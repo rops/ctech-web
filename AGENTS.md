@@ -2,7 +2,7 @@
 
 ## Project Goal
 
-Rebuild the **Computer's Technology S.r.l.** (CTech) company website from scratch as a modern, lightweight static site deployed to GitHub Pages. The new site replaces the legacy site at www.ctech.it.
+Rebuild the **Computer's Technology S.r.l.** (CTech) company website from scratch as a modern, lightweight static site deployed to GitHub Pages. The new site replaces the legacy site at http://www.ctech.it.
 
 ## About the Company
 
@@ -19,16 +19,42 @@ Public contact details (already published on the current site):
 - Email: info@ctech.it
 - P.IVA: 00840390439
 
-## Site Structure (Target)
+## Kickoff (New Session Checklist)
 
-The new site should cover the same content as the current www.ctech.it:
+When starting a fresh session on this project, follow these steps **in order**. Do NOT skip ahead to implementation.
 
-1. **Home** — Hero section, overview of solutions, call to action
-2. **Azienda (About)** — Company history and values
-3. **Soluzioni (Solutions)** — Product pages for Arca EVOLUTION, WinWaste, B.Point, Genya
-4. **Contatti (Contact)** — Contact information, Google Maps embed, contact form
+### 1. Review the legacy site
 
-The website language is **Italian**.
+Fetch and review the current website at http://www.ctech.it (HTTP only, no HTTPS). Check all pages:
+- `index.html` (Home)
+- `azienda.html` (About)
+- `arca.html` (Arca EVOLUTION)
+- `winwaste.html` (WinWaste)
+- `osra-bpoint.html` (B.Point)
+- `osra-genya.html` (Genya)
+- `contatti.html` (Contact)
+
+Summarize what exists, what works, and what's outdated or broken.
+
+### 2. Present a plan before building
+
+Before writing any code, present a plan to the user covering:
+- **Site architecture** — Single-page vs multi-page, navigation structure
+- **Design direction** — Visual style, color palette, typography, layout approach
+- **Content strategy** — What to keep from the legacy site, what to rewrite, what to add
+- **Marketing angle** — How to position CTech (trust, experience since 1984, local presence, product partnerships)
+- **Technical approach** — CSS framework (or none), responsive strategy, accessibility, performance targets
+- **Contact form** — How to handle form submissions on a static site (e.g. Formspree, mailto fallback, etc.)
+- **SEO basics** — Meta tags, Open Graph, structured data, Italian language targeting
+- **Phased delivery** — What to ship first, what can come later
+
+### 3. Discuss and iterate
+
+Wait for the user's feedback on the plan. Do not start implementation until the user approves the direction. Expect back-and-forth on design choices, content tone, and priorities.
+
+### 4. Implement incrementally
+
+Once approved, build in small increments. Commit and push after each meaningful milestone so the user can preview on GitHub Pages. Always check the live site after deployment.
 
 ## Repository Structure
 
