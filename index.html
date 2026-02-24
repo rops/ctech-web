@@ -1,59 +1,510 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CTech - Work in Progress</title>
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  <title>Computer's Technology — Software Gestionale e Servizi IT a Macerata</title>
+  <meta name="description" content="Soluzioni software per aziende e professionisti nelle Marche. Arca EVOLUTION, WinWaste, B.Point, Genya, ESET. Assistenza e consulenza IT dal 1984.">
+  <meta name="keywords" content="software gestionale macerata, assistenza informatica macerata, consulenza IT marche, Arca EVOLUTION macerata">
+  <meta name="author" content="Computer's Technology S.r.l.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://anomalyco.github.io/ctech-web/">
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #0a0a0a;
-      color: #e5e5e5;
-    }
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Computer's Technology — Software Gestionale e Servizi IT a Macerata">
+  <meta property="og:description" content="Soluzioni software per aziende e professionisti nelle Marche. Assistenza e consulenza IT dal 1984.">
+  <meta property="og:url" content="https://anomalyco.github.io/ctech-web/">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="Computer's Technology">
 
-    .container {
-      text-align: center;
-      padding: 2rem;
-    }
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/img/logo-old.png">
 
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 1rem;
-    }
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    .accent {
-      color: #3b82f6;
-    }
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
 
-    p {
-      font-size: 1.125rem;
-      color: #a3a3a3;
-      max-width: 28rem;
-      line-height: 1.6;
-    }
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BC7DWNT8X2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-BC7DWNT8X2');
+  </script>
 
-    .divider {
-      width: 3rem;
-      height: 2px;
-      background: #3b82f6;
-      margin: 1.5rem auto;
-      border-radius: 1px;
+  <!-- Schema.org LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Computer's Technology S.r.l.",
+    "description": "Soluzioni software e servizi IT per aziende e professionisti nelle Marche dal 1984.",
+    "url": "https://anomalyco.github.io/ctech-web/",
+    "telephone": "+390733281142",
+    "email": "info@ctech.it",
+    "foundingDate": "1984",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Via Cluentina, 26/B",
+      "addressLocality": "Macerata",
+      "addressRegion": "MC",
+      "postalCode": "62100",
+      "addressCountry": "IT"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 43.27537,
+      "longitude": 13.49272
+    },
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "Marche"
     }
-  </style>
+  }
+  </script>
 </head>
 <body>
-  <div class="container">
-    <h1><span class="accent">CTech</span></h1>
-    <div class="divider"></div>
-    <p>We're building something new. Our website is currently under construction — check back soon.</p>
+
+  <!-- ============================================================
+       NAVBAR
+       ============================================================ -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Navigazione principale">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="Computer's Technology - Home">
+        <img src="assets/img/logo-old.png" alt="Computer's Technology" width="160" height="36">
+      </a>
+
+      <button class="navbar__toggle" id="navToggle" aria-label="Apri menu" aria-expanded="false" aria-controls="navMenu">
+        <span class="navbar__toggle-icon"></span>
+      </button>
+
+      <div class="navbar__nav" id="navMenu">
+        <ul class="navbar__menu">
+          <li>
+            <a href="index.html" class="navbar__link navbar__link--active">Home</a>
+          </li>
+          <li>
+            <a href="azienda.html" class="navbar__link">Chi Siamo</a>
+          </li>
+          <li class="navbar__dropdown">
+            <a href="#" class="navbar__link navbar__dropdown-toggle" aria-haspopup="true" aria-expanded="false">Soluzioni</a>
+            <ul class="navbar__dropdown-menu" role="menu">
+              <li role="none"><span class="navbar__dropdown-label">Per l'Impresa</span></li>
+              <li role="none"><a href="arca.html" class="navbar__dropdown-item" role="menuitem">Arca EVOLUTION</a></li>
+              <li role="none"><a href="winwaste.html" class="navbar__dropdown-item" role="menuitem">WinWaste</a></li>
+              <li role="none"><div class="navbar__dropdown-divider"></div></li>
+              <li role="none"><span class="navbar__dropdown-label">Per i Professionisti</span></li>
+              <li role="none"><a href="osra-bpoint.html" class="navbar__dropdown-item" role="menuitem">B.Point Solution Platform</a></li>
+              <li role="none"><a href="osra-genya.html" class="navbar__dropdown-item" role="menuitem">Genya</a></li>
+            </ul>
+          </li>
+          <li class="navbar__dropdown">
+            <a href="#" class="navbar__link navbar__dropdown-toggle" aria-haspopup="true" aria-expanded="false">Servizi</a>
+            <ul class="navbar__dropdown-menu" role="menu">
+              <li role="none"><a href="assistenza.html" class="navbar__dropdown-item" role="menuitem">Assistenza Tecnica</a></li>
+              <li role="none"><a href="servizi-it.html" class="navbar__dropdown-item" role="menuitem">Servizi IT</a></li>
+              <li role="none"><a href="eset.html" class="navbar__dropdown-item" role="menuitem">ESET Cybersecurity</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="contatti.html" class="navbar__link">Contatti</a>
+          </li>
+          <li class="navbar__cta">
+            <a href="contatti.html" class="btn btn--primary btn--sm">Richiedi Consulenza</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <h1>Soluzioni software e IT<br>per far crescere la tua impresa</h1>
+      <p class="hero__subtitle">
+        Dal 1984, aiutiamo aziende e studi professionali nelle Marche con software gestionali, 
+        assistenza tecnica e infrastruttura IT. Un unico partner per tutte le tue esigenze tecnologiche.
+      </p>
+      <div class="hero__actions">
+        <a href="contatti.html" class="btn btn--primary btn--lg">Richiedi una consulenza gratuita</a>
+        <a href="tel:0733281142" class="hero__phone">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          0733.281142
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TRUST BAR
+       ============================================================ -->
+  <section class="trust-bar" aria-label="I nostri numeri">
+    <div class="container">
+      <div class="trust-bar__inner">
+        <div class="trust-bar__item">
+          <span class="trust-bar__number">40+</span>
+          <span class="trust-bar__label">Anni di esperienza</span>
+        </div>
+        <div class="trust-bar__item">
+          <span class="trust-bar__number">300+</span>
+          <span class="trust-bar__label">Clienti attivi</span>
+        </div>
+        <div class="trust-bar__item">
+          <span class="trust-bar__number">5</span>
+          <span class="trust-bar__label">Partner tecnologici</span>
+        </div>
+        <div class="trust-bar__item">
+          <span class="trust-bar__number">100%</span>
+          <span class="trust-bar__label">Presenza locale</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TARGET BLOCK 1: AZIENDE
+       ============================================================ -->
+  <section class="target-block" id="aziende">
+    <div class="container">
+      <div class="target-block__inner">
+        <div class="target-block__content">
+          <span class="target-block__label">Per le Aziende</span>
+          <h2 class="target-block__title">Gestisci la tua azienda con un software su misura</h2>
+          <p class="target-block__text">
+            Dalla contabilità al magazzino, dalla fatturazione elettronica al CRM: 
+            Arca EVOLUTION è il gestionale ERP che cresce con la tua impresa. 
+            Noi lo configuriamo, lo personalizziamo e ti affianchiamo ogni giorno.
+          </p>
+          <div class="target-block__features">
+            <div class="target-block__feature">
+              <svg class="target-block__feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Contabilità, magazzino, fatturazione elettronica, CRM</span>
+            </div>
+            <div class="target-block__feature">
+              <svg class="target-block__feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Installazione, configurazione e formazione dedicata</span>
+            </div>
+            <div class="target-block__feature">
+              <svg class="target-block__feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Assistenza tecnica on-site e da remoto</span>
+            </div>
+            <div class="target-block__feature">
+              <svg class="target-block__feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Infrastruttura IT: reti, server, backup, sicurezza ESET</span>
+            </div>
+          </div>
+          <a href="arca.html" class="btn btn--primary">Scopri Arca EVOLUTION</a>
+        </div>
+        <div class="target-block__visual">
+          <div class="card card--flat" style="padding: 3rem; text-align: center;">
+            <div style="font-size: 4rem; font-weight: 700; color: var(--color-primary); line-height: 1;">Arca</div>
+            <div style="font-size: 1.5rem; color: var(--color-text-light); font-weight: 600;">EVOLUTION</div>
+            <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--color-text-light);">Gestionale ERP di Wolters Kluwer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TARGET BLOCK 2: COMMERCIALISTI / STUDI
+       ============================================================ -->
+  <section class="target-block target-block--reverse" id="professionisti">
+    <div class="container">
+      <div class="target-block__inner">
+        <div class="target-block__content">
+          <span class="target-block__label">Per Commercialisti e Studi</span>
+          <h2 class="target-block__title">Il tuo studio, pi&ugrave; efficiente e connesso</h2>
+          <p class="target-block__text">
+            Scegli la piattaforma Wolters Kluwer pi&ugrave; adatta al tuo studio: 
+            B.Point per la gestione completa di dichiarativi, contabilità e paghe, 
+            oppure Genya per lavorare in cloud con i tuoi clienti.
+          </p>
+          <div class="target-block__features">
+            <div class="target-block__feature">
+              <svg class="target-block__feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>B.Point: dichiarativi, contabilità, paghe, bilanci</span>
+            </div>
+            <div class="target-block__feature">
+              <svg class="target-block__feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Genya: suite cloud con collaborazione studio-cliente</span>
+            </div>
+            <div class="target-block__feature">
+              <svg class="target-block__feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Migrazione dati e avviamento garantiti</span>
+            </div>
+            <div class="target-block__feature">
+              <svg class="target-block__feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Assistenza continua e aggiornamenti normativi</span>
+            </div>
+          </div>
+          <div class="flex flex--gap-4" style="flex-wrap: wrap;">
+            <a href="osra-bpoint.html" class="btn btn--primary">Scopri B.Point</a>
+            <a href="osra-genya.html" class="btn btn--secondary">Scopri Genya</a>
+          </div>
+        </div>
+        <div class="target-block__visual">
+          <div class="card card--flat" style="padding: 3rem; text-align: center;">
+            <div style="font-size: 3rem; font-weight: 700; color: var(--color-secondary); line-height: 1;">B.Point</div>
+            <div style="font-size: 1rem; color: var(--color-text-light); font-weight: 500;">Solution Platform</div>
+            <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border);">
+              <img src="assets/img/genya.jpg" alt="Genya" style="max-height: 60px; margin: 0 auto;">
+            </div>
+            <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--color-text-light);">Piattaforme Wolters Kluwer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TARGET BLOCK 3: GESTIONE RIFIUTI
+       ============================================================ -->
+  <section class="target-block" id="rifiuti">
+    <div class="container">
+      <div class="target-block__inner">
+        <div class="target-block__content">
+          <span class="target-block__label">Gestione Rifiuti</span>
+          <h2 class="target-block__title">WinWaste e R.E.N.T.Ri: sei in regola?</h2>
+          <p class="target-block__text">
+            Il registro elettronico R.E.N.T.Ri sta entrando in vigore per tutte le imprese. 
+            WinWaste di Zucchetti Ambiente ti permette di gestire rifiuti, formulari, MUD 
+            e R.E.N.T.Ri in un'unica piattaforma, con il nostro supporto in Marche, Umbria e Abruzzo.
+          </p>
+          <div class="target-block__features">
+            <div class="target-block__feature">
+              <svg class="target-block__feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Registri di carico/scarico, formulari, MUD</span>
+            </div>
+            <div class="target-block__feature">
+              <svg class="target-block__feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Piena conformità R.E.N.T.Ri — scadenza febbraio 2026</span>
+            </div>
+            <div class="target-block__feature">
+              <svg class="target-block__feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>2.500+ clienti attivi in tutta Italia</span>
+            </div>
+            <div class="target-block__feature">
+              <svg class="target-block__feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Copertura Marche, Umbria e Abruzzo</span>
+            </div>
+          </div>
+          <a href="winwaste.html" class="btn btn--primary">Scopri WinWaste</a>
+        </div>
+        <div class="target-block__visual">
+          <div class="card card--flat" style="padding: 3rem; text-align: center;">
+            <img src="assets/img/winwaste-white.png" alt="WinWaste" style="max-height: 80px; margin: 0 auto; filter: none;">
+            <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--color-text-light);">Software Gestione Rifiuti — Zucchetti Ambiente</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PARTNERS
+       ============================================================ -->
+  <section class="partners section--surface" aria-label="I nostri partner">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Partner Tecnologici</span>
+        <h2>Lavoriamo con i migliori</h2>
+        <p>Rivenditori e partner certificati delle principali soluzioni software per imprese e professionisti.</p>
+      </div>
+      <div class="partners__logos">
+        <!-- Text-based partner logos as fallback (no images yet) -->
+        <div style="font-weight: 700; color: var(--color-text-light); font-size: 1.125rem; opacity: 0.6;">Wolters Kluwer</div>
+        <div style="font-weight: 700; color: var(--color-text-light); font-size: 1.125rem; opacity: 0.6;">Zucchetti</div>
+        <div style="font-weight: 700; color: var(--color-text-light); font-size: 1.125rem; opacity: 0.6;">ESET</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FINAL CTA
+       ============================================================ -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Pronto a ottimizzare la tua azienda?</h2>
+      <p>Parliamo delle tue esigenze. La prima consulenza è gratuita e senza impegno.</p>
+      <div class="cta-section__actions">
+        <a href="contatti.html" class="btn btn--primary btn--lg">Richiedi una consulenza gratuita</a>
+        <a href="tel:0733281142" class="btn btn--white btn--lg">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Chiamaci: 0733.281142
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <!-- Brand -->
+        <div class="footer__brand">
+          <img src="assets/img/logo-old.png" alt="Computer's Technology" class="footer__logo" width="140" height="32">
+          <p>Soluzioni software e servizi IT per aziende e professionisti nelle Marche. Al tuo fianco dal 1984.</p>
+        </div>
+
+        <!-- Soluzioni -->
+        <div>
+          <h4 class="footer__heading">Soluzioni</h4>
+          <div class="footer__links">
+            <a href="arca.html" class="footer__link">Arca EVOLUTION</a>
+            <a href="winwaste.html" class="footer__link">WinWaste</a>
+            <a href="osra-bpoint.html" class="footer__link">B.Point</a>
+            <a href="osra-genya.html" class="footer__link">Genya</a>
+          </div>
+        </div>
+
+        <!-- Servizi -->
+        <div>
+          <h4 class="footer__heading">Servizi</h4>
+          <div class="footer__links">
+            <a href="assistenza.html" class="footer__link">Assistenza Tecnica</a>
+            <a href="servizi-it.html" class="footer__link">Servizi IT</a>
+            <a href="eset.html" class="footer__link">ESET Cybersecurity</a>
+            <a href="contatti.html" class="footer__link">Contatti</a>
+          </div>
+        </div>
+
+        <!-- Contatti -->
+        <div>
+          <h4 class="footer__heading">Contatti</h4>
+          <div class="footer__contact-item">
+            <svg class="footer__contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Via Cluentina, 26/B<br>Piediripa di Macerata (MC)<br>62100</span>
+          </div>
+          <div class="footer__contact-item">
+            <svg class="footer__contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="tel:0733281142">0733.281142</a>
+          </div>
+          <div class="footer__contact-item">
+            <svg class="footer__contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <a href="mailto:info@ctech.it">info@ctech.it</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer__bottom">
+        <p class="footer__copy">
+          &copy; 2026 Computer's Technology S.r.l. — Via Cluentina 26/B, 62100 Macerata (MC) — P.IVA 00840390439
+        </p>
+        <div class="footer__legal">
+          <a href="assets/attachments/privacy-policy.pdf" target="_blank" rel="noopener">Privacy Policy</a>
+          <a href="cookie-policy.html">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       COOKIE BANNER
+       ============================================================ -->
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Informativa cookie">
+    <div class="cookie-banner__inner">
+      <p class="cookie-banner__text">
+        Questo sito utilizza cookie tecnici e di analisi (Google Analytics) per migliorare la tua esperienza di navigazione. 
+        Continuando a navigare, accetti l'utilizzo dei cookie. 
+        <a href="cookie-policy.html">Maggiori informazioni</a>
+      </p>
+      <div class="cookie-banner__actions">
+        <button class="btn btn--primary btn--sm" id="cookieAccept">Accetta</button>
+        <button class="btn btn--secondary btn--sm" id="cookieReject">Rifiuta</button>
+      </div>
+    </div>
   </div>
+
+  <!-- ============================================================
+       SCRIPTS
+       ============================================================ -->
+  <script>
+    // --- Mobile Navigation ---
+    (function() {
+      var toggle = document.getElementById('navToggle');
+      var nav = document.getElementById('navMenu');
+      
+      toggle.addEventListener('click', function() {
+        var isOpen = nav.classList.toggle('is-open');
+        toggle.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+
+      // Mobile dropdown toggles
+      var dropdowns = document.querySelectorAll('.navbar__dropdown');
+      dropdowns.forEach(function(dropdown) {
+        var toggleLink = dropdown.querySelector('.navbar__dropdown-toggle');
+        toggleLink.addEventListener('click', function(e) {
+          if (window.innerWidth <= 768) {
+            e.preventDefault();
+            dropdown.classList.toggle('is-open');
+          }
+        });
+      });
+
+      // Close menu on resize to desktop
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+          nav.classList.remove('is-open');
+          toggle.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+          dropdowns.forEach(function(d) { d.classList.remove('is-open'); });
+        }
+      });
+    })();
+
+    // --- Navbar scroll shadow ---
+    (function() {
+      var navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 10) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+    })();
+
+    // --- Cookie Banner ---
+    (function() {
+      var banner = document.getElementById('cookieBanner');
+      var acceptBtn = document.getElementById('cookieAccept');
+      var rejectBtn = document.getElementById('cookieReject');
+      
+      // Check if user already made a choice
+      if (!localStorage.getItem('ctech_cookie_consent')) {
+        setTimeout(function() {
+          banner.classList.add('is-visible');
+        }, 1000);
+      }
+
+      acceptBtn.addEventListener('click', function() {
+        localStorage.setItem('ctech_cookie_consent', 'accepted');
+        banner.classList.remove('is-visible');
+      });
+
+      rejectBtn.addEventListener('click', function() {
+        localStorage.setItem('ctech_cookie_consent', 'rejected');
+        banner.classList.remove('is-visible');
+        // Disable GA4 if rejected
+        window['ga-disable-G-BC7DWNT8X2'] = true;
+      });
+    })();
+  </script>
+
 </body>
 </html>
