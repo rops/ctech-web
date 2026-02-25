@@ -1,0 +1,18 @@
+# Environment
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary screenshot PNGs (development artifacts)
+*.png
+!assets/**/*.png
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
