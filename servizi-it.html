@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servizi IT e Infrastruttura — CTech | Macerata</title>
+  <meta name="description" content="Progettazione reti, server, cloud migration, backup, virtualizzazione. Infrastruttura IT per PMI nelle Marche.">
+  <meta name="keywords" content="servizi IT macerata, infrastruttura informatica, cloud migration PMI, reti aziendali">
+  <meta name="author" content="Computer's Technology S.r.l.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://rops.github.io/ctech-web/servizi-it.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Servizi IT e Infrastruttura — CTech | Macerata">
+  <meta property="og:description" content="Progettazione reti, server, cloud migration, backup, virtualizzazione. Infrastruttura IT per PMI nelle Marche.">
+  <meta property="og:url" content="https://rops.github.io/ctech-web/servizi-it.html">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="Computer's Technology">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/img/logo-old.png">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BC7DWNT8X2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-BC7DWNT8X2');
+  </script>
+
+  <!-- Schema.org Service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Servizi IT e Infrastruttura",
+    "description": "Progettazione reti, server, cloud migration, backup, virtualizzazione. Infrastruttura IT per PMI nelle Marche.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Computer's Technology S.r.l.",
+      "telephone": "+390733281142",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Via Cluentina, 26/B",
+        "addressLocality": "Macerata",
+        "postalCode": "62100",
+        "addressCountry": "IT"
+      },
+      "areaServed": "Marche"
+    },
+    "serviceType": ["Reti Aziendali", "Server e Virtualizzazione", "Backup e Disaster Recovery", "Cloud Migration", "Sicurezza Perimetrale", "Posta Elettronica e Collaborazione"]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Navigazione principale">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="Computer's Technology - Home">
+        <img src="assets/img/logo-old.png" alt="Computer's Technology" width="160" height="36">
+      </a>
+      <button class="navbar__toggle" id="navToggle" aria-label="Apri menu" aria-expanded="false" aria-controls="navMenu">
+        <span class="navbar__toggle-icon"></span>
+      </button>
+      <div class="navbar__nav" id="navMenu">
+        <ul class="navbar__menu">
+          <li><a href="index.html" class="navbar__link">Home</a></li>
+          <li><a href="azienda.html" class="navbar__link">Chi Siamo</a></li>
+          <li class="navbar__dropdown">
+            <a href="#" class="navbar__link navbar__dropdown-toggle" aria-haspopup="true" aria-expanded="false">Soluzioni</a>
+            <ul class="navbar__dropdown-menu" role="menu">
+              <li role="none"><span class="navbar__dropdown-label">Per l'Impresa</span></li>
+              <li role="none"><a href="arca.html" class="navbar__dropdown-item" role="menuitem">Arca EVOLUTION</a></li>
+              <li role="none"><a href="winwaste.html" class="navbar__dropdown-item" role="menuitem">WinWaste</a></li>
+              <li role="none"><div class="navbar__dropdown-divider"></div></li>
+              <li role="none"><span class="navbar__dropdown-label">Per i Professionisti</span></li>
+              <li role="none"><a href="osra-bpoint.html" class="navbar__dropdown-item" role="menuitem">B.Point Solution Platform</a></li>
+              <li role="none"><a href="osra-genya.html" class="navbar__dropdown-item" role="menuitem">Genya</a></li>
+            </ul>
+          </li>
+          <li class="navbar__dropdown">
+            <a href="#" class="navbar__link navbar__dropdown-toggle navbar__link--active" aria-haspopup="true" aria-expanded="false">Servizi</a>
+            <ul class="navbar__dropdown-menu" role="menu">
+              <li role="none"><a href="assistenza.html" class="navbar__dropdown-item" role="menuitem">Assistenza Tecnica</a></li>
+              <li role="none"><a href="servizi-it.html" class="navbar__dropdown-item" role="menuitem">Servizi IT</a></li>
+              <li role="none"><a href="eset.html" class="navbar__dropdown-item" role="menuitem">ESET Cybersecurity</a></li>
+            </ul>
+          </li>
+          <li><a href="contatti.html" class="navbar__link">Contatti</a></li>
+          <li class="navbar__cta"><a href="contatti.html?servizio=servizi-it" class="btn btn--primary btn--sm">Richiedi Sopralluogo</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <span class="section-label" style="color: rgba(255,255,255,0.7);">Servizi IT e Infrastruttura</span>
+      <h1>L'infrastruttura IT che fa crescere la tua azienda</h1>
+      <p class="hero__subtitle">
+        Progettazione, installazione e gestione di reti, server, sistemi di backup e sicurezza. 
+        Dall'analisi iniziale alla manutenzione continua, un unico partner IT per la tua PMI nelle Marche.
+      </p>
+      <div class="hero__actions">
+        <a href="contatti.html?servizio=servizi-it" class="btn btn--primary btn--lg">Richiedi un sopralluogo gratuito</a>
+        <a href="tel:0733281142" class="btn btn--white btn--lg">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Chiamaci: 0733.281142
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <section class="trust-bar">
+    <div class="container">
+      <div class="trust-bar__inner">
+        <div class="trust-bar__item">
+          <span class="trust-bar__number">40+</span>
+          <span class="trust-bar__label">Anni di esperienza</span>
+        </div>
+        <div class="trust-bar__item">
+          <span class="trust-bar__number">&check;</span>
+          <span class="trust-bar__label">Progettazione e installazione</span>
+        </div>
+        <div class="trust-bar__item">
+          <span class="trust-bar__number">24/7</span>
+          <span class="trust-bar__label">Manutenzione continua</span>
+        </div>
+        <div class="trust-bar__item">
+          <span class="trust-bar__number">&star;</span>
+          <span class="trust-bar__label">Partner certificati</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- I NOSTRI SERVIZI -->
+  <section class="section" id="servizi">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">I Nostri Servizi</span>
+        <h2>Infrastruttura IT completa per la tua azienda</h2>
+        <p>Dalla rete al cloud, dalla sicurezza al backup: progettiamo, installiamo e gestiamo ogni componente della tua infrastruttura IT.</p>
+      </div>
+
+      <div class="grid grid--2">
+        <!-- Reti Aziendali -->
+        <div class="card">
+          <div class="card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+          </div>
+          <h3 class="card__title">Reti Aziendali</h3>
+          <p class="card__text">Progettazione e installazione reti LAN/WAN, cablaggio strutturato, switch gestiti, Wi-Fi professionale. Infrastruttura di rete affidabile e performante.</p>
+        </div>
+
+        <!-- Server e Virtualizzazione -->
+        <div class="card">
+          <div class="card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3 class="card__title">Server e Virtualizzazione</h3>
+          <p class="card__text">Fornitura, installazione e configurazione server fisici e virtuali. Virtualizzazione con Hyper-V e VMware per ottimizzare le risorse.</p>
+        </div>
+
+        <!-- Backup e Disaster Recovery -->
+        <div class="card">
+          <div class="card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+          </div>
+          <h3 class="card__title">Backup e Disaster Recovery</h3>
+          <p class="card__text">Sistemi di backup automatico locale e cloud, piani di disaster recovery, test periodici di ripristino. I tuoi dati sono al sicuro.</p>
+        </div>
+
+        <!-- Cloud Migration -->
+        <div class="card">
+          <div class="card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+          </div>
+          <h3 class="card__title">Cloud Migration</h3>
+          <p class="card__text">Migrazione graduale e controllata verso il cloud. Analisi dei workload, scelta della piattaforma, migrazione dati e applicazioni.</p>
+        </div>
+
+        <!-- Sicurezza Perimetrale -->
+        <div class="card">
+          <div class="card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="card__title">Sicurezza Perimetrale</h3>
+          <p class="card__text">Firewall, VPN, segmentazione rete, protezione endpoint con ESET. Sicurezza multilivello per proteggere la tua azienda.</p>
+        </div>
+
+        <!-- Posta Elettronica e Collaborazione -->
+        <div class="card">
+          <div class="card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </div>
+          <h3 class="card__title">Posta Elettronica e Collaborazione</h3>
+          <p class="card__text">Configurazione e gestione email aziendali, Microsoft 365, strumenti di collaborazione. Comunicazione efficiente e sicura.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IL NOSTRO APPROCCIO -->
+  <section class="section section--surface">
+    <div class="container">
+      <div class="target-block__inner" style="padding: 0;">
+        <div class="target-block__content" style="max-width: 100%;">
+          <span class="section-label">Il Nostro Approccio</span>
+          <h2>Non vendiamo scatole: progettiamo soluzioni</h2>
+          <p class="target-block__text">
+            Non vendiamo scatole. Partiamo dalla comprensione delle tue esigenze, progettiamo la soluzione, 
+            la installiamo e la manteniamo nel tempo. Un approccio consulenziale che fa la differenza.
+          </p>
+          <div class="target-block__features">
+            <div class="target-block__feature">
+              <svg class="target-block__feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Analisi e progettazione:</strong> studiamo la tua realtà prima di proporre soluzioni</span>
+            </div>
+            <div class="target-block__feature">
+              <svg class="target-block__feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Implementazione professionale:</strong> installiamo e configuriamo con il minimo impatto operativo</span>
+            </div>
+            <div class="target-block__feature">
+              <svg class="target-block__feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Documentazione completa:</strong> ogni intervento è documentato per garantire continuità</span>
+            </div>
+            <div class="target-block__feature">
+              <svg class="target-block__feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Manutenzione proattiva:</strong> monitoriamo i sistemi e interveniamo prima che si verifichino problemi</span>
+            </div>
+            <div class="target-block__feature">
+              <svg class="target-block__feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Scalabilità:</strong> progettiamo infrastrutture che crescono con la tua azienda</span>
+            </div>
+          </div>
+        </div>
+        <div class="target-block__visual">
+          <div class="card" style="padding: 2.5rem; text-align: center;">
+            <div style="font-size: 4rem; font-weight: 700; color: var(--color-primary); line-height: 1;">IT</div>
+            <div style="font-size: 1.5rem; color: var(--color-text-light); font-weight: 600;">Infrastruttura</div>
+            <div style="margin: 1.5rem 0; padding: 1.5rem 0; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+              <p style="font-size: 0.875rem; color: var(--color-text-light); line-height: 1.6; margin: 0;">
+                Reti &middot; Server &middot; Cloud<br>
+                Backup &middot; Sicurezza &middot; Email
+              </p>
+            </div>
+            <p style="font-size: 0.75rem; color: var(--color-text-light); margin: 0;">
+              Dal 1984 nelle Marche
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Vuoi migliorare la tua infrastruttura IT?</h2>
+      <p>Richiedi un sopralluogo gratuito. Analizziamo la tua situazione e ti proponiamo un piano su misura.</p>
+      <div class="cta-section__actions">
+        <a href="contatti.html?servizio=servizi-it" class="btn btn--primary btn--lg">Richiedi un sopralluogo gratuito</a>
+        <a href="tel:0733281142" class="btn btn--white btn--lg">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Chiamaci: 0733.281142
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="assets/img/logo-old.png" alt="Computer's Technology" class="footer__logo" width="140" height="32">
+          <p>Soluzioni software e servizi IT per aziende e professionisti nelle Marche. Al tuo fianco dal 1984.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Soluzioni</h4>
+          <div class="footer__links">
+            <a href="arca.html" class="footer__link">Arca EVOLUTION</a>
+            <a href="winwaste.html" class="footer__link">WinWaste</a>
+            <a href="osra-bpoint.html" class="footer__link">B.Point</a>
+            <a href="osra-genya.html" class="footer__link">Genya</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading">Servizi</h4>
+          <div class="footer__links">
+            <a href="assistenza.html" class="footer__link">Assistenza Tecnica</a>
+            <a href="servizi-it.html" class="footer__link">Servizi IT</a>
+            <a href="eset.html" class="footer__link">ESET Cybersecurity</a>
+            <a href="contatti.html" class="footer__link">Contatti</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading">Contatti</h4>
+          <div class="footer__contact-item">
+            <svg class="footer__contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Via Cluentina, 26/B<br>Piediripa di Macerata (MC)<br>62100</span>
+          </div>
+          <div class="footer__contact-item">
+            <svg class="footer__contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="tel:0733281142">0733.281142</a>
+          </div>
+          <div class="footer__contact-item">
+            <svg class="footer__contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <a href="mailto:info@ctech.it">info@ctech.it</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 Computer's Technology S.r.l. — Via Cluentina 26/B, 62100 Macerata (MC) — P.IVA 00840390439</p>
+        <div class="footer__legal">
+          <a href="assets/attachments/privacy-policy.pdf" target="_blank" rel="noopener">Privacy Policy</a>
+          <a href="cookie-policy.html">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- COOKIE BANNER -->
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Informativa cookie">
+    <div class="cookie-banner__inner">
+      <p class="cookie-banner__text">Questo sito utilizza cookie tecnici e di analisi (Google Analytics). <a href="cookie-policy.html">Maggiori informazioni</a></p>
+      <div class="cookie-banner__actions">
+        <button class="btn btn--primary btn--sm" id="cookieAccept">Accetta</button>
+        <button class="btn btn--secondary btn--sm" id="cookieReject">Rifiuta</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script>
+    (function(){var t=document.getElementById('navToggle'),n=document.getElementById('navMenu');t.addEventListener('click',function(){var o=n.classList.toggle('is-open');t.classList.toggle('is-open');t.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';});document.querySelectorAll('.navbar__dropdown').forEach(function(d){d.querySelector('.navbar__dropdown-toggle').addEventListener('click',function(e){if(window.innerWidth<=768){e.preventDefault();d.classList.toggle('is-open');}});});window.addEventListener('resize',function(){if(window.innerWidth>768){n.classList.remove('is-open');t.classList.remove('is-open');t.setAttribute('aria-expanded','false');document.body.style.overflow='';document.querySelectorAll('.navbar__dropdown').forEach(function(d){d.classList.remove('is-open');});}});})();
+    (function(){var nb=document.getElementById('navbar');window.addEventListener('scroll',function(){nb.classList.toggle('scrolled',window.scrollY>10);});})();
+    (function(){var b=document.getElementById('cookieBanner'),a=document.getElementById('cookieAccept'),r=document.getElementById('cookieReject');if(!localStorage.getItem('ctech_cookie_consent')){setTimeout(function(){b.classList.add('is-visible');},1000);}a.addEventListener('click',function(){localStorage.setItem('ctech_cookie_consent','accepted');b.classList.remove('is-visible');});r.addEventListener('click',function(){localStorage.setItem('ctech_cookie_consent','rejected');b.classList.remove('is-visible');window['ga-disable-G-BC7DWNT8X2']=true;});})();
+  </script>
+</body>
+</html>
