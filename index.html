@@ -3,20 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Computer's Technology — Software Gestionale e Servizi IT a Macerata</title>
-  <meta name="description" content="Soluzioni software per aziende e professionisti nelle Marche. Arca EVOLUTION, WinWaste, B.Point, Genya, ESET. Assistenza e consulenza IT dal 1984.">
-  <meta name="keywords" content="software gestionale macerata, assistenza informatica macerata, consulenza IT marche, Arca EVOLUTION macerata">
+  <title>Computer's Technology — Software Gestionale e Servizi IT a Macerata dal 1984</title>
+  <meta name="description" content="Dal 1984, partner IT di fiducia nelle Marche. Arca EVOLUTION, WinWaste, Genya, B.Point, ESET. Assistenza on-site, consulenza e formazione per 300+ aziende.">
+  <meta name="keywords" content="software gestionale macerata, assistenza informatica macerata, consulenza IT marche, Arca EVOLUTION macerata, partner wolters kluwer marche">
   <meta name="author" content="Computer's Technology S.r.l.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://rops.github.io/ctech-web/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Computer's Technology — Software Gestionale e Servizi IT a Macerata">
-  <meta property="og:description" content="Soluzioni software per aziende e professionisti nelle Marche. Assistenza e consulenza IT dal 1984.">
+  <meta property="og:title" content="Computer's Technology — Software Gestionale e Servizi IT a Macerata dal 1984">
+  <meta property="og:description" content="Dal 1984, partner IT di fiducia nelle Marche. Software gestionali, assistenza e consulenza per 300+ aziende e studi professionali.">
   <meta property="og:url" content="https://rops.github.io/ctech-web/">
   <meta property="og:locale" content="it_IT">
   <meta property="og:site_name" content="Computer's Technology">
+  <meta property="og:image" content="https://rops.github.io/ctech-web/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/img/logo-ctech.png">
@@ -65,133 +68,10 @@
     "areaServed": {
       "@type": "AdministrativeArea",
       "name": "Marche"
-    }
+    },
+    "image": "https://rops.github.io/ctech-web/assets/img/og-image.jpg"
   }
   </script>
-
-  <!-- Homepage-specific styles -->
-  <style>
-    /* --- Animated Hero --- */
-    .hero { position: relative; overflow: hidden; }
-    .hero::before {
-      content: '';
-      position: absolute; top: -50%; right: -20%;
-      width: 700px; height: 700px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(197,42,42,0.15) 0%, transparent 70%);
-      animation: heroFloat 8s ease-in-out infinite;
-      pointer-events: none;
-    }
-    .hero::after {
-      content: '';
-      position: absolute; bottom: -40%; left: -15%;
-      width: 500px; height: 500px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
-      animation: heroFloat 10s ease-in-out infinite reverse;
-      pointer-events: none;
-    }
-    @keyframes heroFloat {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(30px, -20px) scale(1.05); }
-    }
-
-    /* --- Client Logo Carousel --- */
-    .clients { padding: var(--space-12) 0; overflow: hidden; }
-    .clients__header { text-align: center; margin-bottom: var(--space-8); }
-    .clients__header h2 { font-size: var(--font-size-2xl); margin-bottom: var(--space-2); }
-    .clients__header p { color: var(--color-text-light); font-size: var(--font-size-sm); }
-    .clients__track {
-      display: flex;
-      gap: var(--space-10);
-      animation: scrollLogos 30s linear infinite;
-      width: max-content;
-    }
-    .clients__track:hover { animation-play-state: paused; }
-    .clients__logo {
-      flex-shrink: 0;
-      height: 50px; width: auto;
-      object-fit: contain;
-      opacity: 0.5;
-      filter: grayscale(100%);
-      transition: opacity 0.3s, filter 0.3s;
-    }
-    .clients__logo:hover { opacity: 1; filter: grayscale(0%); }
-    @keyframes scrollLogos {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    /* --- Floating Contact --- */
-    .fab {
-      position: fixed; bottom: var(--space-6); right: var(--space-6);
-      z-index: 900; display: flex; flex-direction: column; align-items: flex-end; gap: var(--space-3);
-    }
-    .fab__options {
-      display: flex; flex-direction: column; gap: var(--space-2);
-      opacity: 0; transform: translateY(10px) scale(0.95);
-      transition: opacity 0.25s, transform 0.25s;
-      pointer-events: none;
-    }
-    .fab.is-open .fab__options { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
-    .fab__option {
-      display: flex; align-items: center; gap: var(--space-3);
-      padding: var(--space-3) var(--space-4);
-      background: var(--color-white); border: 1px solid var(--color-border);
-      border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);
-      font-size: var(--font-size-sm); font-weight: 500; color: var(--color-text);
-      text-decoration: none; white-space: nowrap;
-      transition: box-shadow 0.2s, transform 0.2s;
-    }
-    .fab__option:hover { box-shadow: var(--shadow-xl); transform: translateY(-1px); color: var(--color-primary); }
-    .fab__option svg { flex-shrink: 0; width: 18px; height: 18px; color: var(--color-primary); }
-    .fab__btn {
-      width: 56px; height: 56px; border-radius: 50%;
-      background: var(--color-primary); color: white; border: none; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: var(--shadow-lg);
-      transition: background 0.2s, transform 0.2s;
-    }
-    .fab__btn:hover { background: var(--color-primary-dark); transform: scale(1.05); }
-    .fab__btn svg { width: 24px; height: 24px; transition: transform 0.3s; }
-    .fab.is-open .fab__btn svg { transform: rotate(45deg); }
-    @media (max-width: 768px) {
-      .fab { bottom: var(--space-4); right: var(--space-4); }
-      .fab__btn { width: 48px; height: 48px; }
-      .fab__btn svg { width: 20px; height: 20px; }
-    }
-
-    /* --- Partner logos real images --- */
-    .partners__logos { align-items: center; }
-    .partners__logos img {
-      height: 36px; width: auto; max-width: 160px;
-      object-fit: contain;
-      opacity: 0.5;
-      transition: opacity 0.3s;
-    }
-    .partners__logos img:hover { opacity: 1; }
-
-    /* --- How We Work --- */
-    .howwework__steps {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-8);
-      position: relative; counter-reset: step;
-    }
-    .howwework__step {
-      text-align: center; position: relative;
-      counter-increment: step;
-    }
-    .howwework__step::before {
-      content: counter(step);
-      display: flex; align-items: center; justify-content: center;
-      width: 48px; height: 48px; border-radius: 50%;
-      background: var(--color-primary); color: white;
-      font-size: var(--font-size-xl); font-weight: 700;
-      margin: 0 auto var(--space-4);
-    }
-    .howwework__step h4 { margin-bottom: var(--space-2); }
-    .howwework__step p { font-size: var(--font-size-sm); color: var(--color-text-light); }
-    @media (max-width: 768px) {
-      .howwework__steps { grid-template-columns: 1fr; gap: var(--space-6); }
-    }
-  </style>
 </head>
 <body>
 
@@ -199,7 +79,7 @@
   <nav class="navbar" id="navbar" role="navigation" aria-label="Navigazione principale">
     <div class="container navbar__inner">
       <a href="index.html" class="navbar__logo" aria-label="Computer's Technology - Home">
-        <img src="assets/img/logo-ctech.png" alt="Computer's Technology">
+        <img src="assets/img/logo-ctech.png" alt="Computer's Technology" width="60" height="44">
       </a>
       <button class="navbar__toggle" id="navToggle" aria-label="Apri menu" aria-expanded="false" aria-controls="navMenu">
         <span class="navbar__toggle-icon"></span>
@@ -214,7 +94,7 @@
               <li role="none"><span class="navbar__dropdown-label">Per l'Impresa</span></li>
               <li role="none"><a href="arca.html" class="navbar__dropdown-item" role="menuitem">Arca EVOLUTION</a></li>
               <li role="none"><a href="winwaste.html" class="navbar__dropdown-item" role="menuitem">WinWaste</a></li>
-              <li role="none"><div class="navbar__dropdown-divider"></div></li>
+              <li role="none"><span class="navbar__dropdown-divider" role="separator"></span></li>
               <li role="none"><span class="navbar__dropdown-label">Per i Professionisti</span></li>
               <li role="none"><a href="osra-bpoint.html" class="navbar__dropdown-item" role="menuitem">B.Point Solution Platform</a></li>
               <li role="none"><a href="osra-genya.html" class="navbar__dropdown-item" role="menuitem">Genya</a></li>
@@ -238,10 +118,11 @@
   <!-- HERO -->
   <section class="hero">
     <div class="container hero__inner">
-      <h1>Soluzioni software e IT<br>per far crescere la tua impresa</h1>
+      <h1>Il tuo partner IT nelle Marche,<br>dal 1984</h1>
       <p class="hero__subtitle">
-        Dal 1984, aiutiamo aziende e studi professionali nelle Marche con software gestionali, 
-        assistenza tecnica e infrastruttura IT. Un unico partner per tutte le tue esigenze tecnologiche.
+        Software gestionali, assistenza tecnica e infrastruttura IT per aziende e studi professionali. 
+        Oltre 300 clienti si affidano a noi perch&eacute; siamo qui, sul territorio, con competenze vere 
+        e risposte rapide. Non un call center: il tuo reparto IT.
       </p>
       <div class="hero__actions">
         <a href="contatti.html" class="btn btn--primary btn--lg">Richiedi una consulenza gratuita</a>
@@ -311,14 +192,7 @@
           <a href="arca.html" class="btn btn--primary">Scopri Arca EVOLUTION</a>
         </div>
         <div class="target-block__visual">
-          <div class="card card--flat" style="padding: 3rem; text-align: center;">
-            <div style="font-size: 4rem; font-weight: 700; color: var(--color-primary); line-height: 1;">Arca</div>
-            <div style="font-size: 1.5rem; color: var(--color-text-light); font-weight: 600;">EVOLUTION</div>
-            <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border);">
-              <img src="assets/img/partner/wolters-kluwer.svg" alt="Wolters Kluwer" style="max-height: 36px; margin: 0 auto; opacity: 0.6;">
-            </div>
-            <p style="margin-top: 0.75rem; font-size: 0.875rem; color: var(--color-text-light);">Gestionale ERP di Wolters Kluwer</p>
-          </div>
+          <img src="assets/img/stock/tech-screens.webp" alt="Gestione aziendale con software Arca EVOLUTION" class="target-block__photo" width="1200" height="675" loading="lazy">
         </div>
       </div>
     </div>
@@ -355,20 +229,13 @@
               <span>Migrazione, formazione e assistenza continua con aggiornamenti normativi</span>
             </div>
           </div>
-          <div class="flex flex--gap-4" style="flex-wrap: wrap;">
+          <div class="flex flex--gap-4 flex--wrap">
             <a href="osra-genya.html" class="btn btn--primary">Scopri Genya</a>
             <a href="osra-bpoint.html" class="btn btn--secondary">Scopri B.Point</a>
           </div>
         </div>
         <div class="target-block__visual">
-          <div class="card card--flat" style="padding: 2.5rem; text-align: center;">
-            <img src="assets/img/icon/logo-genya.png" alt="Genya" style="max-height: 80px; margin: 0 auto 1.5rem;">
-            <div style="padding-top: 1.5rem; border-top: 1px solid var(--color-border);">
-              <div style="font-size: 1.25rem; font-weight: 600; color: var(--color-secondary); line-height: 1;">B.Point</div>
-              <div style="font-size: 0.8rem; color: var(--color-text-light); font-weight: 500;">Solution Platform</div>
-            </div>
-            <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--color-text-light);">Piattaforme Wolters Kluwer</p>
-          </div>
+          <img src="assets/img/stock/team-datacenter.webp" alt="Team di professionisti IT in data center" class="target-block__photo" width="1400" height="787" loading="lazy">
         </div>
       </div>
     </div>
@@ -407,10 +274,7 @@
           <a href="winwaste.html" class="btn btn--primary">Scopri WinWaste</a>
         </div>
         <div class="target-block__visual">
-          <div class="card card--flat" style="padding: 2rem; text-align: center;">
-            <img src="assets/img/screenshot/winwaste/winwaste-pc.png" alt="WinWaste su PC" style="max-width: 100%; height: auto; margin: 0 auto;">
-            <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--color-text-light);">Software Gestione Rifiuti &mdash; Zucchetti Ambiente</p>
-          </div>
+          <img src="assets/img/stock/tech-monitoring.webp" alt="Monitoraggio e gestione informatica dei rifiuti" class="target-block__photo" width="1200" height="675" loading="lazy">
         </div>
       </div>
     </div>
@@ -422,20 +286,20 @@
       <div class="section-header">
         <span class="section-label">Come Lavoriamo</span>
         <h2>Tre passi per la tua soluzione</h2>
-        <p>Un percorso chiaro, dalla prima chiamata all'assistenza continuativa.</p>
+        <p>Un percorso concreto, con tempi certi e un unico referente dedicato.</p>
       </div>
       <div class="howwework__steps">
         <div class="howwework__step">
-          <h4>Analisi</h4>
-          <p>Ascoltiamo le tue esigenze e studiamo il tuo flusso di lavoro per proporti la soluzione pi&ugrave; adatta.</p>
+          <h4>Analisi gratuita</h4>
+          <p>Veniamo da te, studiamo i tuoi processi e ti proponiamo la soluzione pi&ugrave; adatta &mdash; non la pi&ugrave; costosa. Nessun impegno.</p>
         </div>
         <div class="howwework__step">
-          <h4>Implementazione</h4>
-          <p>Installiamo, configuriamo e personalizziamo il software. Formiamo il tuo team per renderlo autonomo.</p>
+          <h4>Configurazione su misura</h4>
+          <p>Installiamo, personalizziamo e migriamo i tuoi dati. Formiamo il tuo team fino a renderlo autonomo, senza fretta.</p>
         </div>
         <div class="howwework__step">
-          <h4>Assistenza</h4>
-          <p>Ti affianchiamo nel tempo con supporto tecnico, aggiornamenti e consulenza continua.</p>
+          <h4>Assistenza continua</h4>
+          <p>Risposta entro 24h, aggiornamenti normativi inclusi, interventi on-site quando serve. Siamo a Macerata, non in un call center.</p>
         </div>
       </div>
     </div>
@@ -446,14 +310,14 @@
     <div class="container">
       <div class="section-header">
         <span class="section-label">Partner Tecnologici</span>
-        <h2>Lavoriamo con i migliori</h2>
-        <p>Rivenditori e partner certificati delle principali soluzioni software per imprese e professionisti.</p>
+        <h2>Rivenditori certificati dal 2004</h2>
+        <p>Collaborazioni ventennali con i leader del software gestionale, fiscale e della sicurezza informatica.</p>
       </div>
       <div class="partners__logos">
-        <img src="assets/img/partner/wolters-kluwer.svg" alt="Wolters Kluwer" loading="lazy">
-        <img src="assets/img/partner/winwaste-2025.png" alt="WinWaste" loading="lazy">
-        <img src="assets/img/partner/zucchetti.svg" alt="Zucchetti" loading="lazy">
-        <img src="assets/img/partner/eset.svg" alt="ESET" loading="lazy">
+        <img src="assets/img/partner/wolters-kluwer.svg" alt="Wolters Kluwer — Partner certificato" width="161" height="26" loading="lazy">
+        <img src="assets/img/partner/winwaste-2025.png" alt="WinWaste — Distributore autorizzato" width="100" height="36" loading="lazy">
+        <img src="assets/img/partner/zucchetti.svg" alt="Zucchetti Ambiente" width="120" height="36" loading="lazy">
+        <img src="assets/img/partner/eset.svg" alt="ESET — Rivenditore autorizzato" width="80" height="32" loading="lazy">
       </div>
     </div>
   </section>
@@ -467,39 +331,39 @@
       </div>
     </div>
     <div class="clients__track" aria-hidden="true">
-      <img src="assets/img/clienti/arca/angelucci.jpg" alt="Angelucci" class="clients__logo" loading="lazy">
-      <img src="assets/img/clienti/arca/braid.png" alt="Braid" class="clients__logo" loading="lazy">
-      <img src="assets/img/clienti/arca/corsetti.png" alt="Corsetti" class="clients__logo" loading="lazy">
-      <img src="assets/img/clienti/arca/dignani.png" alt="Dignani" class="clients__logo" loading="lazy">
-      <img src="assets/img/clienti/arca/JDM.png" alt="JDM" class="clients__logo" loading="lazy">
-      <img src="assets/img/clienti/arca/Kinetik.jpg" alt="Kinetik" class="clients__logo" loading="lazy">
-      <img src="assets/img/clienti/arca/Omnia.png" alt="Omnia" class="clients__logo" loading="lazy">
-      <img src="assets/img/clienti/arca/six.png" alt="Six" class="clients__logo" loading="lazy">
-      <img src="assets/img/clienti/arca/TM.jpg" alt="TM" class="clients__logo" loading="lazy">
-      <img src="assets/img/clienti/winwaste/adriatica.png" alt="Adriatica" class="clients__logo" loading="lazy">
-      <img src="assets/img/clienti/winwaste/ambienta.png" alt="Ambienta" class="clients__logo" loading="lazy">
-      <img src="assets/img/clienti/winwaste/ecofox.png" alt="Ecofox" class="clients__logo" loading="lazy">
-      <img src="assets/img/clienti/winwaste/geseco.png" alt="Geseco" class="clients__logo" loading="lazy">
-      <img src="assets/img/clienti/winwaste/ipic.png" alt="IPIC" class="clients__logo" loading="lazy">
-      <img src="assets/img/clienti/winwaste/smorlesi.png" alt="Smorlesi" class="clients__logo" loading="lazy">
-      <img src="assets/img/clienti/winwaste/tecnocarta.png" alt="Tecnocarta" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/angelucci.jpg" alt="Angelucci" class="clients__logo" width="100" height="50" loading="lazy">
+      <img src="assets/img/clienti/arca/braid.png" alt="Braid" class="clients__logo" width="100" height="50" loading="lazy">
+      <img src="assets/img/clienti/arca/corsetti.png" alt="Corsetti" class="clients__logo" width="100" height="50" loading="lazy">
+      <img src="assets/img/clienti/arca/dignani.png" alt="Dignani" class="clients__logo" width="100" height="50" loading="lazy">
+      <img src="assets/img/clienti/arca/JDM.png" alt="JDM" class="clients__logo" width="100" height="50" loading="lazy">
+      <img src="assets/img/clienti/arca/Kinetik.jpg" alt="Kinetik" class="clients__logo" width="100" height="50" loading="lazy">
+      <img src="assets/img/clienti/arca/Omnia.png" alt="Omnia" class="clients__logo" width="100" height="50" loading="lazy">
+      <img src="assets/img/clienti/arca/six.png" alt="Six" class="clients__logo" width="100" height="50" loading="lazy">
+      <img src="assets/img/clienti/arca/TM.jpg" alt="TM" class="clients__logo" width="100" height="50" loading="lazy">
+      <img src="assets/img/clienti/winwaste/adriatica.png" alt="Adriatica" class="clients__logo" width="100" height="50" loading="lazy">
+      <img src="assets/img/clienti/winwaste/ambienta.png" alt="Ambienta" class="clients__logo" width="100" height="50" loading="lazy">
+      <img src="assets/img/clienti/winwaste/ecofox.png" alt="Ecofox" class="clients__logo" width="100" height="50" loading="lazy">
+      <img src="assets/img/clienti/winwaste/geseco.png" alt="Geseco" class="clients__logo" width="100" height="50" loading="lazy">
+      <img src="assets/img/clienti/winwaste/ipic.png" alt="IPIC" class="clients__logo" width="100" height="50" loading="lazy">
+      <img src="assets/img/clienti/winwaste/smorlesi.png" alt="Smorlesi" class="clients__logo" width="100" height="50" loading="lazy">
+      <img src="assets/img/clienti/winwaste/tecnocarta.png" alt="Tecnocarta" class="clients__logo" width="100" height="50" loading="lazy">
       <!-- Duplicate for seamless loop -->
-      <img src="assets/img/clienti/arca/angelucci.jpg" alt="" class="clients__logo" loading="lazy">
-      <img src="assets/img/clienti/arca/braid.png" alt="" class="clients__logo" loading="lazy">
-      <img src="assets/img/clienti/arca/corsetti.png" alt="" class="clients__logo" loading="lazy">
-      <img src="assets/img/clienti/arca/dignani.png" alt="" class="clients__logo" loading="lazy">
-      <img src="assets/img/clienti/arca/JDM.png" alt="" class="clients__logo" loading="lazy">
-      <img src="assets/img/clienti/arca/Kinetik.jpg" alt="" class="clients__logo" loading="lazy">
-      <img src="assets/img/clienti/arca/Omnia.png" alt="" class="clients__logo" loading="lazy">
-      <img src="assets/img/clienti/arca/six.png" alt="" class="clients__logo" loading="lazy">
-      <img src="assets/img/clienti/arca/TM.jpg" alt="" class="clients__logo" loading="lazy">
-      <img src="assets/img/clienti/winwaste/adriatica.png" alt="" class="clients__logo" loading="lazy">
-      <img src="assets/img/clienti/winwaste/ambienta.png" alt="" class="clients__logo" loading="lazy">
-      <img src="assets/img/clienti/winwaste/ecofox.png" alt="" class="clients__logo" loading="lazy">
-      <img src="assets/img/clienti/winwaste/geseco.png" alt="" class="clients__logo" loading="lazy">
-      <img src="assets/img/clienti/winwaste/ipic.png" alt="" class="clients__logo" loading="lazy">
-      <img src="assets/img/clienti/winwaste/smorlesi.png" alt="" class="clients__logo" loading="lazy">
-      <img src="assets/img/clienti/winwaste/tecnocarta.png" alt="" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/angelucci.jpg" alt="" class="clients__logo" width="100" height="50" loading="lazy">
+      <img src="assets/img/clienti/arca/braid.png" alt="" class="clients__logo" width="100" height="50" loading="lazy">
+      <img src="assets/img/clienti/arca/corsetti.png" alt="" class="clients__logo" width="100" height="50" loading="lazy">
+      <img src="assets/img/clienti/arca/dignani.png" alt="" class="clients__logo" width="100" height="50" loading="lazy">
+      <img src="assets/img/clienti/arca/JDM.png" alt="" class="clients__logo" width="100" height="50" loading="lazy">
+      <img src="assets/img/clienti/arca/Kinetik.jpg" alt="" class="clients__logo" width="100" height="50" loading="lazy">
+      <img src="assets/img/clienti/arca/Omnia.png" alt="" class="clients__logo" width="100" height="50" loading="lazy">
+      <img src="assets/img/clienti/arca/six.png" alt="" class="clients__logo" width="100" height="50" loading="lazy">
+      <img src="assets/img/clienti/arca/TM.jpg" alt="" class="clients__logo" width="100" height="50" loading="lazy">
+      <img src="assets/img/clienti/winwaste/adriatica.png" alt="" class="clients__logo" width="100" height="50" loading="lazy">
+      <img src="assets/img/clienti/winwaste/ambienta.png" alt="" class="clients__logo" width="100" height="50" loading="lazy">
+      <img src="assets/img/clienti/winwaste/ecofox.png" alt="" class="clients__logo" width="100" height="50" loading="lazy">
+      <img src="assets/img/clienti/winwaste/geseco.png" alt="" class="clients__logo" width="100" height="50" loading="lazy">
+      <img src="assets/img/clienti/winwaste/ipic.png" alt="" class="clients__logo" width="100" height="50" loading="lazy">
+      <img src="assets/img/clienti/winwaste/smorlesi.png" alt="" class="clients__logo" width="100" height="50" loading="lazy">
+      <img src="assets/img/clienti/winwaste/tecnocarta.png" alt="" class="clients__logo" width="100" height="50" loading="lazy">
     </div>
   </section>
 
@@ -523,7 +387,7 @@
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <img src="assets/img/logo-ctech.png" alt="Computer's Technology" class="footer__logo">
+          <img src="assets/img/logo-ctech.png" alt="Computer's Technology" class="footer__logo" width="55" height="40">
           <p>Soluzioni software e servizi IT per aziende e professionisti nelle Marche. Al tuo fianco dal 1984.</p>
         </div>
         <div>
