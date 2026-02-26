@@ -62,6 +62,185 @@
     }
   }
   </script>
+
+  <!-- Page-specific styles -->
+  <style>
+    /* --- Animated Hero --- */
+    .hero { position: relative; overflow: hidden; }
+    .hero::before {
+      content: '';
+      position: absolute; top: -50%; right: -20%;
+      width: 700px; height: 700px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(197,42,42,0.15) 0%, transparent 70%);
+      animation: heroFloat 8s ease-in-out infinite;
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; bottom: -40%; left: -15%;
+      width: 500px; height: 500px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+      animation: heroFloat 10s ease-in-out infinite reverse;
+      pointer-events: none;
+    }
+    @keyframes heroFloat {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(30px, -20px) scale(1.05); }
+    }
+
+    /* --- Hero partner badge --- */
+    .hero__badge {
+      display: inline-flex; align-items: center; gap: var(--space-3);
+      padding: var(--space-2) var(--space-4);
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--radius-full);
+      font-size: var(--font-size-sm); color: rgba(255,255,255,0.8);
+      margin-bottom: var(--space-6);
+      backdrop-filter: blur(4px);
+    }
+    .hero__badge img {
+      height: 20px; width: auto; display: inline-block;
+      filter: brightness(0) invert(1); opacity: 0.8;
+    }
+
+    /* --- Module cards with real icons --- */
+    .module-card {
+      display: flex; align-items: flex-start; gap: var(--space-5);
+      padding: var(--space-6);
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      transition: box-shadow var(--transition-base), transform var(--transition-base);
+    }
+    .module-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
+    }
+    .module-card__icon {
+      flex-shrink: 0;
+      width: 56px; height: 56px;
+      object-fit: contain;
+    }
+    .module-card__content h3 {
+      font-size: var(--font-size-lg);
+      font-weight: var(--font-weight-semibold);
+      margin-bottom: var(--space-2);
+    }
+    .module-card__content p {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-light);
+      line-height: var(--line-height-relaxed);
+      margin: 0;
+    }
+
+    /* --- Video Section --- */
+    .video-section {
+      padding: var(--space-20) 0;
+      background: linear-gradient(135deg, var(--color-secondary) 0%, #0f1a2e 100%);
+      color: var(--color-text-inverse);
+    }
+    .video-section h2 { color: var(--color-text-inverse); }
+    .video-section .section-header p { color: rgba(255,255,255,0.7); }
+    .video-section .section-label { color: rgba(255,255,255,0.5); }
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0; overflow: hidden;
+      border-radius: var(--radius-xl);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      max-width: 900px; margin: 0 auto;
+    }
+    .video-wrapper iframe {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0; border-radius: var(--radius-xl);
+    }
+
+    /* --- Client Logo Carousel --- */
+    .clients { padding: var(--space-12) 0; overflow: hidden; }
+    .clients__header { text-align: center; margin-bottom: var(--space-8); }
+    .clients__header h2 { font-size: var(--font-size-2xl); margin-bottom: var(--space-2); }
+    .clients__header p { color: var(--color-text-light); font-size: var(--font-size-sm); }
+    .clients__track {
+      display: flex; gap: var(--space-10);
+      animation: scrollLogos 35s linear infinite;
+      width: max-content;
+    }
+    .clients__track:hover { animation-play-state: paused; }
+    .clients__logo {
+      flex-shrink: 0; height: 50px; width: auto;
+      object-fit: contain; opacity: 0.5;
+      filter: grayscale(100%);
+      transition: opacity 0.3s, filter 0.3s;
+    }
+    .clients__logo:hover { opacity: 1; filter: grayscale(0%); }
+    @keyframes scrollLogos {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* --- Inline Contact Form --- */
+    .inline-form { max-width: 800px; margin: 0 auto; }
+    .inline-form__grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5);
+    }
+    .inline-form__full { grid-column: 1 / -1; }
+    @media (max-width: 768px) {
+      .inline-form__grid { grid-template-columns: 1fr; }
+    }
+
+    /* --- Floating Contact --- */
+    .fab {
+      position: fixed; bottom: var(--space-6); right: var(--space-6);
+      z-index: 900; display: flex; flex-direction: column; align-items: flex-end; gap: var(--space-3);
+    }
+    .fab__options {
+      display: flex; flex-direction: column; gap: var(--space-2);
+      opacity: 0; transform: translateY(10px) scale(0.95);
+      transition: opacity 0.25s, transform 0.25s;
+      pointer-events: none;
+    }
+    .fab.is-open .fab__options { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+    .fab__option {
+      display: flex; align-items: center; gap: var(--space-3);
+      padding: var(--space-3) var(--space-4);
+      background: var(--color-white); border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);
+      font-size: var(--font-size-sm); font-weight: 500; color: var(--color-text);
+      text-decoration: none; white-space: nowrap;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .fab__option:hover { box-shadow: var(--shadow-xl); transform: translateY(-1px); color: var(--color-primary); }
+    .fab__option svg { flex-shrink: 0; width: 18px; height: 18px; color: var(--color-primary); }
+    .fab__btn {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--color-primary); color: white; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: var(--shadow-lg);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .fab__btn:hover { background: var(--color-primary-dark); transform: scale(1.05); }
+    .fab__btn svg { width: 24px; height: 24px; transition: transform 0.3s; }
+    .fab.is-open .fab__btn svg { transform: rotate(45deg); }
+    @media (max-width: 768px) {
+      .fab { bottom: var(--space-4); right: var(--space-4); }
+      .fab__btn { width: 48px; height: 48px; }
+      .fab__btn svg { width: 20px; height: 20px; }
+    }
+
+    /* --- WK badge in value section --- */
+    .wk-badge {
+      display: flex; align-items: center; gap: var(--space-4);
+      padding: var(--space-5);
+      background: var(--color-surface);
+      border-radius: var(--radius-lg);
+      margin-top: var(--space-6);
+    }
+    .wk-badge img { height: 44px; width: auto; }
+    .wk-badge__text { font-size: var(--font-size-sm); color: var(--color-text-light); }
+    .wk-badge__text strong { color: var(--color-text); display: block; margin-bottom: var(--space-1); }
+  </style>
 </head>
 <body>
 
@@ -99,7 +278,7 @@
             </ul>
           </li>
           <li><a href="contatti.html" class="navbar__link">Contatti</a></li>
-          <li class="navbar__cta"><a href="contatti.html?servizio=arca" class="btn btn--primary btn--sm">Richiedi Demo</a></li>
+          <li class="navbar__cta"><a href="#richiedi" class="btn btn--primary btn--sm">Richiedi Demo</a></li>
         </ul>
       </div>
     </div>
@@ -108,14 +287,17 @@
   <!-- HERO -->
   <section class="hero">
     <div class="container hero__inner">
-      <span class="section-label" style="color: rgba(255,255,255,0.7);">Software Gestionale ERP</span>
+      <div class="hero__badge">
+        <img src="assets/img/partner/wolters-kluwer.jpg" alt="Wolters Kluwer">
+        Partner certificato Wolters Kluwer
+      </div>
       <h1>Arca EVOLUTION:<br>il gestionale su misura per la tua azienda</h1>
       <p class="hero__subtitle">
-        Dalla contabilità al magazzino, dalla fatturazione elettronica al CRM: una piattaforma modulare 
+        Dalla contabilit&agrave; al magazzino, dalla fatturazione elettronica al CRM: una piattaforma modulare 
         che cresce con la tua impresa. Noi lo configuriamo, personalizziamo e ti affianchiamo ogni giorno.
       </p>
       <div class="hero__actions">
-        <a href="contatti.html?servizio=arca" class="btn btn--primary btn--lg">Richiedi una demo gratuita</a>
+        <a href="#richiedi" class="btn btn--primary btn--lg">Richiedi una demo gratuita</a>
         <a href="assets/attachments/brochure-arca.pdf" class="btn btn--white btn--lg" target="_blank" rel="noopener">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Scarica la brochure
@@ -125,7 +307,7 @@
   </section>
 
   <!-- TRUST BAR -->
-  <section class="trust-bar">
+  <section class="trust-bar" aria-label="I numeri di Arca EVOLUTION">
     <div class="container">
       <div class="trust-bar__inner">
         <div class="trust-bar__item">
@@ -137,103 +319,115 @@
           <span class="trust-bar__label">Clienti CTech</span>
         </div>
         <div class="trust-bar__item">
-          <span class="trust-bar__number">183</span>
-          <span class="trust-bar__label">Anni di storia WK</span>
+          <span class="trust-bar__number">1.6M</span>
+          <span class="trust-bar__label">Aziende servite da WK</span>
         </div>
         <div class="trust-bar__item">
-          <span class="trust-bar__number">93%</span>
-          <span class="trust-bar__label">Fortune 500 usa WK</span>
+          <span class="trust-bar__number">35+</span>
+          <span class="trust-bar__label">Anni WK in Italia</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FUNZIONALITÀ -->
+  <!-- FUNZIONALIT&Agrave; — with real WK icons -->
   <section class="section" id="funzionalita">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Funzionalità</span>
-        <h2>Tutto ciò che serve alla tua azienda, in un unico software</h2>
+        <span class="section-label">Funzionalit&agrave;</span>
+        <h2>Tutto ci&ograve; che serve alla tua azienda, in un unico software</h2>
         <p>Arca EVOLUTION digitalizza ogni area aziendale: velocizzi le operazioni, riduci gli errori e crei valore in termini di tempo, efficienza e precisione.</p>
       </div>
 
       <div class="grid grid--2">
-        <!-- Contabilità -->
-        <div class="card">
-          <div class="card__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        <div class="module-card">
+          <img src="assets/img/icon/contabilita.png" alt="" class="module-card__icon" loading="lazy">
+          <div class="module-card__content">
+            <h3>Contabilit&agrave; e Adempimenti</h3>
+            <p>Contabilit&agrave; generale e analitica, gestione IVA, bilanci, comunicazioni fiscali. Sempre allineato con le normative vigenti grazie agli aggiornamenti automatici Wolters Kluwer.</p>
           </div>
-          <h3 class="card__title">Contabilità e Adempimenti</h3>
-          <p class="card__text">Contabilità generale e analitica, gestione IVA, bilanci, comunicazioni fiscali. Sempre allineato con le normative vigenti grazie agli aggiornamenti automatici Wolters Kluwer.</p>
         </div>
 
-        <!-- Acquisti e Vendite -->
-        <div class="card">
-          <div class="card__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <div class="module-card">
+          <img src="assets/img/icon/acquisti.png" alt="" class="module-card__icon" loading="lazy">
+          <div class="module-card__content">
+            <h3>Gestione Acquisti e Vendite</h3>
+            <p>Ciclo attivo e passivo completo: preventivi, ordini, DDT, fatture. Gestione listini, sconti, condizioni di pagamento e rapporti con clienti e fornitori.</p>
           </div>
-          <h3 class="card__title">Gestione Acquisti e Vendite</h3>
-          <p class="card__text">Ciclo attivo e passivo completo: preventivi, ordini, DDT, fatture. Gestione listini, sconti, condizioni di pagamento e rapporti con clienti e fornitori.</p>
         </div>
 
-        <!-- Fatturazione Elettronica -->
-        <div class="card">
-          <div class="card__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        <div class="module-card">
+          <img src="assets/img/icon/fatturazione.png" alt="" class="module-card__icon" loading="lazy">
+          <div class="module-card__content">
+            <h3>Fatturazione Elettronica</h3>
+            <p>Emissione, invio e ricezione fatture elettroniche integrata nel gestionale. Nessun software esterno necessario: tutto avviene direttamente da Arca EVOLUTION.</p>
           </div>
-          <h3 class="card__title">Fatturazione Elettronica</h3>
-          <p class="card__text">Emissione, invio e ricezione fatture elettroniche integrata nel gestionale. Nessun software esterno necessario: tutto avviene direttamente da Arca EVOLUTION.</p>
         </div>
 
-        <!-- Magazzino -->
-        <div class="card">
-          <div class="card__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+        <div class="module-card">
+          <img src="assets/img/icon/magazzino.png" alt="" class="module-card__icon" loading="lazy">
+          <div class="module-card__content">
+            <h3>Magazzino e Logistica</h3>
+            <p>Gestione multi-magazzino, lotti, matricole, scorte minime e riordino automatico. Inventari, valorizzazione giacenze, movimentazione e tracciabilit&agrave; completa.</p>
           </div>
-          <h3 class="card__title">Magazzino e Logistica</h3>
-          <p class="card__text">Gestione multi-magazzino, lotti, matricole, scorte minime e riordino automatico. Inventari, valorizzazione giacenze, movimentazione e tracciabilità completa.</p>
         </div>
 
-        <!-- Finanza -->
-        <div class="card">
-          <div class="card__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        <div class="module-card">
+          <img src="assets/img/icon/finanza.png" alt="" class="module-card__icon" loading="lazy">
+          <div class="module-card__content">
+            <h3>Finanza, Tesoreria e Controllo</h3>
+            <p>Gestione scadenzario, cash flow, riconciliazione bancaria, portafoglio effetti. Controllo di gestione con centri di costo e analisi redditivit&agrave;.</p>
           </div>
-          <h3 class="card__title">Finanza, Tesoreria e Controllo</h3>
-          <p class="card__text">Gestione scadenzario, cash flow, riconciliazione bancaria, portafoglio effetti. Controllo di gestione con centri di costo e analisi redditività.</p>
         </div>
 
-        <!-- Produzione -->
-        <div class="card">
-          <div class="card__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        <div class="module-card">
+          <img src="assets/img/icon/produzione.png" alt="" class="module-card__icon" loading="lazy">
+          <div class="module-card__content">
+            <h3>Gestione della Produzione</h3>
+            <p>Distinte base, cicli di lavorazione, pianificazione della produzione (MRP), gestione delle commesse e conto lavoro. Per le aziende manifatturiere.</p>
           </div>
-          <h3 class="card__title">Gestione della Produzione</h3>
-          <p class="card__text">Distinte base, cicli di lavorazione, pianificazione della produzione (MRP), gestione delle commesse e conto lavoro. Per le aziende manifatturiere.</p>
         </div>
 
-        <!-- CRM -->
-        <div class="card">
-          <div class="card__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <div class="module-card">
+          <img src="assets/img/icon/crm.png" alt="" class="module-card__icon" loading="lazy">
+          <div class="module-card__content">
+            <h3>Gestione Processi CRM</h3>
+            <p>Anagrafica clienti e prospect, gestione opportunit&agrave;, attivit&agrave; commerciali, offerte. Integrato con il ciclo vendite per una visione completa del rapporto con il cliente.</p>
           </div>
-          <h3 class="card__title">Gestione Processi CRM</h3>
-          <p class="card__text">Anagrafica clienti e prospect, gestione opportunità, attività commerciali, offerte. Integrato con il ciclo vendite per una visione completa del rapporto con il cliente.</p>
         </div>
 
-        <!-- Documentale -->
-        <div class="card">
-          <div class="card__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+        <div class="module-card">
+          <img src="assets/img/icon/archiviazione.png" alt="" class="module-card__icon" loading="lazy">
+          <div class="module-card__content">
+            <h3>Archiviazione Documentale</h3>
+            <p>Conservazione digitale a norma, archiviazione automatica di fatture, DDT e documenti collegati. Ricerca rapida e accesso immediato a tutta la documentazione aziendale.</p>
           </div>
-          <h3 class="card__title">Archiviazione Documentale</h3>
-          <p class="card__text">Conservazione digitale a norma, archiviazione automatica di fatture, DDT e documenti collegati. Ricerca rapida e accesso immediato a tutta la documentazione aziendale.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PERCHÉ SCEGLIERE ARCA CON CTECH -->
+  <!-- VIDEO SECTION -->
+  <section class="video-section" id="video">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Guarda il Video</span>
+        <h2>Scopri Arca EVOLUTION in azione</h2>
+        <p>Un gestionale completo, modulare e intuitivo. Guarda come pu&ograve; trasformare la gestione della tua azienda.</p>
+      </div>
+      <div class="video-wrapper">
+        <iframe 
+          src="https://www.youtube-nocookie.com/embed/_jmbRBHt0YQ?rel=0" 
+          title="Arca EVOLUTION — Video presentazione" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERCH&Eacute; SCEGLIERE ARCA CON CTECH -->
   <section class="section section--surface">
     <div class="container">
       <div class="target-block__inner" style="padding: 0;">
@@ -241,8 +435,8 @@
           <span class="section-label">Il Valore Aggiunto</span>
           <h2>Non solo software: un partner che ti segue</h2>
           <p class="target-block__text">
-            Arca EVOLUTION è un prodotto Wolters Kluwer eccellente, ma il software da solo non basta. 
-            Ciò che fa la differenza è come viene configurato, personalizzato e supportato. 
+            Arca EVOLUTION &egrave; un prodotto Wolters Kluwer eccellente, ma il software da solo non basta. 
+            Ci&ograve; che fa la differenza &egrave; come viene configurato, personalizzato e supportato. 
             Ecco cosa ottieni scegliendo CTech come partner:
           </p>
           <div class="target-block__features">
@@ -252,7 +446,7 @@
             </div>
             <div class="target-block__feature">
               <svg class="target-block__feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span><strong>Personalizzazioni su misura:</strong> grazie alla versatilità del linguaggio di Arca, realizziamo adattamenti specifici per le tue esigenze</span>
+              <span><strong>Personalizzazioni su misura:</strong> grazie alla versatilit&agrave; del linguaggio di Arca, realizziamo adattamenti specifici per le tue esigenze</span>
             </div>
             <div class="target-block__feature">
               <svg class="target-block__feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -267,20 +461,12 @@
               <span><strong>Migrazione dati:</strong> trasferiamo i tuoi dati dal vecchio gestionale senza perdite e con il minimo impatto operativo</span>
             </div>
           </div>
-        </div>
-        <div class="target-block__visual">
-          <div class="card" style="padding: 2.5rem; text-align: center;">
-            <div style="font-size: 4rem; font-weight: 700; color: var(--color-primary); line-height: 1;">Arca</div>
-            <div style="font-size: 1.5rem; color: var(--color-text-light); font-weight: 600;">EVOLUTION</div>
-            <div style="margin: 1.5rem 0; padding: 1.5rem 0; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
-              <p style="font-size: 0.875rem; color: var(--color-text-light); line-height: 1.6; margin: 0;">
-                Struttura modulare<br>
-                Efficiente &middot; Intuitivo &middot; Versatile
-              </p>
+          <div class="wk-badge">
+            <img src="assets/img/partner/wolters-kluwer.jpg" alt="Wolters Kluwer" loading="lazy">
+            <div class="wk-badge__text">
+              <strong>Wolters Kluwer</strong>
+              Leader globale in soluzioni software per professionisti e imprese. Presente in 180 paesi con oltre 20.500 dipendenti.
             </div>
-            <p style="font-size: 0.75rem; color: var(--color-text-light); margin: 0;">
-              Prodotto Wolters Kluwer
-            </p>
           </div>
         </div>
       </div>
@@ -298,17 +484,126 @@
 
       <div class="grid grid--3">
         <div class="card card--flat" style="text-align: center;">
+          <div class="card__icon" style="margin: 0 auto var(--space-4);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          </div>
           <h4 class="card__title">Aziende commerciali</h4>
-          <p class="card__text">Gestione vendite, acquisti, magazzino e fatturazione per attività commerciali di ogni dimensione.</p>
+          <p class="card__text">Gestione vendite, acquisti, magazzino e fatturazione per attivit&agrave; commerciali di ogni dimensione.</p>
         </div>
         <div class="card card--flat" style="text-align: center;">
+          <div class="card__icon" style="margin: 0 auto var(--space-4);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </div>
           <h4 class="card__title">Aziende manifatturiere</h4>
           <p class="card__text">Produzione, distinte base, MRP, commesse e conto lavoro per chi produce e trasforma.</p>
         </div>
         <div class="card card--flat" style="text-align: center;">
+          <div class="card__icon" style="margin: 0 auto var(--space-4);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
           <h4 class="card__title">Aziende di servizi</h4>
-          <p class="card__text">CRM, gestione progetti, fatturazione servizi e controllo redditività per le società di servizi.</p>
+          <p class="card__text">CRM, gestione progetti, fatturazione servizi e controllo redditivit&agrave; per le societ&agrave; di servizi.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENT LOGOS -->
+  <section class="clients section--surface" aria-label="Clienti che usano Arca EVOLUTION con CTech">
+    <div class="container">
+      <div class="clients__header">
+        <h2>I nostri clienti Arca EVOLUTION</h2>
+        <p>Aziende nelle Marche che hanno scelto Arca EVOLUTION con il supporto di CTech.</p>
+      </div>
+    </div>
+    <div class="clients__track" aria-hidden="true">
+      <img src="assets/img/clienti/arca/angelucci.jpg" alt="Angelucci" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/aross.png" alt="A. Ross" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/braid.png" alt="Braid" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/consultprogett.jpg" alt="Consult Progett" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/corsetti.png" alt="Corsetti" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/dignani.png" alt="Dignani" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/dinamicaSpurghi.png" alt="Dinamica Spurghi" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/fioretti.jpg" alt="Fioretti" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/JDM.png" alt="JDM" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/joelle.jpg" alt="Joelle" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/Kinetik.jpg" alt="Kinetik" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/ocanera.jpg" alt="Ocanera" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/Omnia.png" alt="Omnia" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/ProjectSyn.jpg" alt="Project Syn" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/risoallegro.JPG" alt="Riso Allegro" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/six.png" alt="Six" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/tecnoterm.jpg" alt="Tecnoterm" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/TM.jpg" alt="TM" class="clients__logo" loading="lazy">
+      <!-- Duplicate for seamless loop -->
+      <img src="assets/img/clienti/arca/angelucci.jpg" alt="" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/aross.png" alt="" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/braid.png" alt="" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/consultprogett.jpg" alt="" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/corsetti.png" alt="" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/dignani.png" alt="" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/dinamicaSpurghi.png" alt="" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/fioretti.jpg" alt="" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/JDM.png" alt="" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/joelle.jpg" alt="" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/Kinetik.jpg" alt="" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/ocanera.jpg" alt="" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/Omnia.png" alt="" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/ProjectSyn.jpg" alt="" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/risoallegro.JPG" alt="" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/six.png" alt="" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/tecnoterm.jpg" alt="" class="clients__logo" loading="lazy">
+      <img src="assets/img/clienti/arca/TM.jpg" alt="" class="clients__logo" loading="lazy">
+    </div>
+  </section>
+
+  <!-- INLINE CONTACT FORM -->
+  <section class="section" id="richiedi">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Contattaci</span>
+        <h2>Richiedi una demo gratuita di Arca EVOLUTION</h2>
+        <p>Compila il modulo e ti ricontatteremo per organizzare una demo personalizzata, senza impegno.</p>
+      </div>
+
+      <div class="inline-form">
+        <form action="https://formspree.io/f/xpwzgqwn" method="POST">
+          <input type="hidden" name="_subject" value="Demo Arca EVOLUTION — CTech">
+          <input type="hidden" name="_next" value="https://rops.github.io/ctech-web/grazie.html">
+          <input type="hidden" name="servizio" value="Arca EVOLUTION">
+
+          <div class="inline-form__grid">
+            <div class="form-group">
+              <label class="form-label" for="nome">Nome e Cognome *</label>
+              <input type="text" id="nome" name="nome" class="form-input" required placeholder="Mario Rossi">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="azienda">Azienda</label>
+              <input type="text" id="azienda" name="azienda" class="form-input" placeholder="Nome azienda">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email *</label>
+              <input type="email" id="email" name="email" class="form-input" required placeholder="mario@azienda.it">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="telefono">Telefono</label>
+              <input type="tel" id="telefono" name="telefono" class="form-input" placeholder="0733 123456">
+            </div>
+            <div class="form-group inline-form__full">
+              <label class="form-label" for="messaggio">Messaggio</label>
+              <textarea id="messaggio" name="messaggio" class="form-textarea" rows="4" placeholder="Raccontaci le tue esigenze: settore, numero utenti, moduli di interesse..."></textarea>
+            </div>
+            <div class="form-group inline-form__full">
+              <label class="form-checkbox">
+                <input type="checkbox" name="privacy" required>
+                <span class="form-checkbox-label">Ho letto la <a href="privacy.html" target="_blank">Privacy Policy</a> e acconsento al trattamento dei miei dati. *</span>
+              </label>
+            </div>
+            <div class="inline-form__full">
+              <button type="submit" class="btn btn--primary btn--lg">Invia richiesta demo</button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </section>
@@ -316,13 +611,16 @@
   <!-- CTA -->
   <section class="cta-section">
     <div class="container">
-      <h2>Vuoi vedere Arca EVOLUTION in azione?</h2>
-      <p>Ti mostriamo come Arca può adattarsi alla tua azienda. La demo è gratuita e senza impegno.</p>
+      <h2>Preferisci parlarne a voce?</h2>
+      <p>Chiamaci per una consulenza gratuita. Siamo a Macerata e lavoriamo in tutta la regione Marche.</p>
       <div class="cta-section__actions">
-        <a href="contatti.html?servizio=arca" class="btn btn--primary btn--lg">Richiedi una demo gratuita</a>
         <a href="tel:0733281142" class="btn btn--white btn--lg">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           Chiamaci: 0733.281142
+        </a>
+        <a href="mailto:info@ctech.it" class="btn btn--primary btn--lg">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          info@ctech.it
         </a>
       </div>
     </div>
@@ -371,7 +669,7 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <p class="footer__copy">&copy; 2026 Computer's Technology S.r.l. — Via Cluentina 26/B, 62100 Macerata (MC) — P.IVA 00840390439</p>
+        <p class="footer__copy">&copy; 2026 Computer's Technology S.r.l. &mdash; Via Cluentina 26/B, 62100 Macerata (MC) &mdash; P.IVA 00840390439</p>
         <div class="footer__legal">
           <a href="privacy.html">Privacy Policy</a>
           <a href="cookie-policy.html">Cookie Policy</a>
@@ -380,10 +678,34 @@
     </div>
   </footer>
 
+  <!-- FLOATING CONTACT BUTTON -->
+  <div class="fab" id="fab">
+    <div class="fab__options">
+      <a href="tel:0733281142" class="fab__option">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        0733.281142
+      </a>
+      <a href="mailto:info@ctech.it" class="fab__option">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        info@ctech.it
+      </a>
+      <a href="#richiedi" class="fab__option">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        Richiedi demo
+      </a>
+    </div>
+    <button class="fab__btn" id="fabBtn" aria-label="Contattaci">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </button>
+  </div>
+
   <!-- COOKIE BANNER -->
   <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Informativa cookie">
     <div class="cookie-banner__inner">
-      <p class="cookie-banner__text">Questo sito utilizza cookie tecnici e di analisi (Google Analytics). <a href="cookie-policy.html">Maggiori informazioni</a></p>
+      <p class="cookie-banner__text">
+        Questo sito utilizza cookie tecnici e di analisi (Google Analytics) per migliorare la tua esperienza di navigazione.
+        <a href="cookie-policy.html">Maggiori informazioni</a>
+      </p>
       <div class="cookie-banner__actions">
         <button class="btn btn--primary btn--sm" id="cookieAccept">Accetta</button>
         <button class="btn btn--secondary btn--sm" id="cookieReject">Rifiuta</button>
@@ -393,9 +715,15 @@
 
   <!-- SCRIPTS -->
   <script>
+    // Mobile Navigation
     (function(){var t=document.getElementById('navToggle'),n=document.getElementById('navMenu');t.addEventListener('click',function(){var o=n.classList.toggle('is-open');t.classList.toggle('is-open');t.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';});document.querySelectorAll('.navbar__dropdown').forEach(function(d){d.querySelector('.navbar__dropdown-toggle').addEventListener('click',function(e){if(window.innerWidth<=768){e.preventDefault();d.classList.toggle('is-open');}});});window.addEventListener('resize',function(){if(window.innerWidth>768){n.classList.remove('is-open');t.classList.remove('is-open');t.setAttribute('aria-expanded','false');document.body.style.overflow='';document.querySelectorAll('.navbar__dropdown').forEach(function(d){d.classList.remove('is-open');});}});})();
+    // Navbar scroll
     (function(){var nb=document.getElementById('navbar');window.addEventListener('scroll',function(){nb.classList.toggle('scrolled',window.scrollY>10);});})();
+    // Cookie Banner
     (function(){var b=document.getElementById('cookieBanner'),a=document.getElementById('cookieAccept'),r=document.getElementById('cookieReject');if(!localStorage.getItem('ctech_cookie_consent')){setTimeout(function(){b.classList.add('is-visible');},1000);}a.addEventListener('click',function(){localStorage.setItem('ctech_cookie_consent','accepted');b.classList.remove('is-visible');});r.addEventListener('click',function(){localStorage.setItem('ctech_cookie_consent','rejected');b.classList.remove('is-visible');window['ga-disable-G-BC7DWNT8X2']=true;});})();
+    // Floating Contact Button
+    (function(){var fab=document.getElementById('fab'),btn=document.getElementById('fabBtn');btn.addEventListener('click',function(){fab.classList.toggle('is-open');});document.addEventListener('click',function(e){if(!fab.contains(e.target)){fab.classList.remove('is-open');}});})();
   </script>
+
 </body>
 </html>
