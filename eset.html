@@ -17,6 +17,7 @@
   <meta property="og:url" content="https://rops.github.io/ctech-web/eset.html">
   <meta property="og:locale" content="it_IT">
   <meta property="og:site_name" content="Computer's Technology">
+  <meta property="og:image" content="https://rops.github.io/ctech-web/assets/img/og-image.jpg">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/img/logo-ctech.png">
@@ -69,7 +70,7 @@
   <nav class="navbar" id="navbar" role="navigation" aria-label="Navigazione principale">
     <div class="container navbar__inner">
       <a href="index.html" class="navbar__logo" aria-label="Computer's Technology - Home">
-        <img src="assets/img/logo-ctech.png" alt="Computer's Technology">
+        <img src="assets/img/logo-ctech.png" alt="Computer's Technology" width="60" height="44">
       </a>
       <button class="navbar__toggle" id="navToggle" aria-label="Apri menu" aria-expanded="false" aria-controls="navMenu">
         <span class="navbar__toggle-icon"></span>
@@ -84,7 +85,7 @@
               <li role="none"><span class="navbar__dropdown-label">Per l'Impresa</span></li>
               <li role="none"><a href="arca.html" class="navbar__dropdown-item" role="menuitem">Arca EVOLUTION</a></li>
               <li role="none"><a href="winwaste.html" class="navbar__dropdown-item" role="menuitem">WinWaste</a></li>
-              <li role="none"><div class="navbar__dropdown-divider"></div></li>
+              <li role="none"><span class="navbar__dropdown-divider" role="separator"></span></li>
               <li role="none"><span class="navbar__dropdown-label">Per i Professionisti</span></li>
               <li role="none"><a href="osra-bpoint.html" class="navbar__dropdown-item" role="menuitem">B.Point Solution Platform</a></li>
               <li role="none"><a href="osra-genya.html" class="navbar__dropdown-item" role="menuitem">Genya</a></li>
@@ -154,10 +155,10 @@
       <div class="section-header">
         <span class="section-label">Soluzioni</span>
         <h2>Soluzioni ESET per ogni esigenza aziendale</h2>
-        <p>Tre livelli di protezione per coprire le necessità di sicurezza di qualsiasi PMI, dalla protezione base alla sicurezza totale.</p>
+        <p>Quattro livelli di protezione per coprire le necessità di sicurezza di qualsiasi PMI, dalla protezione base alla sicurezza gestita con MDR.</p>
       </div>
 
-      <div class="grid grid--3">
+      <div class="grid grid--2">
         <!-- ESET PROTECT Entry -->
         <div class="card">
           <div class="card__icon">
@@ -183,6 +184,15 @@
           </div>
           <h3 class="card__title">ESET PROTECT Complete</h3>
           <p class="card__text">Sicurezza totale: endpoint, email, cloud apps, crittografia, vulnerability assessment. La soluzione più completa per le PMI.</p>
+        </div>
+
+        <!-- ESET PROTECT MDR -->
+        <div class="card">
+          <div class="card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3 class="card__title">ESET PROTECT MDR</h3>
+          <p class="card__text">Managed Detection &amp; Response: monitoraggio 24/7 da parte del SOC ESET, threat hunting proattivo e risposta agli incidenti gestita. Per chi vuole sicurezza senza complessità.</p>
         </div>
       </div>
     </div>
@@ -223,18 +233,7 @@
           </div>
         </div>
         <div class="target-block__visual">
-          <div class="card" style="padding: 2.5rem; text-align: center;">
-            <div style="font-size: 4rem; font-weight: 700; color: var(--color-primary); line-height: 1;">ESET</div>
-            <div style="font-size: 1.5rem; color: var(--color-text-light); font-weight: 600;">Cybersecurity</div>
-            <div style="margin: 1.5rem 0; padding: 1.5rem 0; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
-              <p style="font-size: 0.875rem; color: var(--color-text-light); line-height: 1.6; margin: 0;">
-                Oltre 30 anni di protezione
-              </p>
-            </div>
-            <p style="font-size: 0.75rem; color: var(--color-text-light); margin: 0;">
-              110M+ utenti nel mondo
-            </p>
-          </div>
+          <img src="assets/img/stock/security-shield.webp" alt="Scudo di sicurezza informatica con lucchetto digitale" class="target-block__photo" width="1200" height="546" loading="lazy">
         </div>
       </div>
     </div>
@@ -249,18 +248,25 @@
         <p>Non ti vendiamo solo una licenza. Ti offriamo un servizio completo di cybersecurity, dalla consulenza al monitoraggio continuo.</p>
       </div>
 
-      <div class="grid grid--3">
-        <div class="card card--flat" style="text-align: center;">
-          <h4 class="card__title">Consulenza</h4>
-          <p class="card__text">Analizziamo la tua infrastruttura e ti proponiamo la soluzione ESET più adatta alle tue esigenze e al tuo budget.</p>
+      <div class="target-block__inner" style="padding: 0;">
+        <div class="target-block__content" style="max-width: 100%;">
+          <div class="grid grid--3">
+            <div class="card card--flat" style="text-align: center;">
+              <h4 class="card__title">Consulenza</h4>
+              <p class="card__text">Analizziamo la tua infrastruttura e ti proponiamo la soluzione ESET più adatta alle tue esigenze e al tuo budget.</p>
+            </div>
+            <div class="card card--flat" style="text-align: center;">
+              <h4 class="card__title">Installazione e Configurazione</h4>
+              <p class="card__text">Installiamo e configuriamo ESET su tutti i dispositivi aziendali, con policy di sicurezza personalizzate.</p>
+            </div>
+            <div class="card card--flat" style="text-align: center;">
+              <h4 class="card__title">Monitoraggio e Supporto</h4>
+              <p class="card__text">Monitoriamo la sicurezza e interveniamo rapidamente in caso di alert. Assistenza locale nelle Marche.</p>
+            </div>
+          </div>
         </div>
-        <div class="card card--flat" style="text-align: center;">
-          <h4 class="card__title">Installazione e Configurazione</h4>
-          <p class="card__text">Deployamo e configuriamo ESET su tutti i dispositivi aziendali, con policy di sicurezza personalizzate.</p>
-        </div>
-        <div class="card card--flat" style="text-align: center;">
-          <h4 class="card__title">Monitoraggio e Supporto</h4>
-          <p class="card__text">Monitoriamo la sicurezza e interveniamo rapidamente in caso di alert. Assistenza locale nelle Marche.</p>
+        <div class="target-block__visual">
+          <img src="assets/img/stock/cybersecurity-login.webp" alt="Schermata di login protetta su sfondo scuro" class="target-block__photo" width="1200" height="632" loading="lazy">
         </div>
       </div>
     </div>
@@ -286,7 +292,7 @@
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <img src="assets/img/logo-ctech.png" alt="Computer's Technology" class="footer__logo">
+          <img src="assets/img/logo-ctech.png" alt="Computer's Technology" class="footer__logo" width="55" height="40">
           <p>Soluzioni software e servizi IT per aziende e professionisti nelle Marche. Al tuo fianco dal 1984.</p>
         </div>
         <div>

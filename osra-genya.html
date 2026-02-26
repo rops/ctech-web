@@ -17,6 +17,7 @@
   <meta property="og:url" content="https://rops.github.io/ctech-web/osra-genya.html">
   <meta property="og:locale" content="it_IT">
   <meta property="og:site_name" content="Computer's Technology">
+  <meta property="og:image" content="https://rops.github.io/ctech-web/assets/img/og-image.jpg">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/img/logo-ctech.png">
@@ -28,6 +29,73 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Page-specific styles -->
+  <style>
+    /* --- Video Section --- */
+    .video-section {
+      padding: var(--space-20) 0;
+      background: linear-gradient(135deg, var(--color-secondary) 0%, #0f1a2e 100%);
+      color: var(--color-text-inverse);
+    }
+    .video-section h2 { color: var(--color-text-inverse); }
+    .video-section .section-header p { color: rgba(255,255,255,0.7); }
+    .video-section .section-label { color: rgba(255,255,255,0.5); }
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0; overflow: hidden;
+      border-radius: var(--radius-xl);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      max-width: 900px; margin: 0 auto;
+    }
+    .video-wrapper iframe {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0; border-radius: var(--radius-xl);
+    }
+    .video-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+      max-width: 900px;
+      margin: var(--space-8) auto 0;
+    }
+    .video-card {
+      display: flex; align-items: center; gap: var(--space-3);
+      padding: var(--space-4) var(--space-5);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-lg);
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-medium);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .video-card:hover {
+      background: rgba(255,255,255,0.15);
+      transform: translateY(-2px);
+      color: var(--color-white);
+    }
+    .video-card svg { flex-shrink: 0; width: 20px; height: 20px; color: var(--color-primary); }
+    @media (max-width: 768px) {
+      .video-cards { grid-template-columns: 1fr; }
+    }
+    /* --- Sunset notice --- */
+    .sunset-notice {
+      display: flex; align-items: flex-start; gap: var(--space-3);
+      padding: var(--space-4) var(--space-5);
+      background: var(--color-primary-light);
+      border-left: 3px solid var(--color-primary);
+      border-radius: var(--radius-md);
+      font-size: var(--font-size-sm);
+      color: var(--color-text);
+      margin-top: var(--space-6);
+      line-height: var(--line-height-relaxed);
+    }
+    .sunset-notice svg { flex-shrink: 0; width: 20px; height: 20px; color: var(--color-primary); margin-top: 2px; }
+  </style>
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BC7DWNT8X2"></script>
@@ -69,7 +137,7 @@
   <nav class="navbar" id="navbar" role="navigation" aria-label="Navigazione principale">
     <div class="container navbar__inner">
       <a href="index.html" class="navbar__logo" aria-label="Computer's Technology - Home">
-        <img src="assets/img/logo-ctech.png" alt="Computer's Technology">
+        <img src="assets/img/logo-ctech.png" alt="Computer's Technology" width="60" height="44">
       </a>
       <button class="navbar__toggle" id="navToggle" aria-label="Apri menu" aria-expanded="false" aria-controls="navMenu">
         <span class="navbar__toggle-icon"></span>
@@ -84,7 +152,7 @@
               <li role="none"><span class="navbar__dropdown-label">Per l'Impresa</span></li>
               <li role="none"><a href="arca.html" class="navbar__dropdown-item" role="menuitem">Arca EVOLUTION</a></li>
               <li role="none"><a href="winwaste.html" class="navbar__dropdown-item" role="menuitem">WinWaste</a></li>
-              <li role="none"><div class="navbar__dropdown-divider"></div></li>
+              <li role="none"><span class="navbar__dropdown-divider" role="separator"></span></li>
               <li role="none"><span class="navbar__dropdown-label">Per i Professionisti</span></li>
               <li role="none"><a href="osra-bpoint.html" class="navbar__dropdown-item" role="menuitem">B.Point Solution Platform</a></li>
               <li role="none"><a href="osra-genya.html" class="navbar__dropdown-item" role="menuitem">Genya</a></li>
@@ -264,66 +332,111 @@
     </div>
   </section>
 
+  <!-- VIDEO SECTION -->
+  <section class="video-section" id="video">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Video Demo</span>
+        <h2>Guarda Genya in azione</h2>
+        <p>Scopri come Genya semplifica il lavoro dello studio professionale. Demo reali, non simulazioni.</p>
+      </div>
+      <div class="video-wrapper">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/k89s1fHwe3c?rel=0"
+          title="Genya Studio — Video demo"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+      </div>
+      <div class="video-cards">
+        <a href="https://youtu.be/hMYbP1DWmd0" target="_blank" rel="noopener" class="video-card">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Genya Bilancio
+        </a>
+        <a href="https://youtu.be/ZY-HvEn4RGI" target="_blank" rel="noopener" class="video-card">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Fattura Smart
+        </a>
+        <a href="https://youtu.be/wCDLzlFJ8Pc" target="_blank" rel="noopener" class="video-card">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Webdesk
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- GENYA VS B.POINT -->
   <section class="section" id="confronto">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Confronto</span>
-        <h2>Genya o B.Point? Ti aiutiamo a scegliere</h2>
-        <p>Entrambe le piattaforme sono prodotti Wolters Kluwer di eccellenza. La scelta dipende dalle esigenze del tuo studio.</p>
+        <span class="section-label">Il futuro è cloud</span>
+        <h2>Perché Genya è la scelta giusta per il tuo studio</h2>
+        <p>Wolters Kluwer ha indicato Genya come la piattaforma di riferimento per il futuro. B.Point resterà supportato fino al 2030, ma tutti i nuovi investimenti sono su Genya.</p>
       </div>
 
       <div class="grid grid--2">
         <!-- Scegli Genya -->
         <div class="card" style="border-top: 3px solid var(--color-primary);">
-          <h3 class="card__title" style="color: var(--color-primary);">Scegli Genya se...</h3>
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+            <span style="display: inline-block; padding: 0.2rem 0.6rem; background: var(--color-primary); color: white; font-size: 0.7rem; font-weight: 700; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em;">Consigliato</span>
+          </div>
+          <h3 class="card__title" style="color: var(--color-primary);">Genya — La piattaforma del futuro</h3>
           <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem;">
             <div style="display: flex; align-items: flex-start; gap: 0.5rem;">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Vuoi lavorare in cloud da qualsiasi dispositivo</span>
+              <span>Cloud nativo: lavora da qualsiasi dispositivo, ovunque</span>
             </div>
             <div style="display: flex; align-items: flex-start; gap: 0.5rem;">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Cerchi un'interfaccia moderna e intuitiva</span>
+              <span>Interfaccia moderna, intuitiva e veloce</span>
             </div>
             <div style="display: flex; align-items: flex-start; gap: 0.5rem;">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Vuoi collaborare in tempo reale con i clienti</span>
+              <span>Collaborazione studio-cliente in tempo reale</span>
             </div>
             <div style="display: flex; align-items: flex-start; gap: 0.5rem;">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Stai avviando un nuovo studio</span>
+              <span>Business intelligence integrata (Genya CFO)</span>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 0.5rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Aggiornamenti automatici, zero manutenzione IT</span>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 0.5rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Investimento continuo da Wolters Kluwer: nuove funzionalità ogni mese</span>
             </div>
           </div>
         </div>
 
-        <!-- Scegli B.Point -->
-        <div class="card" style="border-top: 3px solid var(--color-text-light);">
-          <h3 class="card__title">Scegli B.Point se...</h3>
+        <!-- B.Point -->
+        <div class="card" style="border-top: 3px solid var(--color-text-light); opacity: 0.85;">
+          <h3 class="card__title">B.Point — Piattaforma desktop in fase di transizione</h3>
           <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem;">
             <div style="display: flex; align-items: flex-start; gap: 0.5rem;">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Preferisci una piattaforma desktop collaudata</span>
+              <span>Piattaforma desktop collaudata e affidabile</span>
             </div>
             <div style="display: flex; align-items: flex-start; gap: 0.5rem;">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Hai bisogno di moduli paghe e contributi avanzati</span>
+              <span>Moduli paghe e contributi avanzati</span>
             </div>
             <div style="display: flex; align-items: flex-start; gap: 0.5rem;">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Gestisci un volume elevato di adempimenti</span>
+              <span>Adatto a chi usa già B.Point e vuole continuare temporaneamente</span>
             </div>
-            <div style="display: flex; align-items: flex-start; gap: 0.5rem;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Hai già B.Point e vuoi continuare</span>
-            </div>
+          </div>
+          <div class="sunset-notice">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <span><strong>B.Point sarà dismesso entro il 2030.</strong> Se stai valutando un nuovo software per il tuo studio, Genya è la scelta strategica consigliata da Wolters Kluwer e da CTech. Ti affianchiamo nella migrazione.</span>
           </div>
         </div>
       </div>
 
       <div style="text-align: center; margin-top: 2.5rem;">
-        <p style="font-size: 1.125rem; color: var(--color-text-light); margin-bottom: 1rem;">Non sei sicuro? Contattaci e ti aiuteremo a scegliere.</p>
-        <a href="contatti.html" class="btn btn--primary btn--lg">Parlaci del tuo studio</a>
+        <p style="font-size: 1.125rem; color: var(--color-text-light); margin-bottom: 1rem;">Hai ancora B.Point? Ti aiutiamo a pianificare la migrazione a Genya senza stress.</p>
+        <a href="contatti.html?servizio=genya" class="btn btn--primary btn--lg">Pianifica la migrazione</a>
       </div>
     </div>
   </section>
@@ -348,7 +461,7 @@
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <img src="assets/img/logo-ctech.png" alt="Computer's Technology" class="footer__logo">
+          <img src="assets/img/logo-ctech.png" alt="Computer's Technology" class="footer__logo" width="55" height="40">
           <p>Soluzioni software e servizi IT per aziende e professionisti nelle Marche. Al tuo fianco dal 1984.</p>
         </div>
         <div>

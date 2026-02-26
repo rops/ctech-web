@@ -17,6 +17,7 @@
   <meta property="og:url" content="https://rops.github.io/ctech-web/osra-bpoint.html">
   <meta property="og:locale" content="it_IT">
   <meta property="og:site_name" content="Computer's Technology">
+  <meta property="og:image" content="https://rops.github.io/ctech-web/assets/img/og-image.jpg">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/img/logo-ctech.png">
@@ -69,7 +70,7 @@
   <nav class="navbar" id="navbar" role="navigation" aria-label="Navigazione principale">
     <div class="container navbar__inner">
       <a href="index.html" class="navbar__logo" aria-label="Computer's Technology - Home">
-        <img src="assets/img/logo-ctech.png" alt="Computer's Technology">
+        <img src="assets/img/logo-ctech.png" alt="Computer's Technology" width="60" height="44">
       </a>
       <button class="navbar__toggle" id="navToggle" aria-label="Apri menu" aria-expanded="false" aria-controls="navMenu">
         <span class="navbar__toggle-icon"></span>
@@ -84,7 +85,7 @@
               <li role="none"><span class="navbar__dropdown-label">Per l'Impresa</span></li>
               <li role="none"><a href="arca.html" class="navbar__dropdown-item" role="menuitem">Arca EVOLUTION</a></li>
               <li role="none"><a href="winwaste.html" class="navbar__dropdown-item" role="menuitem">WinWaste</a></li>
-              <li role="none"><div class="navbar__dropdown-divider"></div></li>
+              <li role="none"><span class="navbar__dropdown-divider" role="separator"></span></li>
               <li role="none"><span class="navbar__dropdown-label">Per i Professionisti</span></li>
               <li role="none"><a href="osra-bpoint.html" class="navbar__dropdown-item" role="menuitem">B.Point Solution Platform</a></li>
               <li role="none"><a href="osra-genya.html" class="navbar__dropdown-item" role="menuitem">Genya</a></li>
@@ -251,40 +252,43 @@
           </div>
         </div>
         <div class="target-block__visual">
-          <div class="card" style="padding: 2.5rem; text-align: center;">
-            <div style="font-size: 4rem; font-weight: 700; color: var(--color-primary); line-height: 1;">B.Point</div>
-            <div style="font-size: 1.5rem; color: var(--color-text-light); font-weight: 600;">Solution Platform</div>
-            <div style="margin: 1.5rem 0; padding: 1.5rem 0; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
-              <p style="font-size: 0.875rem; color: var(--color-text-light); line-height: 1.6; margin: 0;">
-                Piattaforma integrata<br>
-                Dichiarativi &middot; Contabilità &middot; Paghe
-              </p>
-            </div>
-            <p style="font-size: 0.75rem; color: var(--color-text-light); margin: 0;">
-              Prodotto Wolters Kluwer
-            </p>
-          </div>
+          <img src="assets/img/stock/tech-screens.webp" alt="Produttività digitale nello studio professionale" class="target-block__photo" width="1200" height="675" loading="lazy">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- POTREBBE INTERESSARTI ANCHE -->
+  <!-- SCOPRI ANCHE GENYA -->
   <section class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Scopri anche</span>
-        <h2>Potrebbe interessarti anche</h2>
+        <span class="section-label">Il futuro è cloud</span>
+        <h2>Scopri anche Genya</h2>
+        <p>Genya è la piattaforma cloud che sostituirà progressivamente B.Point. Se stai valutando un nuovo software, ti consigliamo Genya.</p>
       </div>
 
       <div class="grid grid--2">
-        <a href="osra-genya.html" class="card card--flat" style="text-decoration: none; color: inherit;">
-          <h4 class="card__title">Genya</h4>
-          <p class="card__text">La suite cloud per gestire contabilità e fiscale con collaborazione studio-cliente.</p>
+        <a href="osra-genya.html" class="card" style="text-decoration: none; color: inherit; border-top: 3px solid var(--color-primary);">
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+            <span style="display: inline-block; padding: 0.2rem 0.6rem; background: var(--color-primary); color: white; font-size: 0.7rem; font-weight: 700; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em;">Consigliato</span>
+          </div>
+          <h4 class="card__title" style="color: var(--color-primary);">Genya — Suite Cloud</h4>
+          <p class="card__text">La suite cloud Wolters Kluwer per commercialisti: contabilità, dichiarativi, bilanci, business intelligence. Lavora da qualsiasi dispositivo, collabora in tempo reale con i clienti.</p>
+          <p style="font-size: 0.8rem; color: var(--color-text-light); margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--color-border); line-height: 1.6;">
+            <strong style="color: var(--color-text);">Wolters Kluwer ha indicato Genya come la piattaforma di riferimento.</strong> B.Point resterà supportato fino al 2030, ma gli investimenti futuri sono su Genya. Ti affianchiamo nella migrazione.
+          </p>
+          <span class="card__link" style="margin-top: 1rem;">
+            Scopri Genya
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
         </a>
         <a href="arca.html" class="card card--flat" style="text-decoration: none; color: inherit;">
           <h4 class="card__title">Arca EVOLUTION</h4>
-          <p class="card__text">Il gestionale ERP per i clienti azienda del tuo studio.</p>
+          <p class="card__text">Il gestionale ERP per i clienti azienda del tuo studio. Contabilità, magazzino, fatturazione elettronica, CRM.</p>
+          <span class="card__link" style="margin-top: 1rem;">
+            Scopri Arca
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
         </a>
       </div>
     </div>
@@ -310,7 +314,7 @@
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <img src="assets/img/logo-ctech.png" alt="Computer's Technology" class="footer__logo">
+          <img src="assets/img/logo-ctech.png" alt="Computer's Technology" class="footer__logo" width="55" height="40">
           <p>Soluzioni software e servizi IT per aziende e professionisti nelle Marche. Al tuo fianco dal 1984.</p>
         </div>
         <div>
