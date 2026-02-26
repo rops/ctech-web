@@ -6,9 +6,6 @@
 .DS_Store
 Thumbs.db
 
-# Temporary screenshot PNGs (development artifacts)
-*.png
-!assets/**/*.png
 
 # Editor files
 *.swp
