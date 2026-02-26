@@ -335,7 +335,7 @@ small {
 }
 
 .navbar__logo img {
-  height: 36px;
+  height: 44px;
   width: auto;
 }
 
@@ -932,7 +932,7 @@ body {
 }
 
 .footer__logo {
-  height: 32px;
+  height: 40px;
   width: auto;
   filter: brightness(0) invert(1);
 }

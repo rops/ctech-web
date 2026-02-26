@@ -19,7 +19,7 @@
   <meta property="og:site_name" content="Computer's Technology">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/img/logo-old.png">
+  <link rel="icon" type="image/png" href="assets/img/logo-ctech.png">
 
   <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -162,11 +162,12 @@
     /* --- Partner logos real images --- */
     .partners__logos { align-items: center; }
     .partners__logos img {
-      height: 40px; width: auto; max-width: 180px;
-      opacity: 0.45; filter: grayscale(100%);
-      transition: opacity 0.3s, filter 0.3s;
+      height: 36px; width: auto; max-width: 160px;
+      object-fit: contain;
+      opacity: 0.5;
+      transition: opacity 0.3s;
     }
-    .partners__logos img:hover { opacity: 1; filter: grayscale(0%); }
+    .partners__logos img:hover { opacity: 1; }
 
     /* --- How We Work --- */
     .howwework__steps {
@@ -198,7 +199,7 @@
   <nav class="navbar" id="navbar" role="navigation" aria-label="Navigazione principale">
     <div class="container navbar__inner">
       <a href="index.html" class="navbar__logo" aria-label="Computer's Technology - Home">
-        <img src="assets/img/logo-old.png" alt="Computer's Technology" width="160" height="36">
+        <img src="assets/img/logo-ctech.png" alt="Computer's Technology">
       </a>
       <button class="navbar__toggle" id="navToggle" aria-label="Apri menu" aria-expanded="false" aria-controls="navMenu">
         <span class="navbar__toggle-icon"></span>
@@ -265,8 +266,8 @@
           <span class="trust-bar__label">Clienti attivi</span>
         </div>
         <div class="trust-bar__item">
-          <span class="trust-bar__number">5</span>
-          <span class="trust-bar__label">Province servite</span>
+          <span class="trust-bar__number">3</span>
+          <span class="trust-bar__label">Regioni coperte</span>
         </div>
         <div class="trust-bar__item">
           <span class="trust-bar__number">24h</span>
@@ -282,28 +283,29 @@
       <div class="target-block__inner">
         <div class="target-block__content">
           <span class="target-block__label">Per le Aziende</span>
-          <h2 class="target-block__title">Gestisci la tua azienda con un software su misura</h2>
+          <h2 class="target-block__title">Un gestionale ERP completo, configurato su di te</h2>
           <p class="target-block__text">
-            Dalla contabilit&agrave; al magazzino, dalla fatturazione elettronica al CRM: 
-            Arca EVOLUTION &egrave; il gestionale ERP che cresce con la tua impresa. 
-            Noi lo configuriamo, lo personalizziamo e ti affianchiamo ogni giorno.
+            Arca EVOLUTION di Wolters Kluwer &egrave; la piattaforma modulare che gestisce 
+            contabilit&agrave;, magazzino, produzione, CRM e fatturazione elettronica in un unico ambiente. 
+            Noi non ti vendiamo solo una licenza: analizziamo i tuoi processi, personalizziamo 
+            il software e restiamo al tuo fianco con assistenza continua.
           </p>
           <div class="target-block__features">
             <div class="target-block__feature">
               <svg class="target-block__feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Contabilit&agrave;, magazzino, fatturazione elettronica, CRM</span>
+              <span>8 moduli integrati: contabilit&agrave;, vendite, magazzino, produzione, CRM, fatturazione, finanza, documentale</span>
             </div>
             <div class="target-block__feature">
               <svg class="target-block__feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Installazione, configurazione e formazione dedicata</span>
+              <span>Personalizzazioni su misura per il tuo settore e flusso di lavoro</span>
             </div>
             <div class="target-block__feature">
               <svg class="target-block__feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Assistenza tecnica on-site e da remoto</span>
+              <span>Formazione dedicata e assistenza on-site o da remoto, senza call center</span>
             </div>
             <div class="target-block__feature">
               <svg class="target-block__feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Infrastruttura IT: reti, server, backup, sicurezza ESET</span>
+              <span>Migrazione dati dal vecchio gestionale garantita, con minimo impatto operativo</span>
             </div>
           </div>
           <a href="arca.html" class="btn btn--primary">Scopri Arca EVOLUTION</a>
@@ -328,41 +330,42 @@
       <div class="target-block__inner">
         <div class="target-block__content">
           <span class="target-block__label">Per Commercialisti e Studi</span>
-          <h2 class="target-block__title">Il tuo studio, pi&ugrave; efficiente e connesso</h2>
+          <h2 class="target-block__title">Il futuro dello studio &egrave; in cloud con Genya</h2>
           <p class="target-block__text">
-            Scegli la piattaforma Wolters Kluwer pi&ugrave; adatta al tuo studio: 
-            B.Point per la gestione completa di dichiarativi, contabilit&agrave; e paghe, 
-            oppure Genya per lavorare in cloud con i tuoi clienti.
+            Genya &egrave; la suite cloud di Wolters Kluwer che trasforma il modo in cui lavori: 
+            contabilit&agrave;, dichiarativi, bilanci e fatturazione in un'unica piattaforma condivisa 
+            con i tuoi clienti, accessibile ovunque. Per chi usa gi&agrave; B.Point, 
+            garantiamo continuit&agrave; e assistenza completa.
           </p>
           <div class="target-block__features">
             <div class="target-block__feature">
               <svg class="target-block__feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>B.Point: dichiarativi, contabilit&agrave;, paghe, bilanci</span>
+              <span>Genya: contabilit&agrave;, dichiarativi, bilanci e fatturazione in cloud</span>
             </div>
             <div class="target-block__feature">
               <svg class="target-block__feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Genya: suite cloud con collaborazione studio-cliente</span>
+              <span>Collaborazione studio-cliente in tempo reale, ovunque ti trovi</span>
             </div>
             <div class="target-block__feature">
               <svg class="target-block__feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Migrazione dati e avviamento garantiti</span>
+              <span>B.Point: piattaforma completa per studi che preferiscono il desktop</span>
             </div>
             <div class="target-block__feature">
               <svg class="target-block__feature-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Assistenza continua e aggiornamenti normativi</span>
+              <span>Migrazione, formazione e assistenza continua con aggiornamenti normativi</span>
             </div>
           </div>
           <div class="flex flex--gap-4" style="flex-wrap: wrap;">
-            <a href="osra-bpoint.html" class="btn btn--primary">Scopri B.Point</a>
-            <a href="osra-genya.html" class="btn btn--secondary">Scopri Genya</a>
+            <a href="osra-genya.html" class="btn btn--primary">Scopri Genya</a>
+            <a href="osra-bpoint.html" class="btn btn--secondary">Scopri B.Point</a>
           </div>
         </div>
         <div class="target-block__visual">
-          <div class="card card--flat" style="padding: 3rem; text-align: center;">
-            <div style="font-size: 3rem; font-weight: 700; color: var(--color-secondary); line-height: 1;">B.Point</div>
-            <div style="font-size: 1rem; color: var(--color-text-light); font-weight: 500;">Solution Platform</div>
-            <div style="margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border);">
-              <img src="assets/img/genya.jpg" alt="Genya" style="max-height: 60px; margin: 0 auto;">
+          <div class="card card--flat" style="padding: 2.5rem; text-align: center;">
+            <img src="assets/img/icon/logo-genya.png" alt="Genya" style="max-height: 80px; margin: 0 auto 1.5rem;">
+            <div style="padding-top: 1.5rem; border-top: 1px solid var(--color-border);">
+              <div style="font-size: 1.25rem; font-weight: 600; color: var(--color-secondary); line-height: 1;">B.Point</div>
+              <div style="font-size: 0.8rem; color: var(--color-text-light); font-weight: 500;">Solution Platform</div>
             </div>
             <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--color-text-light);">Piattaforme Wolters Kluwer</p>
           </div>
@@ -520,7 +523,7 @@
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <img src="assets/img/logo-old.png" alt="Computer's Technology" class="footer__logo" width="140" height="32">
+          <img src="assets/img/logo-ctech.png" alt="Computer's Technology" class="footer__logo">
           <p>Soluzioni software e servizi IT per aziende e professionisti nelle Marche. Al tuo fianco dal 1984.</p>
         </div>
         <div>
