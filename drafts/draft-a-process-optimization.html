@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CTech Draft A - Process Optimization Partner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&family=Playfair+Display:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #10131a;
+        --ink-soft: #3c4252;
+        --surface: #f7f4ef;
+        --surface-strong: #ffffff;
+        --accent: #c46b3c;
+        --accent-soft: #f2d6c7;
+        --slate: #e2e4ea;
+        --shadow: 0 20px 50px rgba(16, 19, 26, 0.12);
+        --radius: 22px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Manrope", sans-serif;
+        color: var(--ink);
+        background: radial-gradient(circle at top left, #fbefe7, #f3f4f7 55%, #f7f4ef);
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 36px 24px 80px;
+        display: flex;
+        flex-direction: column;
+        gap: 72px;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .logo span {
+        font-weight: 600;
+        font-size: 0.8rem;
+        color: var(--ink-soft);
+      }
+
+      nav {
+        display: flex;
+        gap: 22px;
+        font-size: 0.95rem;
+      }
+
+      .cta {
+        background: var(--ink);
+        color: var(--surface-strong);
+        padding: 12px 20px;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 36px;
+        align-items: center;
+      }
+
+      .hero h1 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2.4rem, 3.2vw, 3.6rem);
+        line-height: 1.1;
+        margin-bottom: 18px;
+      }
+
+      .hero p {
+        color: var(--ink-soft);
+        margin-bottom: 22px;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      .hero .cta {
+        background: var(--accent);
+        color: #fffaf6;
+      }
+
+      .ghost {
+        border: 1px solid var(--ink);
+        padding: 12px 20px;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+
+      .hero-card {
+        background: var(--surface-strong);
+        border-radius: var(--radius);
+        padding: 28px;
+        box-shadow: var(--shadow);
+      }
+
+      .hero-card ul {
+        list-style: none;
+        display: grid;
+        gap: 16px;
+        margin-top: 18px;
+      }
+
+      .hero-card li {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 600;
+      }
+
+      .section-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 16px;
+      }
+
+      .section-title h2 {
+        font-size: 1.8rem;
+        font-family: "Playfair Display", serif;
+      }
+
+      .section-title span {
+        color: var(--ink-soft);
+        max-width: 440px;
+        font-size: 0.95rem;
+      }
+
+      .card-grid {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      .card {
+        background: var(--surface-strong);
+        border-radius: 18px;
+        padding: 22px;
+        box-shadow: 0 18px 36px rgba(16, 19, 26, 0.08);
+      }
+
+      .card strong {
+        display: block;
+        margin: 12px 0 6px;
+        font-size: 1.05rem;
+      }
+
+      .solutions {
+        background: var(--surface-strong);
+        border-radius: var(--radius);
+        padding: 30px;
+        box-shadow: var(--shadow);
+      }
+
+      .solutions-grid {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        margin-top: 18px;
+      }
+
+      .solution {
+        border: 1px solid var(--slate);
+        border-radius: 16px;
+        padding: 18px;
+        display: grid;
+        gap: 8px;
+      }
+
+      .split {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      }
+
+      .proof {
+        background: linear-gradient(135deg, var(--accent-soft), #fff6f0);
+        border-radius: var(--radius);
+        padding: 28px;
+        display: grid;
+        gap: 18px;
+      }
+
+      .stats {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+
+      .stat {
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 16px;
+        padding: 16px;
+        text-align: center;
+        font-weight: 600;
+      }
+
+      footer {
+        display: grid;
+        gap: 14px;
+        border-top: 1px solid var(--slate);
+        padding-top: 30px;
+        color: var(--ink-soft);
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 780px) {
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        nav {
+          flex-wrap: wrap;
+        }
+
+        .section-title {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <div class="logo">
+          CTech <span>Business Technology Partner</span>
+        </div>
+        <nav>
+          <a href="#">Azienda</a>
+          <a href="#">Soluzioni</a>
+          <a href="#">Settori</a>
+          <a href="#">Contatti</a>
+        </nav>
+        <a class="cta" href="#">Consulenza gratuita</a>
+      </header>
+
+      <section class="hero">
+        <div>
+          <h1>Ottimizza i processi aziendali con una guida tecnica affidabile.</h1>
+          <p>
+            CTech integra consulenza, software gestionale e supporto continuo per aiutare imprese e
+            professionisti a lavorare meglio, con strumenti calibrati sui tuoi flussi operativi.
+          </p>
+          <div class="hero-actions">
+            <a class="cta" href="#">Parla con un consulente</a>
+            <a class="ghost" href="#">Scopri le soluzioni</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <strong>In sintesi</strong>
+          <ul>
+            <li><span>Analisi processi</span><span>01</span></li>
+            <li><span>Implementazione</span><span>02</span></li>
+            <li><span>Supporto dedicato</span><span>03</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-title">
+          <h2>Un metodo chiaro, risultati misurabili.</h2>
+          <span>
+            Dall'assessment iniziale al post-go live, il team CTech segue ogni fase per garantire
+            continuita e controllo.
+          </span>
+        </div>
+        <div class="card-grid" style="margin-top: 20px;">
+          <div class="card">
+            <strong>Consulenza</strong>
+            Analisi dei flussi, obiettivi condivisi e roadmap operativa.
+          </div>
+          <div class="card">
+            <strong>Integrazione</strong>
+            Configurazione software, migrazione dati e formazione sul campo.
+          </div>
+          <div class="card">
+            <strong>Supporto</strong>
+            Assistenza continua, monitoraggio e ottimizzazione periodica.
+          </div>
+        </div>
+      </section>
+
+      <section class="solutions">
+        <div class="section-title">
+          <h2>Soluzioni principali</h2>
+          <span>Selezione delle piattaforme piu richieste da imprese e studi professionali.</span>
+        </div>
+        <div class="solutions-grid">
+          <div class="solution">
+            <strong>Arca Evolution</strong>
+            Gestionale completo per PMI manifatturiere e servizi.
+          </div>
+          <div class="solution">
+            <strong>WinWaste</strong>
+            Gestione rifiuti e compliance ambientale semplificata.
+          </div>
+          <div class="solution">
+            <strong>Genya</strong>
+            Suite fiscale cloud per studi professionali evoluti.
+          </div>
+          <div class="solution">
+            <strong>B.Point</strong>
+            Piattaforma fiscale per commercialisti e consulenti.
+          </div>
+        </div>
+      </section>
+
+      <section class="split">
+        <div>
+          <div class="section-title" style="align-items: flex-start;">
+            <h2>Settori serviti</h2>
+            <span>Esperienza diretta con realta produttive, studi e aziende di servizi.</span>
+          </div>
+          <div class="card-grid" style="margin-top: 18px;">
+            <div class="card">PMI industriali</div>
+            <div class="card">Studi di consulenza</div>
+            <div class="card">Aziende di servizi</div>
+            <div class="card">Gestione rifiuti</div>
+          </div>
+        </div>
+        <div class="proof">
+          <strong>Proof of value</strong>
+          <p>
+            Dal 1994 affianchiamo aziende locali e multi-sede con soluzioni scalabili.
+          </p>
+          <div class="stats">
+            <div class="stat">+350 clienti attivi</div>
+            <div class="stat">98% SLA rispettati</div>
+            <div class="stat">24h tempo medio risposta</div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <strong>CTech - Computer's Technology</strong>
+        <span>Via Cluentina 26/B, Piediripa di Macerata (MC)</span>
+        <span>0733 281142 · info@ctech.it</span>
+      </footer>
+    </div>
+  </body>
+</html>

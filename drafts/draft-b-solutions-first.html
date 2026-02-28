@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CTech Draft B - Solutions First</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=DM+Serif+Display&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #0c0f16;
+        --ink-soft: #465062;
+        --base: #f4f6f8;
+        --white: #ffffff;
+        --accent: #0f6b5e;
+        --accent-soft: #cfe8e3;
+        --line: #d8dde6;
+        --radius: 24px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Outfit", sans-serif;
+        background: linear-gradient(180deg, #f8fafc, #eef2f7 60%, #f4f6f8);
+        color: var(--ink);
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .page {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 32px 24px 72px;
+        display: grid;
+        gap: 64px;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .brand {
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      header nav {
+        display: flex;
+        gap: 18px;
+        font-size: 0.95rem;
+      }
+
+      .primary {
+        background: var(--accent);
+        color: var(--white);
+        padding: 12px 22px;
+        border-radius: 999px;
+        font-weight: 600;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 32px;
+        align-items: center;
+      }
+
+      .hero h1 {
+        font-family: "DM Serif Display", serif;
+        font-size: clamp(2.6rem, 3.4vw, 3.8rem);
+        line-height: 1.1;
+        margin-bottom: 16px;
+      }
+
+      .hero p {
+        color: var(--ink-soft);
+        margin-bottom: 22px;
+      }
+
+      .hero-panel {
+        background: var(--white);
+        border-radius: var(--radius);
+        padding: 24px;
+        box-shadow: 0 24px 50px rgba(12, 15, 22, 0.12);
+      }
+
+      .hero-panel ul {
+        list-style: none;
+        display: grid;
+        gap: 12px;
+        margin-top: 14px;
+        color: var(--ink-soft);
+      }
+
+      .solutions {
+        display: grid;
+        gap: 18px;
+      }
+
+      .solutions h2 {
+        font-size: 1.9rem;
+      }
+
+      .solution-grid {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      .solution-card {
+        background: var(--white);
+        border-radius: 20px;
+        padding: 20px;
+        border: 1px solid var(--line);
+        display: grid;
+        gap: 10px;
+      }
+
+      .solution-card span {
+        font-size: 0.85rem;
+        color: var(--ink-soft);
+      }
+
+      .use-cases {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+
+      .use-case {
+        padding: 18px;
+        border-radius: 18px;
+        background: var(--accent-soft);
+        color: #0a463e;
+        font-weight: 600;
+      }
+
+      .why {
+        background: var(--white);
+        border-radius: var(--radius);
+        padding: 26px;
+        display: grid;
+        gap: 18px;
+        border: 1px solid var(--line);
+      }
+
+      .why-list {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      footer {
+        border-top: 1px solid var(--line);
+        padding-top: 24px;
+        color: var(--ink-soft);
+        font-size: 0.9rem;
+        display: grid;
+        gap: 8px;
+      }
+
+      @media (max-width: 800px) {
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 12px;
+        }
+
+        header nav {
+          flex-wrap: wrap;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <div class="brand">CTech</div>
+        <nav>
+          <a href="#">Soluzioni</a>
+          <a href="#">Servizi</a>
+          <a href="#">Supporto</a>
+          <a href="#">Contatti</a>
+        </nav>
+        <a class="primary" href="#">Richiedi demo</a>
+      </header>
+
+      <section class="hero">
+        <div>
+          <h1>La piattaforma giusta per ogni reparto aziendale.</h1>
+          <p>
+            CTech seleziona e implementa soluzioni gestionali per imprese e studi professionali,
+            accelerando la digitalizzazione dei processi chiave.
+          </p>
+          <a class="primary" href="#">Scopri le soluzioni</a>
+        </div>
+        <div class="hero-panel">
+          <strong>Catalogo rapido</strong>
+          <ul>
+            <li>ERP e gestione amministrativa</li>
+            <li>Gestione rifiuti e compliance</li>
+            <li>Suite fiscali cloud</li>
+            <li>Business intelligence operativa</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="solutions">
+        <h2>Soluzioni in primo piano</h2>
+        <div class="solution-grid">
+          <div class="solution-card">
+            <strong>Arca Evolution</strong>
+            <span>Gestionale completo</span>
+            Ottimizza produzione, logistica e amministrazione in un'unica piattaforma.
+          </div>
+          <div class="solution-card">
+            <strong>WinWaste</strong>
+            <span>Gestione rifiuti</span>
+            Tracciabilita, formulari digitali e compliance ambientale.
+          </div>
+          <div class="solution-card">
+            <strong>Genya</strong>
+            <span>Suite fiscale cloud</span>
+            Workflow collaborativo per studi professionali moderni.
+          </div>
+          <div class="solution-card">
+            <strong>B.Point</strong>
+            <span>Soluzione fiscale</span>
+            Controllo dati e adempimenti per commercialisti.
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Use case principali</h2>
+        <div class="use-cases">
+          <div class="use-case">Aziende con multi-sede</div>
+          <div class="use-case">Studi di consulenza fiscale</div>
+          <div class="use-case">Gestori rifiuti e utilities</div>
+          <div class="use-case">Produzione e logistica</div>
+        </div>
+      </section>
+
+      <section class="why">
+        <h2>Perche CTech</h2>
+        <div class="why-list">
+          <div>Team certificato e specializzato su soluzioni enterprise.</div>
+          <div>Assistenza locale con SLA misurabili.</div>
+          <div>Analisi processi e formazione personalizzata.</div>
+        </div>
+        <a class="primary" href="#">Prenota una demo</a>
+      </section>
+
+      <footer>
+        <strong>CTech - Computer's Technology</strong>
+        <span>Macerata · Via Cluentina 26/B</span>
+        <span>info@ctech.it · 0733 281142</span>
+      </footer>
+    </div>
+  </body>
+</html>

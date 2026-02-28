@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CTech - Draft A: Corporate Grid</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ================================================================
+       DRAFT A — "CORPORATE GRID"
+       Structured, grid-based, enterprise feel.
+       Palette: navy #0F1B2D, blue accent #2563EB, slate grays, white.
+       Layout: rigid 12-col grid, card-based sections, strong alignment.
+       Typography: Inter, tight tracking, clear hierarchy.
+    ================================================================ */
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0F1B2D;
+      --navy-light: #1A2942;
+      --blue: #2563EB;
+      --blue-light: #3B82F6;
+      --blue-pale: #EFF6FF;
+      --slate-50: #F8FAFC;
+      --slate-100: #F1F5F9;
+      --slate-200: #E2E8F0;
+      --slate-300: #CBD5E1;
+      --slate-400: #94A3B8;
+      --slate-500: #64748B;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1E293B;
+      --slate-900: #0F172A;
+      --white: #FFFFFF;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --radius: 8px;
+      --radius-lg: 12px;
+      --shadow-sm: 0 1px 2px rgba(15,27,45,0.05);
+      --shadow: 0 1px 3px rgba(15,27,45,0.1), 0 1px 2px rgba(15,27,45,0.06);
+      --shadow-md: 0 4px 6px -1px rgba(15,27,45,0.1), 0 2px 4px -2px rgba(15,27,45,0.1);
+      --shadow-lg: 0 10px 15px -3px rgba(15,27,45,0.1), 0 4px 6px -4px rgba(15,27,45,0.1);
+      --max-w: 1200px;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: var(--font); color: var(--slate-700); line-height: 1.6; background: var(--white); -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+    /* ---------- NAVBAR ---------- */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--slate-200);
+      transition: box-shadow 0.3s;
+    }
+    .nav.scrolled { box-shadow: var(--shadow-md); }
+    .nav__inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+    }
+    .nav__brand {
+      display: flex; align-items: center; gap: 12px;
+      font-weight: 700; font-size: 1.1rem; color: var(--navy);
+    }
+    .nav__brand-icon {
+      width: 40px; height: 40px; background: var(--blue); border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-weight: 800; font-size: 0.85rem; letter-spacing: -0.5px;
+    }
+    .nav__brand small { display: block; font-weight: 400; font-size: 0.7rem; color: var(--slate-500); letter-spacing: 0.02em; }
+    .nav__links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav__link {
+      font-size: 0.875rem; font-weight: 500; color: var(--slate-600);
+      transition: color 0.2s; position: relative;
+    }
+    .nav__link:hover { color: var(--navy); }
+    .nav__link::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+      background: var(--blue); transition: width 0.2s;
+    }
+    .nav__link:hover::after { width: 100%; }
+    .nav__cta {
+      background: var(--blue); color: white; padding: 10px 20px;
+      border-radius: var(--radius); font-size: 0.875rem; font-weight: 600;
+      transition: background 0.2s;
+    }
+    .nav__cta:hover { background: var(--blue-light); }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      padding: 160px 0 100px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      color: white; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -50%; right: -20%; width: 800px; height: 800px;
+      background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; position: relative; }
+    .hero__label {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(37,99,235,0.2); border: 1px solid rgba(37,99,235,0.3);
+      padding: 6px 14px; border-radius: 100px; font-size: 0.8rem; font-weight: 500;
+      color: rgba(255,255,255,0.9); margin-bottom: 20px;
+    }
+    .hero__label-dot { width: 6px; height: 6px; background: var(--blue-light); border-radius: 50%; }
+    .hero h1 {
+      font-size: 3rem; font-weight: 800; line-height: 1.15; letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+    .hero__sub { font-size: 1.125rem; line-height: 1.7; color: rgba(255,255,255,0.75); margin-bottom: 32px; max-width: 520px; }
+    .hero__actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; border-radius: var(--radius); font-size: 0.9375rem;
+      font-weight: 600; cursor: pointer; border: none; transition: all 0.2s;
+    }
+    .btn--primary { background: var(--blue); color: white; }
+    .btn--primary:hover { background: var(--blue-light); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(37,99,235,0.3); }
+    .btn--outline { background: transparent; color: white; border: 1px solid rgba(255,255,255,0.3); }
+    .btn--outline:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.5); }
+    .btn--dark { background: var(--navy); color: white; }
+    .btn--dark:hover { background: var(--navy-light); }
+
+    .hero__visual {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    }
+    .hero__stat {
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-lg); padding: 28px 24px;
+      backdrop-filter: blur(8px);
+    }
+    .hero__stat-number { font-size: 2.5rem; font-weight: 800; color: white; line-height: 1; margin-bottom: 4px; }
+    .hero__stat-label { font-size: 0.85rem; color: rgba(255,255,255,0.6); }
+
+    /* ---------- SECTION COMMON ---------- */
+    .section { padding: 100px 0; }
+    .section--gray { background: var(--slate-50); }
+    .section--dark { background: var(--navy); color: white; }
+    .section-header { text-align: center; margin-bottom: 64px; }
+    .section-label {
+      display: inline-block; font-size: 0.8rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--blue); margin-bottom: 12px;
+    }
+    .section-header h2 {
+      font-size: 2.25rem; font-weight: 800; color: var(--navy); line-height: 1.2;
+      letter-spacing: -0.01em; margin-bottom: 16px;
+    }
+    .section--dark .section-header h2 { color: white; }
+    .section-header p { font-size: 1.05rem; color: var(--slate-500); max-width: 600px; margin: 0 auto; }
+    .section--dark .section-header p { color: rgba(255,255,255,0.65); }
+
+    /* ---------- SOLUTIONS GRID ---------- */
+    .solutions-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+    }
+    .solution-card {
+      background: white; border: 1px solid var(--slate-200); border-radius: var(--radius-lg);
+      padding: 40px 32px; transition: all 0.3s; position: relative; overflow: hidden;
+    }
+    .solution-card:hover { border-color: var(--blue); box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+    .solution-card__category {
+      font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;
+      color: var(--blue); margin-bottom: 16px;
+    }
+    .solution-card h3 { font-size: 1.5rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .solution-card p { font-size: 0.95rem; color: var(--slate-500); margin-bottom: 24px; line-height: 1.6; }
+    .solution-card__tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+    .solution-card__tag {
+      background: var(--blue-pale); color: var(--blue); font-size: 0.75rem; font-weight: 500;
+      padding: 4px 10px; border-radius: 100px;
+    }
+    .solution-card__link {
+      font-size: 0.875rem; font-weight: 600; color: var(--blue);
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .solution-card__link svg { width: 16px; height: 16px; transition: transform 0.2s; }
+    .solution-card:hover .solution-card__link svg { transform: translateX(4px); }
+
+    /* ---------- AUDIENCE SPLIT ---------- */
+    .audience {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    }
+    .audience__panel {
+      padding: 80px 64px; position: relative;
+    }
+    .audience__panel--business { background: var(--navy); color: white; }
+    .audience__panel--accountants { background: var(--blue); color: white; }
+    .audience__panel h3 {
+      font-size: 1.75rem; font-weight: 700; margin-bottom: 16px;
+    }
+    .audience__panel p { font-size: 1rem; line-height: 1.7; opacity: 0.85; margin-bottom: 28px; }
+    .audience__list { list-style: none; margin-bottom: 32px; }
+    .audience__list li {
+      font-size: 0.9rem; padding: 8px 0; padding-left: 24px; position: relative; opacity: 0.9;
+    }
+    .audience__list li::before {
+      content: ''; position: absolute; left: 0; top: 14px;
+      width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.5);
+    }
+    .audience__link {
+      font-size: 0.875rem; font-weight: 600; color: white;
+      border-bottom: 2px solid rgba(255,255,255,0.3);
+      padding-bottom: 2px; transition: border-color 0.2s;
+    }
+    .audience__link:hover { border-color: white; }
+
+    /* ---------- PROCESS ---------- */
+    .process-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+    }
+    .process-card { text-align: center; padding: 32px; }
+    .process-card__number {
+      width: 56px; height: 56px; background: var(--blue-pale); color: var(--blue);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 1.25rem; font-weight: 800; margin: 0 auto 20px;
+    }
+    .process-card h4 { font-size: 1.125rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+    .process-card p { font-size: 0.9rem; color: var(--slate-500); line-height: 1.6; }
+
+    /* ---------- PARTNERS ---------- */
+    .partners-row {
+      display: flex; justify-content: center; align-items: center; gap: 64px; flex-wrap: wrap;
+    }
+    .partner-logo {
+      height: 36px; opacity: 0.45; filter: grayscale(100%);
+      transition: all 0.3s;
+    }
+    .partner-logo:hover { opacity: 1; filter: none; }
+
+    /* ---------- CTA SECTION ---------- */
+    .cta {
+      padding: 80px 0; text-align: center;
+      background: linear-gradient(135deg, var(--blue) 0%, #1D4ED8 100%);
+      color: white;
+    }
+    .cta h2 { font-size: 2.25rem; font-weight: 800; margin-bottom: 16px; }
+    .cta p { font-size: 1.1rem; opacity: 0.85; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .cta .btn--white { background: white; color: var(--blue); }
+    .cta .btn--white:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+
+    /* ---------- FOOTER ---------- */
+    .footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 64px 0 32px; }
+    .footer__grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+    .footer__brand p { font-size: 0.875rem; line-height: 1.7; margin-top: 12px; }
+    .footer h4 { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
+    .footer__links { display: flex; flex-direction: column; gap: 10px; }
+    .footer__link { font-size: 0.875rem; transition: color 0.2s; }
+    .footer__link:hover { color: white; }
+    .footer__bottom {
+      border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.8rem; color: rgba(255,255,255,0.4);
+    }
+    .footer__legal { display: flex; gap: 24px; }
+    .footer__legal a { color: rgba(255,255,255,0.4); transition: color 0.2s; }
+    .footer__legal a:hover { color: rgba(255,255,255,0.7); }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 768px) {
+      .hero { padding: 120px 0 60px; }
+      .hero__inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero h1 { font-size: 2rem; }
+      .hero__visual { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .solutions-grid { grid-template-columns: 1fr; }
+      .audience { grid-template-columns: 1fr; }
+      .audience__panel { padding: 48px 24px; }
+      .process-grid { grid-template-columns: 1fr; }
+      .footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .nav__links { display: none; }
+      .section-header h2 { font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#" class="nav__brand">
+        <div class="nav__brand-icon">CT</div>
+        <div>CTech<small>Computer's Technology</small></div>
+      </a>
+      <ul class="nav__links">
+        <li><a href="#" class="nav__link">Home</a></li>
+        <li><a href="#" class="nav__link">Chi Siamo</a></li>
+        <li><a href="#" class="nav__link">Soluzioni</a></li>
+        <li><a href="#" class="nav__link">Servizi</a></li>
+        <li><a href="#" class="nav__link">Contatti</a></li>
+        <li><a href="#" class="nav__cta">Richiedi Consulenza</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div>
+        <div class="hero__label"><span class="hero__label-dot"></span> Dal 1984 al fianco delle imprese</div>
+        <h1>Soluzioni IT<br>per chi vuole crescere</h1>
+        <p class="hero__sub">
+          Software gestionali, infrastruttura IT e assistenza dedicata 
+          per aziende e studi professionali nelle Marche, Umbria e Abruzzo. 
+          Non un call center: il tuo reparto IT.
+        </p>
+        <div class="hero__actions">
+          <a href="#" class="btn btn--primary">Richiedi consulenza gratuita</a>
+          <a href="#" class="btn btn--outline">Scopri le soluzioni</a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="hero__stat">
+          <div class="hero__stat-number">40+</div>
+          <div class="hero__stat-label">Anni di esperienza</div>
+        </div>
+        <div class="hero__stat">
+          <div class="hero__stat-number">300+</div>
+          <div class="hero__stat-label">Clienti attivi</div>
+        </div>
+        <div class="hero__stat">
+          <div class="hero__stat-number">4</div>
+          <div class="hero__stat-label">Piattaforme software</div>
+        </div>
+        <div class="hero__stat">
+          <div class="hero__stat-number">24h</div>
+          <div class="hero__stat-label">Tempo di risposta</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTIONS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Le nostre soluzioni</div>
+        <h2>Software di riferimento, personalizzati per te</h2>
+        <p>Distribuiamo e configuriamo le piattaforme leader di mercato, adattandole ai tuoi processi.</p>
+      </div>
+      <div class="solutions-grid">
+
+        <div class="solution-card">
+          <div class="solution-card__category">Per le Aziende</div>
+          <h3>Arca EVOLUTION</h3>
+          <p>Gestionale ERP modulare: contabilita, vendite, magazzino, produzione, CRM e fatturazione elettronica in un unico ambiente.</p>
+          <div class="solution-card__tags">
+            <span class="solution-card__tag">ERP</span>
+            <span class="solution-card__tag">Contabilita</span>
+            <span class="solution-card__tag">Magazzino</span>
+            <span class="solution-card__tag">Produzione</span>
+          </div>
+          <a href="#" class="solution-card__link">Scopri di piu <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+
+        <div class="solution-card">
+          <div class="solution-card__category">Gestione Rifiuti</div>
+          <h3>WinWaste</h3>
+          <p>Il software leader in Italia per la gestione integrata dei rifiuti. Registri, formulari, MUD e piena conformita R.E.N.T.Ri.</p>
+          <div class="solution-card__tags">
+            <span class="solution-card__tag">Rifiuti</span>
+            <span class="solution-card__tag">R.E.N.T.Ri</span>
+            <span class="solution-card__tag">MUD</span>
+            <span class="solution-card__tag">Ambiente</span>
+          </div>
+          <a href="#" class="solution-card__link">Scopri di piu <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+
+        <div class="solution-card">
+          <div class="solution-card__category">Per i Professionisti</div>
+          <h3>Genya</h3>
+          <p>Suite cloud per studi professionali: contabilita, dichiarativi, bilanci e fatturazione. Collaborazione studio-cliente in tempo reale.</p>
+          <div class="solution-card__tags">
+            <span class="solution-card__tag">Cloud</span>
+            <span class="solution-card__tag">Fiscale</span>
+            <span class="solution-card__tag">Bilanci</span>
+          </div>
+          <a href="#" class="solution-card__link">Scopri di piu <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+
+        <div class="solution-card">
+          <div class="solution-card__category">Per i Professionisti</div>
+          <h3>B.Point Solution Platform</h3>
+          <p>La piattaforma completa per studi professionali. Affidabilita e solidita per garantire l'efficienza operativa di 8.000+ studi.</p>
+          <div class="solution-card__tags">
+            <span class="solution-card__tag">Desktop</span>
+            <span class="solution-card__tag">Fiscale</span>
+            <span class="solution-card__tag">Adempimenti</span>
+          </div>
+          <a href="#" class="solution-card__link">Scopri di piu <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- AUDIENCE SPLIT -->
+  <div class="audience">
+    <div class="audience__panel audience__panel--business">
+      <h3>Per le Aziende</h3>
+      <p>Digitalizza i processi aziendali con un gestionale completo, configurato sulle tue esigenze.</p>
+      <ul class="audience__list">
+        <li>ERP modulare con 8 aree funzionali</li>
+        <li>Personalizzazioni su misura</li>
+        <li>Gestione rifiuti conforme R.E.N.T.Ri</li>
+        <li>Formazione e migrazione dati garantita</li>
+      </ul>
+      <a href="#" class="audience__link">Soluzioni per imprese &rarr;</a>
+    </div>
+    <div class="audience__panel audience__panel--accountants">
+      <h3>Per Commercialisti e Studi</h3>
+      <p>Piu tempo per la consulenza strategica, meno per gli adempimenti.</p>
+      <ul class="audience__list">
+        <li>Genya: il futuro dello studio e in cloud</li>
+        <li>B.Point: affidabilita desktop per 8.000+ studi</li>
+        <li>Collaborazione studio-cliente in tempo reale</li>
+        <li>Aggiornamenti normativi sempre inclusi</li>
+      </ul>
+      <a href="#" class="audience__link">Soluzioni per studi &rarr;</a>
+    </div>
+  </div>
+
+  <!-- PROCESS -->
+  <section class="section section--gray">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Come lavoriamo</div>
+        <h2>Tre passi per la tua soluzione</h2>
+        <p>Un percorso concreto, con tempi certi e un unico referente dedicato.</p>
+      </div>
+      <div class="process-grid">
+        <div class="process-card">
+          <div class="process-card__number">1</div>
+          <h4>Analisi gratuita</h4>
+          <p>Veniamo da te, studiamo i tuoi processi e ti proponiamo la soluzione piu adatta. Nessun impegno.</p>
+        </div>
+        <div class="process-card">
+          <div class="process-card__number">2</div>
+          <h4>Configurazione su misura</h4>
+          <p>Installiamo, personalizziamo e migriamo i tuoi dati. Formiamo il tuo team fino a renderlo autonomo.</p>
+        </div>
+        <div class="process-card">
+          <div class="process-card__number">3</div>
+          <h4>Assistenza continua</h4>
+          <p>Risposta entro 24h, aggiornamenti normativi inclusi, interventi on-site quando serve.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Partner tecnologici</div>
+        <h2>Rivenditori certificati</h2>
+        <p>Collaborazioni ventennali con i leader del software gestionale e della sicurezza informatica.</p>
+      </div>
+      <div class="partners-row">
+        <div style="font-size:1.1rem;font-weight:700;color:var(--slate-400);letter-spacing:0.02em;">Wolters Kluwer</div>
+        <div style="font-size:1.1rem;font-weight:700;color:var(--slate-400);letter-spacing:0.02em;">Zucchetti</div>
+        <div style="font-size:1.1rem;font-weight:700;color:var(--slate-400);letter-spacing:0.02em;">Nica</div>
+        <div style="font-size:1.1rem;font-weight:700;color:var(--slate-400);letter-spacing:0.02em;">ESET</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <h2>Pronto a ottimizzare la tua azienda?</h2>
+      <p>Parliamo delle tue esigenze. La prima consulenza e gratuita e senza impegno.</p>
+      <a href="#" class="btn btn--white" style="padding:16px 32px;">Richiedi consulenza gratuita</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div style="display:flex;align-items:center;gap:10px;color:white;font-weight:700;font-size:1.1rem;">
+            <div style="width:36px;height:36px;background:var(--blue);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:800;color:white;">CT</div>
+            CTech
+          </div>
+          <p>Soluzioni software e servizi IT per aziende e professionisti nelle Marche. Al tuo fianco dal 1984.</p>
+        </div>
+        <div>
+          <h4>Soluzioni</h4>
+          <div class="footer__links">
+            <a href="#" class="footer__link">Arca EVOLUTION</a>
+            <a href="#" class="footer__link">WinWaste</a>
+            <a href="#" class="footer__link">Genya</a>
+            <a href="#" class="footer__link">B.Point</a>
+          </div>
+        </div>
+        <div>
+          <h4>Servizi</h4>
+          <div class="footer__links">
+            <a href="#" class="footer__link">Assistenza Tecnica</a>
+            <a href="#" class="footer__link">Servizi IT</a>
+            <a href="#" class="footer__link">Cybersecurity</a>
+          </div>
+        </div>
+        <div>
+          <h4>Contatti</h4>
+          <div class="footer__links">
+            <a href="#" class="footer__link">Via Cluentina, 26/B<br>Macerata (MC) 62100</a>
+            <a href="#" class="footer__link">0733.281142</a>
+            <a href="#" class="footer__link">info@ctech.it</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 Computer's Technology S.r.l. &mdash; P.IVA 00840390439</span>
+        <div class="footer__legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 10);
+    });
+  </script>
+
+</body>
+</html>
