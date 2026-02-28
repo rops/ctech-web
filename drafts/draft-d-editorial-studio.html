@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CTech Draft D - Editorial Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Sora:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #101319;
+        --ink-soft: #4e5864;
+        --paper: #f6f1eb;
+        --paper-strong: #ffffff;
+        --accent: #c5673f;
+        --sage: #d9e3da;
+        --line: #e5ddd4;
+        --radius: 26px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Sora", sans-serif;
+        background: linear-gradient(140deg, #fdf7f0 0%, #f3f6f9 45%, #f6f1eb 100%);
+        color: var(--ink);
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .page {
+        max-width: 1220px;
+        margin: 0 auto;
+        padding: 36px 24px 80px;
+        display: grid;
+        gap: 64px;
+      }
+
+      header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .brand {
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      nav {
+        display: flex;
+        gap: 18px;
+        font-size: 0.95rem;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(240px, 0.85fr) minmax(280px, 1fr);
+        gap: 30px;
+        align-items: center;
+      }
+
+      .hero h1 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(2.8rem, 3.8vw, 4.2rem);
+        line-height: 1.05;
+      }
+
+      .hero p {
+        color: var(--ink-soft);
+        margin: 18px 0 24px;
+        max-width: 520px;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .cta {
+        background: var(--accent);
+        color: #fffaf6;
+        padding: 12px 22px;
+        border-radius: 999px;
+        font-weight: 600;
+      }
+
+      .ghost {
+        border: 1px solid var(--ink);
+        padding: 12px 22px;
+        border-radius: 999px;
+        font-weight: 600;
+      }
+
+      .hero-panel {
+        background: var(--paper-strong);
+        border-radius: var(--radius);
+        padding: 26px;
+        box-shadow: 0 24px 46px rgba(16, 19, 25, 0.12);
+        display: grid;
+        gap: 16px;
+      }
+
+      .hero-panel strong {
+        font-size: 1.1rem;
+      }
+
+      .hero-panel ul {
+        list-style: none;
+        display: grid;
+        gap: 10px;
+        color: var(--ink-soft);
+      }
+
+      .section-title h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+
+      .section-title p {
+        color: var(--ink-soft);
+        max-width: 520px;
+      }
+
+      .columns {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 18px;
+      }
+
+      .note {
+        background: var(--paper-strong);
+        padding: 18px;
+        border-radius: 18px;
+        border: 1px solid var(--line);
+      }
+
+      .timeline {
+        display: grid;
+        gap: 14px;
+      }
+
+      .step {
+        display: grid;
+        gap: 8px;
+        padding: 16px;
+        border-radius: 16px;
+        background: var(--sage);
+      }
+
+      .case {
+        background: var(--paper-strong);
+        border-radius: var(--radius);
+        padding: 26px;
+        border: 1px solid var(--line);
+        display: grid;
+        gap: 14px;
+      }
+
+      .case-grid {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+
+      .case-grid div {
+        background: #f9f3ed;
+        padding: 14px;
+        border-radius: 14px;
+      }
+
+      footer {
+        display: grid;
+        gap: 8px;
+        border-top: 1px solid var(--line);
+        padding-top: 26px;
+        color: var(--ink-soft);
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 860px) {
+        header {
+          grid-template-columns: 1fr;
+        }
+
+        nav {
+          flex-wrap: wrap;
+        }
+
+        .hero {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <div class="brand">CTech</div>
+        <nav>
+          <a href="#">Azienda</a>
+          <a href="#">Metodo</a>
+          <a href="#">Soluzioni</a>
+          <a href="#">Contatti</a>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <div>
+          <h1>Un laboratorio digitale per processi aziendali piu fluidi.</h1>
+          <p>
+            Affianchiamo PMI e studi professionali con un approccio editoriale: analisi accurata,
+            soluzioni mirate e supporto costante.
+          </p>
+          <div class="hero-actions">
+            <a class="cta" href="#">Prenota una consulenza</a>
+            <a class="ghost" href="#">Scarica il profilo</a>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <strong>Snapshot CTech</strong>
+          <ul>
+            <li>30+ anni nel territorio</li>
+            <li>Team certificato su ERP e fiscale</li>
+            <li>Supporto con SLA monitorati</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-title">
+          <h2>Metodo di lavoro</h2>
+          <p>Un percorso guidato per trasformare i flussi in risultati misurabili.</p>
+        </div>
+        <div class="columns" style="margin-top: 18px;">
+          <div class="note">Assessment dei processi e definizione obiettivi.</div>
+          <div class="note">Configurazione e migrazione dati controllata.</div>
+          <div class="note">Formazione operativa e assistenza continua.</div>
+        </div>
+      </section>
+
+      <section class="columns">
+        <div>
+          <div class="section-title">
+            <h2>Roadmap</h2>
+            <p>Un progetto unico con tappe chiare e misurabili.</p>
+          </div>
+          <div class="timeline">
+            <div class="step">1. Diagnosi e piano operativo</div>
+            <div class="step">2. Setup soluzioni e integrazione</div>
+            <div class="step">3. Go-live e ottimizzazione</div>
+          </div>
+        </div>
+        <div class="case">
+          <strong>Spotlight cliente</strong>
+          <p>Digitalizzazione completa dei flussi amministrativi in 8 settimane.</p>
+          <div class="case-grid">
+            <div>Riduzione errori -35%</div>
+            <div>Tempo chiusura mese -28%</div>
+            <div>Supporto dedicato 24/48h</div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <strong>CTech - Computer's Technology</strong>
+        <span>Via Cluentina 26/B, Macerata</span>
+        <span>info@ctech.it · 0733 281142</span>
+      </footer>
+    </div>
+  </body>
+</html>

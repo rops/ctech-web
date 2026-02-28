@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CTech Draft F - Immersive Split</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Fraunces:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #0f1117;
+        --ink-soft: #3b4351;
+        --night: #101726;
+        --night-soft: #161f33;
+        --glow: #57c4b8;
+        --sand: #f5efe5;
+        --line: rgba(255, 255, 255, 0.12);
+        --radius: 24px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Space Grotesk", sans-serif;
+        color: var(--ink);
+        background: #f5efe5;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .split {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+
+      .dark-pane {
+        background: radial-gradient(circle at top left, #1b2a42, var(--night));
+        color: #f8fafc;
+        padding: 48px 36px;
+        display: grid;
+        gap: 28px;
+      }
+
+      .light-pane {
+        padding: 48px 36px;
+        display: grid;
+        gap: 26px;
+        background: #f5efe5;
+      }
+
+      .brand {
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+
+      nav {
+        display: flex;
+        gap: 16px;
+        font-size: 0.95rem;
+        flex-wrap: wrap;
+      }
+
+      h1 {
+        font-family: "Fraunces", serif;
+        font-size: clamp(2.6rem, 3.5vw, 3.8rem);
+        line-height: 1.05;
+      }
+
+      .accent {
+        color: var(--glow);
+      }
+
+      .cta {
+        background: var(--glow);
+        color: #08211f;
+        padding: 12px 22px;
+        border-radius: 999px;
+        font-weight: 600;
+        display: inline-block;
+      }
+
+      .panel {
+        background: var(--night-soft);
+        border-radius: var(--radius);
+        padding: 22px;
+        border: 1px solid var(--line);
+        display: grid;
+        gap: 10px;
+      }
+
+      .panel span {
+        color: rgba(248, 250, 252, 0.7);
+      }
+
+      .stack {
+        display: grid;
+        gap: 14px;
+      }
+
+      .tile {
+        background: #ffffff;
+        border-radius: 18px;
+        padding: 18px;
+        border: 1px solid #e2d7c7;
+        display: grid;
+        gap: 8px;
+      }
+
+      .tile strong {
+        font-size: 1rem;
+      }
+
+      .section-title {
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+
+      .list {
+        display: grid;
+        gap: 10px;
+      }
+
+      footer {
+        color: rgba(248, 250, 252, 0.6);
+        border-top: 1px solid var(--line);
+        padding-top: 18px;
+        font-size: 0.85rem;
+      }
+
+      @media (max-width: 920px) {
+        .dark-pane,
+        .light-pane {
+          padding: 32px 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="split">
+      <section class="dark-pane">
+        <div class="brand">CTech</div>
+        <nav>
+          <a href="#">Azienda</a>
+          <a href="#">Servizi</a>
+          <a href="#">Soluzioni</a>
+          <a href="#">Contatti</a>
+        </nav>
+        <div>
+          <h1>Il tuo <span class="accent">ecosistema digitale</span> in un solo partner.</h1>
+          <p>
+            Software gestionale, compliance e consulenza in un modello operativo guidato e misurabile.
+          </p>
+        </div>
+        <a class="cta" href="#">Richiedi una call</a>
+        <div class="panel">
+          <strong>CTech in numeri</strong>
+          <span>+350 clienti attivi</span>
+          <span>30+ anni di esperienza</span>
+          <span>Supporto entro 24/48h</span>
+        </div>
+        <footer>
+          <div>CTech - Computer's Technology</div>
+          <div>Via Cluentina 26/B · Macerata</div>
+          <div>info@ctech.it · 0733 281142</div>
+        </footer>
+      </section>
+
+      <section class="light-pane">
+        <div class="stack">
+          <div class="section-title">Soluzioni principali</div>
+          <div class="tile">
+            <strong>Arca Evolution</strong>
+            <span>ERP modulare per PMI e manifattura.</span>
+          </div>
+          <div class="tile">
+            <strong>WinWaste</strong>
+            <span>Compliance ambientale e gestione rifiuti.</span>
+          </div>
+          <div class="tile">
+            <strong>Genya</strong>
+            <span>Suite fiscale cloud per studi moderni.</span>
+          </div>
+          <div class="tile">
+            <strong>B.Point</strong>
+            <span>Piattaforma fiscale per commercialisti.</span>
+          </div>
+        </div>
+        <div class="stack">
+          <div class="section-title">Metodo di lavoro</div>
+          <div class="list">
+            <div class="tile">Analisi processi e KPI condivisi.</div>
+            <div class="tile">Implementazione e formazione sul campo.</div>
+            <div class="tile">Assistenza e ottimizzazione continua.</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
