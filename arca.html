@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arca EVOLUTION — Software Gestionale ERP | CTech Macerata</title>
+  <meta name="description" content="Arca EVOLUTION di Wolters Kluwer: gestionale ERP per PMI. Contabilità, magazzino, fatturazione elettronica, CRM. Rivenditore autorizzato nelle Marche.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://rops.github.io/ctech-web/arca.html">
+  <meta property="og:title" content="Arca EVOLUTION — Software Gestionale ERP | CTech">
+  <meta property="og:description" content="Gestionale ERP per PMI: contabilità, magazzino, fatturazione elettronica, CRM, produzione. Partner certificato Wolters Kluwer nelle Marche.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Arca EVOLUTION",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Windows",
+    "description": "Software gestionale ERP per PMI: contabilità, magazzino, fatturazione elettronica, CRM, produzione.",
+    "author": { "@type": "Organization", "name": "Wolters Kluwer" },
+    "offers": {
+      "@type": "Offer",
+      "seller": {
+        "@type": "LocalBusiness",
+        "name": "Computer's Technology S.r.l.",
+        "telephone": "+39 0733 281142",
+        "areaServed": "Marche"
+      }
+    }
+  }
+  </script>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --ctech-red: #C52A2A; --ctech-red-dark: #A01E1E; --ctech-red-light: #FEF2F2;
+      --ctech-navy: #1A2B4A; --ctech-navy-light: #243B63;
+      --blue: #007AC3; --blue-dark: #005a8f; --blue-light: #e8f4fc;
+      --green: #059669; --green-dark: #047857; --green-light: #ecfdf5;
+      --amber: #d97706; --amber-dark: #b45309; --amber-light: #fffbeb;
+      --teal: #00B8A9; --teal-dark: #006D77; --teal-light: #e6faf8;
+      --gray-50: #f9fafb; --gray-100: #f3f4f6; --gray-200: #e5e7eb;
+      --gray-400: #9ca3af; --gray-500: #6b7280; --gray-700: #374151; --gray-900: #111827;
+      --white: #fff; --r: 8px; --r-lg: 12px;
+      --shadow: 0 1px 3px rgba(0,0,0,.1); --shadow-md: 0 4px 6px rgba(0,0,0,.07);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; color: var(--gray-700); line-height: 1.6; background: var(--white); -webkit-font-smoothing: antialiased; }
+    a { color: var(--ctech-red); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 1.25rem; }
+
+    /* Header */
+    .header { background: var(--white); border-bottom: 1px solid var(--gray-200); position: sticky; top: 0; z-index: 100; }
+    .header-top { background: var(--ctech-navy); color: var(--white); font-size: .8125rem; padding: .4rem 0; }
+    .header-top .container { display: flex; justify-content: flex-end; gap: 1.5rem; flex-wrap: wrap; }
+    .header-top a { color: var(--white); opacity: .9; }
+    .header-top a:hover { opacity: 1; text-decoration: none; }
+    .header-main { padding: .75rem 0; }
+    .header-main .container { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .logo { font-size: 1.5rem; font-weight: 700; color: var(--gray-900); letter-spacing: -.02em; text-decoration: none; }
+    .logo em { color: var(--ctech-red); font-style: normal; }
+    .logo:hover { text-decoration: none; }
+    .logo-sub { display: block; font-size: .625rem; font-weight: 400; color: var(--gray-500); letter-spacing: .04em; text-transform: uppercase; margin-top: -2px; }
+    .nav { display: flex; align-items: center; gap: .125rem; }
+    .nav a { color: var(--gray-700); font-size: .875rem; font-weight: 500; padding: .5rem .625rem; border-radius: var(--r); transition: background .15s, color .15s; white-space: nowrap; }
+    .nav a:hover { background: var(--gray-100); color: var(--gray-900); text-decoration: none; }
+    .nav a.active { color: var(--ctech-red); }
+    .nav .nav-cta { background: var(--ctech-red); color: var(--white); font-weight: 600; }
+    .nav .nav-cta:hover { background: var(--ctech-red-dark); color: var(--white); }
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: .5rem; color: var(--gray-700); }
+    .nav-toggle svg { width: 24px; height: 24px; }
+
+    /* Hero */
+    .hero { background: linear-gradient(135deg, var(--ctech-navy) 0%, var(--ctech-navy-light) 100%); color: var(--white); padding: 3rem 0 2.5rem; }
+    .hero-badge { display: inline-flex; align-items: center; gap: .5rem; font-size: .6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; background: rgba(255,255,255,.12); padding: .3rem .75rem; border-radius: 100px; margin-bottom: 1rem; }
+    .hero h1 { font-size: 2rem; font-weight: 800; line-height: 1.12; margin-bottom: .625rem; letter-spacing: -.025em; }
+    .hero-sub { font-size: 1rem; opacity: .8; max-width: 560px; margin-bottom: 1.75rem; line-height: 1.6; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .625rem; }
+    .btn { display: inline-flex; align-items: center; gap: .5rem; font-weight: 600; font-size: .875rem; padding: .625rem 1.25rem; border-radius: var(--r); transition: transform .15s, background .15s; text-decoration: none; }
+    .btn:hover { text-decoration: none; transform: translateY(-1px); }
+    .btn-primary { background: var(--blue); color: var(--white); }
+    .btn-primary:hover { background: var(--blue-dark); color: var(--white); }
+    .btn-white { background: var(--white); color: var(--ctech-navy); }
+
+    /* Trust bar */
+    .trust { padding: 1.25rem 0; background: var(--gray-50); border-bottom: 1px solid var(--gray-200); }
+    .trust-items { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem 2.5rem; text-align: center; }
+    .trust-item strong { display: block; font-size: 1.5rem; font-weight: 800; color: var(--gray-900); }
+    .trust-item span { font-size: .75rem; color: var(--gray-500); }
+
+    /* Sections */
+    .section { padding: 3.5rem 0; }
+    .section-alt { background: var(--gray-50); }
+    .section-label { font-size: .6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--blue); margin-bottom: .5rem; }
+    .section-title { font-size: 1.375rem; font-weight: 700; color: var(--gray-900); margin-bottom: .375rem; letter-spacing: -.01em; }
+    .section-subtitle { color: var(--gray-500); font-size: .9375rem; margin-bottom: 1.5rem; max-width: 640px; }
+
+    /* Module grid */
+    .modules { display: grid; grid-template-columns: 1fr; gap: .875rem; }
+    .module { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--r-lg); padding: 1.375rem; }
+    .module:hover { box-shadow: var(--shadow-md); }
+    .module h3 { font-size: 1rem; font-weight: 700; color: var(--gray-900); margin-bottom: .375rem; }
+    .module p { font-size: .875rem; color: var(--gray-500); line-height: 1.6; }
+
+    /* Value section */
+    .values { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    .value { display: flex; gap: 1rem; }
+    .value-num { flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background: var(--blue-light); color: var(--blue); font-weight: 700; font-size: .8125rem; display: flex; align-items: center; justify-content: center; }
+    .value h3 { font-size: .9375rem; font-weight: 700; color: var(--gray-900); margin-bottom: .125rem; }
+    .value p { font-size: .875rem; color: var(--gray-500); }
+
+    /* Target cards */
+    .targets { display: grid; grid-template-columns: 1fr; gap: .875rem; }
+    .target { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--r-lg); padding: 1.375rem; }
+    .target h3 { font-size: 1rem; font-weight: 700; color: var(--gray-900); margin-bottom: .25rem; }
+    .target p { font-size: .875rem; color: var(--gray-500); }
+
+    /* Video */
+    .video-wrap { position: relative; padding-bottom: 56.25%; height: 0; border-radius: var(--r-lg); overflow: hidden; background: #000; }
+    .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+    /* CTA */
+    .cta-section { background: var(--ctech-navy); color: var(--white); padding: 3rem 0; text-align: center; }
+    .cta-section h2 { font-size: 1.375rem; font-weight: 700; margin-bottom: .5rem; }
+    .cta-section p { opacity: .8; margin-bottom: 1.25rem; }
+    .cta-actions { display: flex; flex-wrap: wrap; gap: .625rem; justify-content: center; }
+
+    /* Footer */
+    .footer { background: var(--gray-900); color: var(--gray-500); padding: 2.5rem 0 1.5rem; font-size: .8125rem; }
+    .footer-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 2rem; }
+    .footer h4 { color: var(--white); font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .75rem; }
+    .footer a { color: var(--gray-500); }
+    .footer a:hover { color: var(--white); text-decoration: none; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: .375rem; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 1.25rem; display: flex; flex-direction: column; gap: .5rem; font-size: .75rem; }
+
+    @media (min-width: 640px) {
+      .modules { grid-template-columns: repeat(2, 1fr); }
+      .targets { grid-template-columns: repeat(3, 1fr); }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 768px) {
+      .hero { padding: 4rem 0 3.5rem; }
+      .hero h1 { font-size: 2.5rem; }
+      .section { padding: 4rem 0; }
+      .footer-grid { grid-template-columns: repeat(4, 1fr); }
+      .footer-bottom { flex-direction: row; justify-content: space-between; }
+    }
+    @media (min-width: 1024px) {
+      .hero h1 { font-size: 2.75rem; }
+      .modules { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 767px) {
+      .nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--gray-200); flex-direction: column; padding: .5rem 1rem; box-shadow: 0 10px 25px rgba(0,0,0,.1); }
+      .nav.open { display: flex; }
+      .nav a { width: 100%; padding: .75rem; }
+      .nav-toggle { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-top">
+      <div class="container">
+        <a href="tel:+390733281142">0733 281142</a>
+        <a href="mailto:info@ctech.it">info@ctech.it</a>
+      </div>
+    </div>
+    <div class="header-main">
+      <div class="container">
+        <a href="/ctech-web/" class="logo">C<em>Tech</em><span class="logo-sub">Computer's Technology</span></a>
+        <button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="document.querySelector('.nav').classList.toggle('open'); this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </button>
+        <nav class="nav">
+          <a href="/ctech-web/">Home</a>
+          <a href="/ctech-web/arca.html" class="active">Arca Evolution</a>
+          <a href="/ctech-web/winwaste.html">WinWaste</a>
+          <a href="/ctech-web/genya.html">BPoint / Genya</a>
+          <a href="/ctech-web/contatti.html">Contatti</a>
+          <a href="/ctech-web/assistenza.html" class="nav-cta">Assistenza</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">Partner certificato Wolters Kluwer</div>
+      <h1>Arca EVOLUTION: il gestionale<br>su misura per la tua azienda</h1>
+      <p class="hero-sub">Dalla contabilità al magazzino, dalla fatturazione elettronica al CRM: una piattaforma modulare che cresce con la tua impresa. Noi lo configuriamo, personalizziamo e ti affianchiamo ogni giorno.</p>
+      <div class="hero-actions">
+        <a href="/ctech-web/contatti.html?servizio=arca" class="btn btn-primary">Richiedi una demo gratuita</a>
+        <a href="tel:+390733281142" class="btn btn-white">Chiamaci: 0733 281142</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust bar -->
+  <div class="trust">
+    <div class="container">
+      <div class="trust-items">
+        <div class="trust-item"><strong>8</strong><span>Moduli funzionali</span></div>
+        <div class="trust-item"><strong>300+</strong><span>Clienti CTech</span></div>
+        <div class="trust-item"><strong>35+</strong><span>Anni WK in Italia</span></div>
+        <div class="trust-item"><strong>1</strong><span>Referente dedicato</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Funzionalità -->
+  <section class="section" id="funzionalita">
+    <div class="container">
+      <p class="section-label">Funzionalità</p>
+      <h2 class="section-title">Tutto ciò che serve alla tua azienda, in un unico software</h2>
+      <p class="section-subtitle">Arca EVOLUTION digitalizza ogni area aziendale: velocizzi le operazioni, riduci gli errori e crei valore in termini di tempo, efficienza e precisione.</p>
+      <div class="modules">
+        <div class="module">
+          <h3>Contabilità e Adempimenti</h3>
+          <p>Contabilità generale e analitica, gestione IVA, bilanci, comunicazioni fiscali. Sempre allineato con le normative grazie agli aggiornamenti automatici Wolters Kluwer.</p>
+        </div>
+        <div class="module">
+          <h3>Gestione Acquisti e Vendite</h3>
+          <p>Ciclo attivo e passivo completo: preventivi, ordini, DDT, fatture. Gestione listini, sconti, condizioni di pagamento e rapporti con clienti e fornitori.</p>
+        </div>
+        <div class="module">
+          <h3>Fatturazione Elettronica</h3>
+          <p>Emissione, invio e ricezione fatture elettroniche integrata nel gestionale. Nessun software esterno: tutto avviene direttamente da Arca EVOLUTION.</p>
+        </div>
+        <div class="module">
+          <h3>Magazzino e Logistica</h3>
+          <p>Multi-magazzino, lotti, matricole, scorte minime e riordino automatico. Inventari, valorizzazione giacenze, movimentazione e tracciabilità completa.</p>
+        </div>
+        <div class="module">
+          <h3>Finanza, Tesoreria e Controllo</h3>
+          <p>Scadenzario, cash flow, riconciliazione bancaria, portafoglio effetti. Controllo di gestione con centri di costo e analisi redditività.</p>
+        </div>
+        <div class="module">
+          <h3>Gestione della Produzione</h3>
+          <p>Distinte base, cicli di lavorazione, pianificazione MRP, gestione commesse e conto lavoro. Per le aziende manifatturiere.</p>
+        </div>
+        <div class="module">
+          <h3>Gestione Processi CRM</h3>
+          <p>Anagrafica clienti e prospect, opportunità, attività commerciali, offerte. Integrato con il ciclo vendite per una visione completa del rapporto con il cliente.</p>
+        </div>
+        <div class="module">
+          <h3>Archiviazione Documentale</h3>
+          <p>Conservazione digitale a norma, archiviazione automatica di fatture, DDT e documenti. Ricerca rapida e accesso immediato a tutta la documentazione.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video -->
+  <section class="section section-alt" id="video">
+    <div class="container">
+      <p class="section-label">Guarda il video</p>
+      <h2 class="section-title">Scopri Arca EVOLUTION in azione</h2>
+      <p class="section-subtitle">Un gestionale completo, modulare e intuitivo.</p>
+      <div class="video-wrap">
+        <iframe src="https://www.youtube-nocookie.com/embed/_jmbRBHt0YQ?rel=0" title="Arca EVOLUTION — Video presentazione" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Valore aggiunto CTech -->
+  <section class="section" id="valore">
+    <div class="container">
+      <p class="section-label">Il valore aggiunto</p>
+      <h2 class="section-title">Non solo software: un partner che ti segue</h2>
+      <p class="section-subtitle">Arca EVOLUTION è un prodotto Wolters Kluwer eccellente, ma il software da solo non basta. Ciò che fa la differenza è come viene configurato, personalizzato e supportato.</p>
+      <div class="values">
+        <div class="value">
+          <div class="value-num">1</div>
+          <div>
+            <h3>Analisi delle esigenze</h3>
+            <p>Studiamo il tuo flusso di lavoro prima di proporre la configurazione.</p>
+          </div>
+        </div>
+        <div class="value">
+          <div class="value-num">2</div>
+          <div>
+            <h3>Personalizzazioni su misura</h3>
+            <p>Grazie alla versatilità del linguaggio di Arca, realizziamo adattamenti specifici per le tue esigenze.</p>
+          </div>
+        </div>
+        <div class="value">
+          <div class="value-num">3</div>
+          <div>
+            <h3>Formazione dedicata</h3>
+            <p>Il tuo team impara a usare il software in modo efficace, non solo a "farlo funzionare".</p>
+          </div>
+        </div>
+        <div class="value">
+          <div class="value-num">4</div>
+          <div>
+            <h3>Assistenza on-site e remota</h3>
+            <p>Interveniamo rapidamente, in presenza o da remoto. Niente call center.</p>
+          </div>
+        </div>
+        <div class="value">
+          <div class="value-num">5</div>
+          <div>
+            <h3>Migrazione dati</h3>
+            <p>Trasferiamo i tuoi dati dal vecchio gestionale senza perdite e con il minimo impatto operativo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- A chi si rivolge -->
+  <section class="section section-alt" id="target">
+    <div class="container">
+      <p class="section-label">Per chi</p>
+      <h2 class="section-title">A chi si rivolge Arca EVOLUTION</h2>
+      <p class="section-subtitle">Un gestionale trasversale, adatto a PMI di ogni settore nelle Marche.</p>
+      <div class="targets">
+        <div class="target">
+          <h3>Aziende commerciali</h3>
+          <p>Vendite, acquisti, magazzino e fatturazione per attività commerciali di ogni dimensione.</p>
+        </div>
+        <div class="target">
+          <h3>Aziende manifatturiere</h3>
+          <p>Produzione, distinte base, MRP, commesse e conto lavoro per chi produce e trasforma.</p>
+        </div>
+        <div class="target">
+          <h3>Aziende di servizi</h3>
+          <p>CRM, gestione progetti, fatturazione servizi e controllo redditività per le società di servizi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA finale -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Vuoi vedere Arca EVOLUTION in azione?</h2>
+      <p>Organizziamo una demo personalizzata sulle tue esigenze, senza impegno.</p>
+      <div class="cta-actions">
+        <a href="/ctech-web/contatti.html?servizio=arca" class="btn btn-primary">Richiedi una demo</a>
+        <a href="tel:+390733281142" class="btn btn-white">Chiamaci: 0733 281142</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>CTech</h4>
+          <p>Computer's Technology S.r.l.</p>
+          <p style="margin-top:.5rem">Via Cluentina, 26/B<br>Loc. Piediripa di Macerata (MC)<br>62100</p>
+        </div>
+        <div>
+          <h4>Software</h4>
+          <ul class="footer-links">
+            <li><a href="/ctech-web/arca.html">Arca Evolution</a></li>
+            <li><a href="/ctech-web/winwaste.html">WinWaste</a></li>
+            <li><a href="/ctech-web/genya.html">BPoint / Genya</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Servizi</h4>
+          <ul class="footer-links">
+            <li><a href="/ctech-web/assistenza.html">Assistenza</a></li>
+            <li><a href="/ctech-web/contatti.html">Contatti</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Recapiti</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+390733281142">0733 281142</a></li>
+            <li><a href="tel:+390733292776">0733 292776</a></li>
+            <li><a href="mailto:info@ctech.it">info@ctech.it</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Computer's Technology S.r.l. — P.IVA 00840390439</span>
+        <span><a href="/ctech-web/privacy.html">Privacy</a> &middot; <a href="/ctech-web/cookie.html">Cookie</a></span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
