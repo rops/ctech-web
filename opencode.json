@@ -1,7 +1,6 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "gitlab/duo-chat-opus-4-6",
-  "default_agent": "plan",
+  "model": "gitlab/duo-chat-gpt-5-2-codex",
   "share": "disabled",
   "permission": {
     "external_directory": "deny"
