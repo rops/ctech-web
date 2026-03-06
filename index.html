@@ -2,485 +2,536 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CTech — Partner IT a Macerata dal 1984</title>
-  <meta name="description" content="Computer's Technology S.r.l. — Software gestionali per aziende, commercialisti e gestione rifiuti. Infrastrutture IT e cybersecurity. Dal 1984 nelle Marche.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://rops.github.io/ctech-web/">
-  <meta property="og:title" content="CTech — Partner IT a Macerata dal 1984">
-  <meta property="og:description" content="Software gestionali per aziende, commercialisti e gestione rifiuti. Infrastrutture IT e cybersecurity nelle Marche.">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="it_IT">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Computer's Technology S.r.l.",
-    "alternateName": "CTech",
-    "url": "https://rops.github.io/ctech-web/",
-    "telephone": "+39 0733 281142",
-    "email": "info@ctech.it",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Via Cluentina, 26/B",
-      "addressLocality": "Piediripa di Macerata",
-      "addressRegion": "MC",
-      "postalCode": "62100",
-      "addressCountry": "IT"
-    },
-    "foundingDate": "1984",
-    "areaServed": ["Marche", "Umbria", "Abruzzo"],
-    "vatID": "IT00840390439"
-  }
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CTech - Draft A: Corporate Grid</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    /* ================================================================
+       DRAFT A — "CORPORATE GRID"
+       Structured, grid-based, enterprise feel.
+       Palette: navy #0F1B2D, blue accent #2563EB, slate grays, white.
+       Layout: rigid 12-col grid, card-based sections, strong alignment.
+       Typography: Inter, tight tracking, clear hierarchy.
+    ================================================================ */
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     :root {
-      --blue-dark: #0f2b46;
-      --blue-mid: #1a4470;
-      --blue-light: #e8f0fe;
-      --accent: #2563eb;
-      --accent-hover: #1d4ed8;
-      --green: #059669;
-      --green-dark: #047857;
-      --green-light: #ecfdf5;
-      --amber: #d97706;
-      --amber-dark: #b45309;
-      --amber-light: #fffbeb;
-      --slate: #475569;
-      --slate-light: #f1f5f9;
-      --gray-50: #f9fafb;
-      --gray-100: #f3f4f6;
-      --gray-200: #e5e7eb;
-      --gray-400: #9ca3af;
-      --gray-500: #6b7280;
-      --gray-700: #374151;
-      --gray-900: #111827;
-      --white: #fff;
-      --r: 8px;
-      --r-lg: 12px;
-      --shadow: 0 1px 3px rgba(0,0,0,.1);
-      --shadow-md: 0 4px 6px rgba(0,0,0,.07);
-      --shadow-lg: 0 10px 25px rgba(0,0,0,.1);
+      --navy: #0F1B2D;
+      --navy-light: #1A2942;
+      --blue: #2563EB;
+      --blue-light: #3B82F6;
+      --blue-pale: #EFF6FF;
+      --slate-50: #F8FAFC;
+      --slate-100: #F1F5F9;
+      --slate-200: #E2E8F0;
+      --slate-300: #CBD5E1;
+      --slate-400: #94A3B8;
+      --slate-500: #64748B;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1E293B;
+      --slate-900: #0F172A;
+      --white: #FFFFFF;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --radius: 8px;
+      --radius-lg: 12px;
+      --shadow-sm: 0 1px 2px rgba(15,27,45,0.05);
+      --shadow: 0 1px 3px rgba(15,27,45,0.1), 0 1px 2px rgba(15,27,45,0.06);
+      --shadow-md: 0 4px 6px -1px rgba(15,27,45,0.1), 0 2px 4px -2px rgba(15,27,45,0.1);
+      --shadow-lg: 0 10px 15px -3px rgba(15,27,45,0.1), 0 4px 6px -4px rgba(15,27,45,0.1);
+      --max-w: 1200px;
     }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      color: var(--gray-700); line-height: 1.6; background: var(--white);
-      -webkit-font-smoothing: antialiased;
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: var(--font); color: var(--slate-700); line-height: 1.6; background: var(--white); -webkit-font-smoothing: antialiased; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+    /* ---------- NAVBAR ---------- */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--slate-200);
+      transition: box-shadow 0.3s;
     }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .container { max-width: 1120px; margin: 0 auto; padding: 0 1.25rem; }
-
-    /* Header */
-    .header { background: var(--white); border-bottom: 1px solid var(--gray-200); position: sticky; top: 0; z-index: 100; }
-    .header-top { background: var(--blue-dark); color: var(--white); font-size: .8125rem; padding: .4rem 0; }
-    .header-top .container { display: flex; justify-content: flex-end; gap: 1.5rem; flex-wrap: wrap; }
-    .header-top a { color: var(--white); opacity: .9; }
-    .header-top a:hover { opacity: 1; text-decoration: none; }
-    .header-main { padding: .75rem 0; }
-    .header-main .container { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-    .logo { font-size: 1.5rem; font-weight: 700; color: var(--gray-900); letter-spacing: -.02em; text-decoration: none; }
-    .logo em { color: var(--accent); font-style: normal; }
-    .logo:hover { text-decoration: none; }
-    .logo-sub { display: block; font-size: .625rem; font-weight: 400; color: var(--gray-500); letter-spacing: .04em; text-transform: uppercase; margin-top: -2px; }
-    .nav { display: flex; align-items: center; gap: .125rem; }
-    .nav a { color: var(--gray-700); font-size: .875rem; font-weight: 500; padding: .5rem .625rem; border-radius: var(--r); transition: background .15s, color .15s; white-space: nowrap; }
-    .nav a:hover { background: var(--gray-100); color: var(--gray-900); text-decoration: none; }
-    .nav a.active { color: var(--accent); }
-    .nav .nav-cta { background: var(--accent); color: var(--white); font-weight: 600; }
-    .nav .nav-cta:hover { background: var(--accent-hover); color: var(--white); }
-    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: .5rem; color: var(--gray-700); }
-    .nav-toggle svg { width: 24px; height: 24px; }
-
-    /* Hero */
-    .hero { background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-mid) 100%); color: var(--white); padding: 3rem 0 2.5rem; }
-    .hero-badge { display: inline-block; font-size: .6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; background: rgba(255,255,255,.12); padding: .3rem .75rem; border-radius: 100px; margin-bottom: 1rem; }
-    .hero h1 { font-size: 2rem; font-weight: 800; line-height: 1.12; margin-bottom: .625rem; letter-spacing: -.025em; }
-    .hero-sub { font-size: 1rem; opacity: .8; max-width: 520px; margin-bottom: 1.75rem; line-height: 1.6; }
-    .hero-label { font-size: .6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; opacity: .5; margin-bottom: .625rem; }
-
-    /* Hero doors */
-    .hero-doors { display: grid; grid-template-columns: 1fr; gap: .625rem; }
-    .hero-door {
-      display: flex; align-items: center; gap: .875rem;
-      padding: 1rem 1.25rem; border-radius: var(--r-lg);
-      font-weight: 600; font-size: .9375rem;
-      transition: transform .15s, box-shadow .15s;
-      text-decoration: none;
+    .nav.scrolled { box-shadow: var(--shadow-md); }
+    .nav__inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
     }
-    .hero-door:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.2); text-decoration: none; }
-    .hero-door-icon {
-      flex-shrink: 0; width: 44px; height: 44px; border-radius: 10px;
+    .nav__brand {
+      display: flex; align-items: center; gap: 12px;
+      font-weight: 700; font-size: 1.1rem; color: var(--navy);
+    }
+    .nav__brand-icon {
+      width: 40px; height: 40px; background: var(--blue); border-radius: var(--radius);
       display: flex; align-items: center; justify-content: center;
+      color: white; font-weight: 800; font-size: 0.85rem; letter-spacing: -0.5px;
     }
-    .hero-door small { display: block; font-size: .75rem; font-weight: 400; opacity: .7; margin-top: 1px; }
-
-    .door-blue { background: var(--accent); color: var(--white); }
-    .door-blue .hero-door-icon { background: rgba(255,255,255,.2); }
-    .door-amber { background: var(--amber); color: var(--white); }
-    .door-amber .hero-door-icon { background: rgba(255,255,255,.2); }
-    .door-green { background: var(--green); color: var(--white); }
-    .door-green .hero-door-icon { background: rgba(255,255,255,.2); }
-
-    /* Sections */
-    .section { padding: 3.5rem 0; }
-    .section-alt { background: var(--gray-50); }
-    .section-header { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; }
-    .section-icon { flex-shrink: 0; width: 44px; height: 44px; border-radius: var(--r-lg); display: flex; align-items: center; justify-content: center; }
-    .section-icon-blue { background: var(--blue-light); color: var(--accent); }
-    .section-icon-green { background: var(--green-light); color: var(--green); }
-    .section-icon-amber { background: var(--amber-light); color: var(--amber); }
-    .section-icon-slate { background: var(--slate-light); color: var(--slate); }
-    .section-title { font-size: 1.375rem; font-weight: 700; color: var(--gray-900); margin-bottom: .25rem; letter-spacing: -.01em; }
-    .section-subtitle { color: var(--gray-500); font-size: .9375rem; }
-    .section-territory { display: inline-flex; align-items: center; gap: .375rem; font-size: .75rem; font-weight: 600; color: var(--gray-500); background: var(--gray-100); padding: .25rem .625rem; border-radius: 100px; margin-top: .5rem; }
-
-    /* Colored top border for sections */
-    .section-border-blue { border-top: 3px solid var(--accent); }
-    .section-border-amber { border-top: 3px solid var(--amber); }
-    .section-border-green { border-top: 3px solid var(--green); }
-
-    /* Cards */
-    .cards { display: grid; grid-template-columns: 1fr; gap: .875rem; }
-    .card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--r-lg); padding: 1.375rem; transition: box-shadow .2s, border-color .2s; display: flex; flex-direction: column; }
-    .card:hover { box-shadow: var(--shadow-md); border-color: var(--accent); }
-    .card-tag { font-size: .6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; color: var(--accent); margin-bottom: .375rem; }
-    .card h3 { font-size: 1.0625rem; font-weight: 700; color: var(--gray-900); margin-bottom: .375rem; }
-    .card p { font-size: .875rem; color: var(--gray-500); line-height: 1.6; margin-bottom: .875rem; flex-grow: 1; }
-    .card-link { font-size: .8125rem; font-weight: 600; color: var(--accent); }
-    .card-link:hover { text-decoration: underline; }
-
-    /* Wide card */
-    .card-wide { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--r-lg); padding: 1.75rem; transition: box-shadow .2s, border-color .2s; }
-    .card-wide:hover { box-shadow: var(--shadow-md); border-color: var(--green); }
-    .card-wide h3 { font-size: 1.125rem; font-weight: 700; color: var(--gray-900); margin-bottom: .5rem; }
-    .card-wide p { font-size: .9375rem; color: var(--gray-500); line-height: 1.7; margin-bottom: 1rem; }
-    .card-wide .card-tag { color: var(--green); }
-    .card-wide-features { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.25rem; }
-    .feature-pill { font-size: .75rem; font-weight: 500; color: var(--gray-700); background: var(--gray-100); padding: .25rem .625rem; border-radius: 100px; }
-    .card-wide-link { font-size: .9375rem; font-weight: 600; color: var(--green); }
-    .card-wide-link:hover { text-decoration: underline; }
-
-    /* Trust bar */
-    .trust { padding: 1.5rem 0; background: var(--gray-50); border-bottom: 1px solid var(--gray-200); }
-    .trust-logos { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1.25rem 2rem; }
-    .trust-logos span { font-size: .75rem; font-weight: 700; color: var(--gray-400); letter-spacing: .03em; text-transform: uppercase; white-space: nowrap; }
-
-    /* Assist */
-    .assist { background: var(--blue-dark); color: var(--white); padding: 3rem 0; }
-    .assist-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
-    .assist h2 { font-size: 1.375rem; font-weight: 700; margin-bottom: .5rem; }
-    .assist-desc { opacity: .8; font-size: .9375rem; margin-bottom: 1.25rem; max-width: 440px; }
-    .assist-contacts { display: flex; flex-direction: column; gap: .625rem; }
-    .assist-contact { display: inline-flex; align-items: center; gap: .625rem; color: var(--white); font-size: 1.125rem; font-weight: 600; }
-    .assist-contact:hover { text-decoration: none; opacity: .85; }
-    .assist-contact svg { flex-shrink: 0; opacity: .7; }
-    .assist-remote { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); border-radius: var(--r-lg); padding: 1.5rem; }
-    .assist-remote h3 { font-size: 1rem; font-weight: 600; margin-bottom: .375rem; }
-    .assist-remote p { font-size: .875rem; opacity: .75; margin-bottom: 1rem; }
-    .btn-download { display: inline-flex; align-items: center; gap: .5rem; background: var(--white); color: var(--blue-dark); font-weight: 600; font-size: .875rem; padding: .625rem 1.25rem; border-radius: var(--r); transition: transform .15s; }
-    .btn-download:hover { text-decoration: none; transform: translateY(-1px); }
-
-    /* Footer */
-    .footer { background: var(--gray-900); color: var(--gray-500); padding: 2.5rem 0 1.5rem; font-size: .8125rem; }
-    .footer-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 2rem; }
-    .footer h4 { color: var(--white); font-size: .75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; margin-bottom: .75rem; }
-    .footer a { color: var(--gray-500); }
-    .footer a:hover { color: var(--white); text-decoration: none; }
-    .footer-links { list-style: none; display: flex; flex-direction: column; gap: .375rem; }
-    .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 1.25rem; display: flex; flex-direction: column; gap: .5rem; font-size: .75rem; }
-
-    /* Responsive */
-    @media (min-width: 640px) {
-      .hero-doors { grid-template-columns: repeat(3, 1fr); }
-      .cards { grid-template-columns: repeat(2, 1fr); }
-      .assist-grid { grid-template-columns: 1fr 1fr; align-items: start; }
-      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    .nav__brand small { display: block; font-weight: 400; font-size: 0.7rem; color: var(--slate-500); letter-spacing: 0.02em; }
+    .nav__links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav__link {
+      font-size: 0.875rem; font-weight: 500; color: var(--slate-600);
+      transition: color 0.2s; position: relative;
     }
-    @media (min-width: 768px) {
-      .hero { padding: 4rem 0 3.5rem; }
-      .hero h1 { font-size: 2.75rem; }
-      .section { padding: 4rem 0; }
-      .footer-grid { grid-template-columns: repeat(4, 1fr); }
-      .footer-bottom { flex-direction: row; justify-content: space-between; }
+    .nav__link:hover { color: var(--navy); }
+    .nav__link::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+      background: var(--blue); transition: width 0.2s;
     }
-    @media (min-width: 1024px) {
-      .hero h1 { font-size: 3rem; }
-      .cards-3 { grid-template-columns: repeat(3, 1fr); }
+    .nav__link:hover::after { width: 100%; }
+    .nav__cta {
+      background: var(--blue); color: white; padding: 10px 20px;
+      border-radius: var(--radius); font-size: 0.875rem; font-weight: 600;
+      transition: background 0.2s;
     }
-    @media (max-width: 767px) {
-      .nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--gray-200); flex-direction: column; padding: .5rem 1rem; box-shadow: var(--shadow-lg); }
-      .nav.open { display: flex; }
-      .nav a { width: 100%; padding: .75rem; }
-      .nav-toggle { display: block; }
+    .nav__cta:hover { background: var(--blue-light); }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      padding: 160px 0 100px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      color: white; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -50%; right: -20%; width: 800px; height: 800px;
+      background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; position: relative; }
+    .hero__label {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(37,99,235,0.2); border: 1px solid rgba(37,99,235,0.3);
+      padding: 6px 14px; border-radius: 100px; font-size: 0.8rem; font-weight: 500;
+      color: rgba(255,255,255,0.9); margin-bottom: 20px;
+    }
+    .hero__label-dot { width: 6px; height: 6px; background: var(--blue-light); border-radius: 50%; }
+    .hero h1 {
+      font-size: 3rem; font-weight: 800; line-height: 1.15; letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+    .hero__sub { font-size: 1.125rem; line-height: 1.7; color: rgba(255,255,255,0.75); margin-bottom: 32px; max-width: 520px; }
+    .hero__actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; border-radius: var(--radius); font-size: 0.9375rem;
+      font-weight: 600; cursor: pointer; border: none; transition: all 0.2s;
+    }
+    .btn--primary { background: var(--blue); color: white; }
+    .btn--primary:hover { background: var(--blue-light); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(37,99,235,0.3); }
+    .btn--outline { background: transparent; color: white; border: 1px solid rgba(255,255,255,0.3); }
+    .btn--outline:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.5); }
+    .btn--dark { background: var(--navy); color: white; }
+    .btn--dark:hover { background: var(--navy-light); }
+
+    .hero__visual {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    }
+    .hero__stat {
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-lg); padding: 28px 24px;
+      backdrop-filter: blur(8px);
+    }
+    .hero__stat-number { font-size: 2.5rem; font-weight: 800; color: white; line-height: 1; margin-bottom: 4px; }
+    .hero__stat-label { font-size: 0.85rem; color: rgba(255,255,255,0.6); }
+
+    /* ---------- SECTION COMMON ---------- */
+    .section { padding: 100px 0; }
+    .section--gray { background: var(--slate-50); }
+    .section--dark { background: var(--navy); color: white; }
+    .section-header { text-align: center; margin-bottom: 64px; }
+    .section-label {
+      display: inline-block; font-size: 0.8rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--blue); margin-bottom: 12px;
+    }
+    .section-header h2 {
+      font-size: 2.25rem; font-weight: 800; color: var(--navy); line-height: 1.2;
+      letter-spacing: -0.01em; margin-bottom: 16px;
+    }
+    .section--dark .section-header h2 { color: white; }
+    .section-header p { font-size: 1.05rem; color: var(--slate-500); max-width: 600px; margin: 0 auto; }
+    .section--dark .section-header p { color: rgba(255,255,255,0.65); }
+
+    /* ---------- SOLUTIONS GRID ---------- */
+    .solutions-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+    }
+    .solution-card {
+      background: white; border: 1px solid var(--slate-200); border-radius: var(--radius-lg);
+      padding: 40px 32px; transition: all 0.3s; position: relative; overflow: hidden;
+    }
+    .solution-card:hover { border-color: var(--blue); box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+    .solution-card__category {
+      font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;
+      color: var(--blue); margin-bottom: 16px;
+    }
+    .solution-card h3 { font-size: 1.5rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .solution-card p { font-size: 0.95rem; color: var(--slate-500); margin-bottom: 24px; line-height: 1.6; }
+    .solution-card__tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+    .solution-card__tag {
+      background: var(--blue-pale); color: var(--blue); font-size: 0.75rem; font-weight: 500;
+      padding: 4px 10px; border-radius: 100px;
+    }
+    .solution-card__link {
+      font-size: 0.875rem; font-weight: 600; color: var(--blue);
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .solution-card__link svg { width: 16px; height: 16px; transition: transform 0.2s; }
+    .solution-card:hover .solution-card__link svg { transform: translateX(4px); }
+
+    /* ---------- AUDIENCE SPLIT ---------- */
+    .audience {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    }
+    .audience__panel {
+      padding: 80px 64px; position: relative;
+    }
+    .audience__panel--business { background: var(--navy); color: white; }
+    .audience__panel--accountants { background: var(--blue); color: white; }
+    .audience__panel h3 {
+      font-size: 1.75rem; font-weight: 700; margin-bottom: 16px;
+    }
+    .audience__panel p { font-size: 1rem; line-height: 1.7; opacity: 0.85; margin-bottom: 28px; }
+    .audience__list { list-style: none; margin-bottom: 32px; }
+    .audience__list li {
+      font-size: 0.9rem; padding: 8px 0; padding-left: 24px; position: relative; opacity: 0.9;
+    }
+    .audience__list li::before {
+      content: ''; position: absolute; left: 0; top: 14px;
+      width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.5);
+    }
+    .audience__link {
+      font-size: 0.875rem; font-weight: 600; color: white;
+      border-bottom: 2px solid rgba(255,255,255,0.3);
+      padding-bottom: 2px; transition: border-color 0.2s;
+    }
+    .audience__link:hover { border-color: white; }
+
+    /* ---------- PROCESS ---------- */
+    .process-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+    }
+    .process-card { text-align: center; padding: 32px; }
+    .process-card__number {
+      width: 56px; height: 56px; background: var(--blue-pale); color: var(--blue);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 1.25rem; font-weight: 800; margin: 0 auto 20px;
+    }
+    .process-card h4 { font-size: 1.125rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+    .process-card p { font-size: 0.9rem; color: var(--slate-500); line-height: 1.6; }
+
+    /* ---------- PARTNERS ---------- */
+    .partners-row {
+      display: flex; justify-content: center; align-items: center; gap: 64px; flex-wrap: wrap;
+    }
+    .partner-logo {
+      height: 36px; opacity: 0.45; filter: grayscale(100%);
+      transition: all 0.3s;
+    }
+    .partner-logo:hover { opacity: 1; filter: none; }
+
+    /* ---------- CTA SECTION ---------- */
+    .cta {
+      padding: 80px 0; text-align: center;
+      background: linear-gradient(135deg, var(--blue) 0%, #1D4ED8 100%);
+      color: white;
+    }
+    .cta h2 { font-size: 2.25rem; font-weight: 800; margin-bottom: 16px; }
+    .cta p { font-size: 1.1rem; opacity: 0.85; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+    .cta .btn--white { background: white; color: var(--blue); }
+    .cta .btn--white:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+
+    /* ---------- FOOTER ---------- */
+    .footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 64px 0 32px; }
+    .footer__grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+    .footer__brand p { font-size: 0.875rem; line-height: 1.7; margin-top: 12px; }
+    .footer h4 { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
+    .footer__links { display: flex; flex-direction: column; gap: 10px; }
+    .footer__link { font-size: 0.875rem; transition: color 0.2s; }
+    .footer__link:hover { color: white; }
+    .footer__bottom {
+      border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px;
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.8rem; color: rgba(255,255,255,0.4);
+    }
+    .footer__legal { display: flex; gap: 24px; }
+    .footer__legal a { color: rgba(255,255,255,0.4); transition: color 0.2s; }
+    .footer__legal a:hover { color: rgba(255,255,255,0.7); }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 768px) {
+      .hero { padding: 120px 0 60px; }
+      .hero__inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero h1 { font-size: 2rem; }
+      .hero__visual { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .solutions-grid { grid-template-columns: 1fr; }
+      .audience { grid-template-columns: 1fr; }
+      .audience__panel { padding: 48px 24px; }
+      .process-grid { grid-template-columns: 1fr; }
+      .footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .nav__links { display: none; }
+      .section-header h2 { font-size: 1.75rem; }
     }
   </style>
 </head>
 <body>
 
-  <header class="header">
-    <div class="header-top">
-      <div class="container">
-        <a href="tel:+390733281142">0733 281142</a>
-        <a href="mailto:info@ctech.it">info@ctech.it</a>
-      </div>
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#" class="nav__brand">
+        <div class="nav__brand-icon">CT</div>
+        <div>CTech<small>Computer's Technology</small></div>
+      </a>
+      <ul class="nav__links">
+        <li><a href="#" class="nav__link">Home</a></li>
+        <li><a href="#" class="nav__link">Chi Siamo</a></li>
+        <li><a href="#" class="nav__link">Soluzioni</a></li>
+        <li><a href="#" class="nav__link">Servizi</a></li>
+        <li><a href="#" class="nav__link">Contatti</a></li>
+        <li><a href="#" class="nav__cta">Richiedi Consulenza</a></li>
+      </ul>
     </div>
-    <div class="header-main">
-      <div class="container">
-        <a href="/ctech-web/" class="logo">C<em>Tech</em><span class="logo-sub">Computer's Technology</span></a>
-        <button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="document.querySelector('.nav').classList.toggle('open'); this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true')">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
-        </button>
-        <nav class="nav">
-          <a href="/ctech-web/" class="active">Home</a>
-          <a href="/ctech-web/arca.html">Arca Evolution</a>
-          <a href="/ctech-web/winwaste.html">WinWaste</a>
-          <a href="/ctech-web/genya.html">BPoint / Genya</a>
-          <a href="/ctech-web/contatti.html">Contatti</a>
-          <a href="/ctech-web/assistenza.html" class="nav-cta">Assistenza</a>
-        </nav>
-      </div>
-    </div>
-  </header>
+  </nav>
 
-  <!-- Hero -->
+  <!-- HERO -->
   <section class="hero">
-    <div class="container">
-      <div class="hero-badge">Macerata — dal 1984</div>
-      <h1>Software, sistemi<br>e chi li fa funzionare.</h1>
-      <p class="hero-sub">Vendiamo, installiamo e assistiamo software gestionali e infrastrutture IT nelle Marche. Per ogni area, un tecnico dedicato che ti segue dall'inizio.</p>
-      <p class="hero-label">Cosa stai cercando?</p>
-      <div class="hero-doors">
-        <a href="#aziende" class="hero-door door-blue">
-          <div class="hero-door-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-          </div>
-          <div>Per le aziende<small>Gestionale ERP, IT, sicurezza</small></div>
-        </a>
-        <a href="#professionisti" class="hero-door door-amber">
-          <div class="hero-door-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 7h6m-6 4h6m-6 4h4M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"/></svg>
-          </div>
-          <div>Per i professionisti<small>Contabilità, fisco, bilancio</small></div>
-        </a>
-        <a href="#rifiuti" class="hero-door door-green">
-          <div class="hero-door-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6l3 1m0 0l-3 9a5 5 0 006 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5 5 0 006 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
-          </div>
-          <div>Gestione rifiuti<small>WinWaste, RENTRI, formulari</small></div>
-        </a>
+    <div class="container hero__inner">
+      <div>
+        <div class="hero__label"><span class="hero__label-dot"></span> Dal 1984 al fianco delle imprese</div>
+        <h1>Soluzioni IT<br>per chi vuole crescere</h1>
+        <p class="hero__sub">
+          Software gestionali, infrastruttura IT e assistenza dedicata 
+          per aziende e studi professionali nelle Marche, Umbria e Abruzzo. 
+          Non un call center: il tuo reparto IT.
+        </p>
+        <div class="hero__actions">
+          <a href="#" class="btn btn--primary">Richiedi consulenza gratuita</a>
+          <a href="#" class="btn btn--outline">Scopri le soluzioni</a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="hero__stat">
+          <div class="hero__stat-number">40+</div>
+          <div class="hero__stat-label">Anni di esperienza</div>
+        </div>
+        <div class="hero__stat">
+          <div class="hero__stat-number">300+</div>
+          <div class="hero__stat-label">Clienti attivi</div>
+        </div>
+        <div class="hero__stat">
+          <div class="hero__stat-number">4</div>
+          <div class="hero__stat-label">Piattaforme software</div>
+        </div>
+        <div class="hero__stat">
+          <div class="hero__stat-number">24h</div>
+          <div class="hero__stat-label">Tempo di risposta</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Trust -->
-  <div class="trust">
+  <!-- SOLUTIONS -->
+  <section class="section">
     <div class="container">
-      <div class="trust-logos">
-        <span>Wolters Kluwer</span>
-        <span>Zucchetti</span>
-        <span>ESET</span>
-        <span>Dell</span>
-        <span>HP</span>
-        <span>Microsoft</span>
+      <div class="section-header">
+        <div class="section-label">Le nostre soluzioni</div>
+        <h2>Software di riferimento, personalizzati per te</h2>
+        <p>Distribuiamo e configuriamo le piattaforme leader di mercato, adattandole ai tuoi processi.</p>
       </div>
+      <div class="solutions-grid">
+
+        <div class="solution-card">
+          <div class="solution-card__category">Per le Aziende</div>
+          <h3>Arca EVOLUTION</h3>
+          <p>Gestionale ERP modulare: contabilita, vendite, magazzino, produzione, CRM e fatturazione elettronica in un unico ambiente.</p>
+          <div class="solution-card__tags">
+            <span class="solution-card__tag">ERP</span>
+            <span class="solution-card__tag">Contabilita</span>
+            <span class="solution-card__tag">Magazzino</span>
+            <span class="solution-card__tag">Produzione</span>
+          </div>
+          <a href="#" class="solution-card__link">Scopri di piu <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+
+        <div class="solution-card">
+          <div class="solution-card__category">Gestione Rifiuti</div>
+          <h3>WinWaste</h3>
+          <p>Il software leader in Italia per la gestione integrata dei rifiuti. Registri, formulari, MUD e piena conformita R.E.N.T.Ri.</p>
+          <div class="solution-card__tags">
+            <span class="solution-card__tag">Rifiuti</span>
+            <span class="solution-card__tag">R.E.N.T.Ri</span>
+            <span class="solution-card__tag">MUD</span>
+            <span class="solution-card__tag">Ambiente</span>
+          </div>
+          <a href="#" class="solution-card__link">Scopri di piu <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+
+        <div class="solution-card">
+          <div class="solution-card__category">Per i Professionisti</div>
+          <h3>Genya</h3>
+          <p>Suite cloud per studi professionali: contabilita, dichiarativi, bilanci e fatturazione. Collaborazione studio-cliente in tempo reale.</p>
+          <div class="solution-card__tags">
+            <span class="solution-card__tag">Cloud</span>
+            <span class="solution-card__tag">Fiscale</span>
+            <span class="solution-card__tag">Bilanci</span>
+          </div>
+          <a href="#" class="solution-card__link">Scopri di piu <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+
+        <div class="solution-card">
+          <div class="solution-card__category">Per i Professionisti</div>
+          <h3>B.Point Solution Platform</h3>
+          <p>La piattaforma completa per studi professionali. Affidabilita e solidita per garantire l'efficienza operativa di 8.000+ studi.</p>
+          <div class="solution-card__tags">
+            <span class="solution-card__tag">Desktop</span>
+            <span class="solution-card__tag">Fiscale</span>
+            <span class="solution-card__tag">Adempimenti</span>
+          </div>
+          <a href="#" class="solution-card__link">Scopri di piu <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- AUDIENCE SPLIT -->
+  <div class="audience">
+    <div class="audience__panel audience__panel--business">
+      <h3>Per le Aziende</h3>
+      <p>Digitalizza i processi aziendali con un gestionale completo, configurato sulle tue esigenze.</p>
+      <ul class="audience__list">
+        <li>ERP modulare con 8 aree funzionali</li>
+        <li>Personalizzazioni su misura</li>
+        <li>Gestione rifiuti conforme R.E.N.T.Ri</li>
+        <li>Formazione e migrazione dati garantita</li>
+      </ul>
+      <a href="#" class="audience__link">Soluzioni per imprese &rarr;</a>
+    </div>
+    <div class="audience__panel audience__panel--accountants">
+      <h3>Per Commercialisti e Studi</h3>
+      <p>Piu tempo per la consulenza strategica, meno per gli adempimenti.</p>
+      <ul class="audience__list">
+        <li>Genya: il futuro dello studio e in cloud</li>
+        <li>B.Point: affidabilita desktop per 8.000+ studi</li>
+        <li>Collaborazione studio-cliente in tempo reale</li>
+        <li>Aggiornamenti normativi sempre inclusi</li>
+      </ul>
+      <a href="#" class="audience__link">Soluzioni per studi &rarr;</a>
     </div>
   </div>
 
-  <!-- AZIENDE -->
-  <section class="section section-border-blue" id="aziende">
+  <!-- PROCESS -->
+  <section class="section section--gray">
     <div class="container">
       <div class="section-header">
-        <div class="section-icon section-icon-blue">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-        </div>
-        <div>
-          <h2 class="section-title">Per le aziende</h2>
-          <p class="section-subtitle">Gestionale ERP per gestire contabilità, magazzino, fatturazione e produzione.</p>
-        </div>
+        <div class="section-label">Come lavoriamo</div>
+        <h2>Tre passi per la tua soluzione</h2>
+        <p>Un percorso concreto, con tempi certi e un unico referente dedicato.</p>
       </div>
-      <div class="card-wide" style="border-color: var(--blue-light);">
-        <p class="card-tag" style="color: var(--accent);">Wolters Kluwer</p>
-        <h3>Arca Evolution</h3>
-        <p>Il gestionale ERP per aziende commerciali e di produzione. Lo installiamo, lo configuriamo sulle tue esigenze e lo assistiamo ogni giorno. Un unico referente per tutto.</p>
-        <div class="card-wide-features">
-          <span class="feature-pill">Contabilità</span>
-          <span class="feature-pill">Magazzino</span>
-          <span class="feature-pill">Fatturazione elettronica</span>
-          <span class="feature-pill">CRM</span>
-          <span class="feature-pill">Produzione</span>
-          <span class="feature-pill">Business Intelligence</span>
+      <div class="process-grid">
+        <div class="process-card">
+          <div class="process-card__number">1</div>
+          <h4>Analisi gratuita</h4>
+          <p>Veniamo da te, studiamo i tuoi processi e ti proponiamo la soluzione piu adatta. Nessun impegno.</p>
         </div>
-        <a href="/ctech-web/arca.html" class="card-wide-link" style="color: var(--accent);">Scopri Arca Evolution &rarr;</a>
+        <div class="process-card">
+          <div class="process-card__number">2</div>
+          <h4>Configurazione su misura</h4>
+          <p>Installiamo, personalizziamo e migriamo i tuoi dati. Formiamo il tuo team fino a renderlo autonomo.</p>
+        </div>
+        <div class="process-card">
+          <div class="process-card__number">3</div>
+          <h4>Assistenza continua</h4>
+          <p>Risposta entro 24h, aggiornamenti normativi inclusi, interventi on-site quando serve.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- PROFESSIONISTI -->
-  <section class="section section-alt section-border-amber" id="professionisti">
+  <!-- PARTNERS -->
+  <section class="section">
     <div class="container">
       <div class="section-header">
-        <div class="section-icon section-icon-amber">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 7h6m-6 4h6m-6 4h4M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"/></svg>
-        </div>
-        <div>
-          <h2 class="section-title">Per commercialisti e studi professionali</h2>
-          <p class="section-subtitle">Software fiscale e contabile Wolters Kluwer. In locale o in cloud.</p>
-        </div>
+        <div class="section-label">Partner tecnologici</div>
+        <h2>Rivenditori certificati</h2>
+        <p>Collaborazioni ventennali con i leader del software gestionale e della sicurezza informatica.</p>
       </div>
-      <div class="cards">
-        <div class="card">
-          <p class="card-tag" style="color: var(--amber);">In dismissione 2030</p>
-          <h3>BPoint Solution Platform</h3>
-          <p>La piattaforma contabile e fiscale in locale. Contabilità, dichiarativi, bilancio, paghe. Supportiamo i clienti esistenti e gestiamo la migrazione a Genya.</p>
-          <a href="/ctech-web/genya.html" class="card-link" style="color: var(--amber);">BPoint e Genya &rarr;</a>
-        </div>
-        <div class="card">
-          <p class="card-tag" style="color: var(--amber);">Cloud — il futuro</p>
-          <h3>Genya</h3>
-          <p>La piattaforma su cui Wolters Kluwer sta investendo. Stesse funzionalità di BPoint, interamente in cloud, accessibili ovunque.</p>
-          <a href="/ctech-web/genya.html" class="card-link" style="color: var(--amber);">Scopri Genya &rarr;</a>
-        </div>
+      <div class="partners-row">
+        <div style="font-size:1.1rem;font-weight:700;color:var(--slate-400);letter-spacing:0.02em;">Wolters Kluwer</div>
+        <div style="font-size:1.1rem;font-weight:700;color:var(--slate-400);letter-spacing:0.02em;">Zucchetti</div>
+        <div style="font-size:1.1rem;font-weight:700;color:var(--slate-400);letter-spacing:0.02em;">Nica</div>
+        <div style="font-size:1.1rem;font-weight:700;color:var(--slate-400);letter-spacing:0.02em;">ESET</div>
       </div>
     </div>
   </section>
 
-  <!-- RIFIUTI -->
-  <section class="section section-border-green" id="rifiuti">
+  <!-- CTA -->
+  <section class="cta">
     <div class="container">
-      <div class="section-header">
-        <div class="section-icon section-icon-green">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6l3 1m0 0l-3 9a5 5 0 006 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5 5 0 006 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
-        </div>
-        <div>
-          <h2 class="section-title">Gestione rifiuti e RENTRI</h2>
-          <p class="section-subtitle">Il software e l'assistenza per chi lavora nel settore ambientale.</p>
-          <div class="section-territory">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Marche · Umbria · Abruzzo · Molise
-          </div>
-        </div>
-      </div>
-      <div class="card-wide">
-        <p class="card-tag">Nica / Gruppo Zucchetti</p>
-        <h3>WinWaste</h3>
-        <p>Il gestionale completo per aziende di raccolta, trasporto, smaltimento e intermediazione rifiuti. Integrato con RENTRI per la tracciabilità obbligatoria. Lo vendiamo, lo installiamo e ti assistiamo ogni giorno.</p>
-        <div class="card-wide-features">
-          <span class="feature-pill">Registri di carico/scarico</span>
-          <span class="feature-pill">Formulari</span>
-          <span class="feature-pill">MUD</span>
-          <span class="feature-pill">RENTRI</span>
-          <span class="feature-pill">Fatturazione</span>
-          <span class="feature-pill">Pesatura</span>
-        </div>
-        <a href="/ctech-web/winwaste.html" class="card-wide-link">Scopri WinWaste &rarr;</a>
-      </div>
+      <h2>Pronto a ottimizzare la tua azienda?</h2>
+      <p>Parliamo delle tue esigenze. La prima consulenza e gratuita e senza impegno.</p>
+      <a href="#" class="btn btn--white" style="padding:16px 32px;">Richiedi consulenza gratuita</a>
     </div>
   </section>
 
-  <!-- TRASVERSALE: IT + CYBERSECURITY -->
-  <section class="section section-alt" id="infrastruttura">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-icon section-icon-slate">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><circle cx="6" cy="6" r="1"/><circle cx="6" cy="18" r="1"/></svg>
-        </div>
-        <div>
-          <h2 class="section-title">Infrastruttura IT e cybersecurity</h2>
-          <p class="section-subtitle">Per tutti i nostri clienti — aziende, professionisti e operatori ambientali. Il software funziona bene solo su una base solida e protetta.</p>
-        </div>
-      </div>
-      <div class="cards">
-        <div class="card">
-          <p class="card-tag" style="color: var(--slate);">Dell · HP · Microsoft</p>
-          <h3>Sistemi e infrastruttura</h3>
-          <p>Server, reti, postazioni di lavoro, Microsoft 365, Azure. Progettiamo, installiamo e manteniamo l'infrastruttura su cui girano i tuoi software.</p>
-          <a href="/ctech-web/contatti.html" class="card-link">Richiedi un preventivo &rarr;</a>
-        </div>
-        <div class="card">
-          <p class="card-tag" style="color: var(--slate);">ESET Partner</p>
-          <h3>Cybersecurity</h3>
-          <p>Antivirus, protezione endpoint, XDR e MDR. Siamo partner ESET Italia. Proteggiamo i tuoi dati e i tuoi sistemi dalle minacce informatiche.</p>
-          <a href="/ctech-web/contatti.html" class="card-link">Parla con noi &rarr;</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ASSISTENZA -->
-  <section class="assist" id="assistenza">
-    <div class="container">
-      <div class="assist-grid">
-        <div>
-          <h2>Assistenza</h2>
-          <p class="assist-desc">Chiamaci o scrivici. Chi risponde è chi risolve il problema — non un call center.</p>
-          <div class="assist-contacts">
-            <a href="tel:+390733281142" class="assist-contact">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-              0733 281142
-            </a>
-            <a href="tel:+390733292776" class="assist-contact">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-              0733 292776
-            </a>
-            <a href="mailto:info@ctech.it" class="assist-contact">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
-              info@ctech.it
-            </a>
-          </div>
-        </div>
-        <div class="assist-remote">
-          <h3>Assistenza remota</h3>
-          <p>Scarica SupRemo per ricevere assistenza a distanza. Ti guideremo noi.</p>
-          <a href="https://www.supremocontrol.com/download/" class="btn-download" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-            Scarica SupRemo
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-grid">
-        <div>
-          <h4>CTech</h4>
-          <p>Computer's Technology S.r.l.</p>
-          <p style="margin-top:.5rem">Via Cluentina, 26/B<br>Loc. Piediripa di Macerata (MC)<br>62100</p>
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div style="display:flex;align-items:center;gap:10px;color:white;font-weight:700;font-size:1.1rem;">
+            <div style="width:36px;height:36px;background:var(--blue);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:800;color:white;">CT</div>
+            CTech
+          </div>
+          <p>Soluzioni software e servizi IT per aziende e professionisti nelle Marche. Al tuo fianco dal 1984.</p>
         </div>
         <div>
-          <h4>Software</h4>
-          <ul class="footer-links">
-            <li><a href="/ctech-web/arca.html">Arca Evolution</a></li>
-            <li><a href="/ctech-web/winwaste.html">WinWaste</a></li>
-            <li><a href="/ctech-web/genya.html">BPoint / Genya</a></li>
-          </ul>
+          <h4>Soluzioni</h4>
+          <div class="footer__links">
+            <a href="#" class="footer__link">Arca EVOLUTION</a>
+            <a href="#" class="footer__link">WinWaste</a>
+            <a href="#" class="footer__link">Genya</a>
+            <a href="#" class="footer__link">B.Point</a>
+          </div>
         </div>
         <div>
           <h4>Servizi</h4>
-          <ul class="footer-links">
-            <li><a href="/ctech-web/assistenza.html">Assistenza</a></li>
-            <li><a href="/ctech-web/contatti.html">Contatti</a></li>
-          </ul>
+          <div class="footer__links">
+            <a href="#" class="footer__link">Assistenza Tecnica</a>
+            <a href="#" class="footer__link">Servizi IT</a>
+            <a href="#" class="footer__link">Cybersecurity</a>
+          </div>
         </div>
         <div>
-          <h4>Recapiti</h4>
-          <ul class="footer-links">
-            <li><a href="tel:+390733281142">0733 281142</a></li>
-            <li><a href="tel:+390733292776">0733 292776</a></li>
-            <li><a href="mailto:info@ctech.it">info@ctech.it</a></li>
-          </ul>
+          <h4>Contatti</h4>
+          <div class="footer__links">
+            <a href="#" class="footer__link">Via Cluentina, 26/B<br>Macerata (MC) 62100</a>
+            <a href="#" class="footer__link">0733.281142</a>
+            <a href="#" class="footer__link">info@ctech.it</a>
+          </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <span>&copy; 2025 Computer's Technology S.r.l. — P.IVA 00840390439</span>
-        <span><a href="/ctech-web/privacy.html">Privacy</a> &middot; <a href="/ctech-web/cookie.html">Cookie</a></span>
+      <div class="footer__bottom">
+        <span>&copy; 2026 Computer's Technology S.r.l. &mdash; P.IVA 00840390439</span>
+        <div class="footer__legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Cookie Policy</a>
+        </div>
       </div>
     </div>
   </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 10);
+    });
+  </script>
 
 </body>
 </html>
