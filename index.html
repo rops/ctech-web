@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CTech — Partner IT a Macerata dal 1984</title>
-  <meta name="description" content="Computer's Technology S.r.l. — Software gestionali per aziende, commercialisti e gestione rifiuti. Infrastrutture IT e cybersecurity. Dal 1984 nelle Marche.">
+  <title>CTech — Software gestionali e servizi IT a Macerata dal 1984</title>
+  <meta name="description" content="Computer's Technology S.r.l. — Software gestionali Wolters Kluwer e Zucchetti, gestione rifiuti WinWaste, cybersecurity ESET e infrastrutture IT. Dal 1984 a Macerata, nelle Marche.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://rops.github.io/ctech-web/">
-  <meta property="og:title" content="CTech — Partner IT a Macerata dal 1984">
-  <meta property="og:description" content="Software gestionali, infrastrutture IT e cybersecurity per aziende e professionisti nelle Marche.">
+  <meta property="og:title" content="CTech — Software gestionali e servizi IT a Macerata">
+  <meta property="og:description" content="Software gestionali, infrastrutture IT e cybersecurity per aziende e professionisti nelle Marche. Dal 1984.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="it_IT">
   <script type="application/ld+json">
@@ -46,17 +46,18 @@
       --red-light: #FEF2F2;
       --navy: #1A2B4A;
       --navy-light: #243B63;
-      /* Area accents */
-      --blue: #007AC3;
-      --blue-light: #3B9CD8;
-      --blue-pale: #e8f4fc;
-      --amber: #d97706;
-      --amber-pale: #fffbeb;
-      --green: #059669;
-      --green-pale: #ecfdf5;
-      --teal: #00B8A9;
-      --teal-dark: #006D77;
-      --teal-pale: #e6faf8;
+      /* Product palettes — from partner sites */
+      --wk-blue: #007AC3;        /* Wolters Kluwer */
+      --wk-blue-light: #3B9CD8;
+      --wk-blue-pale: #e8f4fc;
+      --ww-blue: #0077c2;        /* WinWaste */
+      --ww-gold: #d4a017;
+      --ww-blue-pale: #e6f2fb;
+      --eset-teal: #00B8A9;      /* ESET */
+      --eset-teal-dark: #008193;
+      --eset-teal-pale: #e6faf8;
+      --genya-blue: #2962FF;     /* Genya — from their UI */
+      --genya-blue-pale: #e8eeff;
       /* Neutrals */
       --slate-50: #F8FAFC;
       --slate-100: #F1F5F9;
@@ -99,15 +100,11 @@
       height: 72px;
     }
     .nav__brand {
-      display: flex; align-items: center; gap: 12px;
-      font-weight: 700; font-size: 1.1rem; color: var(--navy);
+      display: flex; align-items: center; gap: 10px;
     }
-    .nav__brand-icon {
-      width: 40px; height: 40px; background: var(--red); border-radius: var(--radius);
-      display: flex; align-items: center; justify-content: center;
-      color: white; font-weight: 800; font-size: 0.85rem; letter-spacing: -0.5px;
+    .nav__brand img {
+      height: 42px; width: auto;
     }
-    .nav__brand small { display: block; font-weight: 400; font-size: 0.7rem; color: var(--slate-500); letter-spacing: 0.02em; }
     .nav__links { display: flex; align-items: center; gap: 28px; list-style: none; }
     .nav__link {
       font-size: 0.875rem; font-weight: 500; color: var(--slate-600);
@@ -135,7 +132,7 @@
 
     /* ---------- HERO ---------- */
     .hero {
-      padding: 160px 0 100px;
+      padding: 140px 0 80px;
       background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
       color: white; position: relative; overflow: hidden;
     }
@@ -144,7 +141,8 @@
       background: radial-gradient(circle, rgba(197,42,42,0.12) 0%, transparent 70%);
       pointer-events: none;
     }
-    .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; position: relative; }
+    .hero__inner { position: relative; }
+    .hero__content { max-width: 640px; }
     .hero__label {
       display: inline-flex; align-items: center; gap: 8px;
       background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
@@ -153,11 +151,11 @@
     }
     .hero__label-dot { width: 6px; height: 6px; background: var(--red); border-radius: 50%; }
     .hero h1 {
-      font-size: 3rem; font-weight: 800; line-height: 1.15; letter-spacing: -0.02em;
+      font-size: 2.75rem; font-weight: 800; line-height: 1.15; letter-spacing: -0.02em;
       margin-bottom: 20px;
     }
-    .hero__sub { font-size: 1.125rem; line-height: 1.7; color: rgba(255,255,255,0.75); margin-bottom: 32px; max-width: 520px; }
-    .hero__actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero__sub { font-size: 1.1rem; line-height: 1.7; color: rgba(255,255,255,0.75); margin-bottom: 32px; }
+    .hero__actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 48px; }
     .btn {
       display: inline-flex; align-items: center; gap: 8px;
       padding: 14px 28px; border-radius: var(--radius); font-size: 0.9375rem;
@@ -170,16 +168,26 @@
     .btn--white { background: white; color: var(--navy); }
     .btn--white:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
 
-    .hero__visual {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    /* Hero bottom strip: stats + partners */
+    .hero__bottom {
+      display: flex; align-items: center; gap: 48px;
+      padding-top: 48px; border-top: 1px solid rgba(255,255,255,0.12);
     }
-    .hero__stat {
-      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
-      border-radius: var(--radius-lg); padding: 28px 24px;
-      backdrop-filter: blur(8px);
+    .hero__stat { text-align: center; }
+    .hero__stat-number { font-size: 2.25rem; font-weight: 800; color: white; line-height: 1; }
+    .hero__stat-label { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-top: 4px; }
+    .hero__divider {
+      width: 1px; height: 48px; background: rgba(255,255,255,0.12); flex-shrink: 0;
     }
-    .hero__stat-number { font-size: 2.5rem; font-weight: 800; color: white; line-height: 1; margin-bottom: 4px; }
-    .hero__stat-label { font-size: 0.85rem; color: rgba(255,255,255,0.6); }
+    .hero__partners {
+      display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+    }
+    .hero__partners-label { font-size: 0.75rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; white-space: nowrap; }
+    .hero__partners img, .hero__partners svg {
+      height: 22px; width: auto; opacity: 0.5; transition: opacity 0.2s;
+      filter: brightness(0) invert(1);
+    }
+    .hero__partners img:hover, .hero__partners svg:hover { opacity: 0.8; }
 
     /* ---------- SECTION COMMON ---------- */
     .section { padding: 100px 0; }
@@ -204,95 +212,78 @@
     }
     .solution-card {
       background: white; border: 1px solid var(--slate-200); border-radius: var(--radius-lg);
-      padding: 36px 32px; transition: all 0.3s; position: relative; overflow: hidden;
+      padding: 0; transition: all 0.3s; position: relative; overflow: hidden;
+      display: flex; flex-direction: column;
     }
     .solution-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+    .solution-card__img {
+      width: 100%; height: 180px; object-fit: cover; border-bottom: 1px solid var(--slate-100);
+    }
+    .solution-card__body { padding: 28px 28px 24px; flex: 1; display: flex; flex-direction: column; }
+    .solution-card__top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
     .solution-card__category {
       font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;
-      margin-bottom: 16px;
     }
-    .solution-card h3 { font-size: 1.4rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-    .solution-card__producer { font-size: 0.8rem; color: var(--slate-400); margin-bottom: 12px; }
-    .solution-card p { font-size: 0.95rem; color: var(--slate-500); margin-bottom: 20px; line-height: 1.6; }
-    .solution-card__tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+    .solution-card__producer { font-size: 0.75rem; color: var(--slate-400); }
+    .solution-card h3 { font-size: 1.35rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+    .solution-card p { font-size: 0.92rem; color: var(--slate-500); margin-bottom: 16px; line-height: 1.6; flex: 1; }
+    .solution-card__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
     .solution-card__tag {
-      font-size: 0.75rem; font-weight: 500;
-      padding: 4px 10px; border-radius: 100px;
+      font-size: 0.72rem; font-weight: 500;
+      padding: 3px 10px; border-radius: 100px;
     }
     .solution-card__territory {
       display: inline-flex; align-items: center; gap: 4px;
-      font-size: 0.75rem; color: var(--slate-400); margin-bottom: 20px;
+      font-size: 0.75rem; color: var(--slate-400); margin-bottom: 16px;
     }
     .solution-card__territory svg { width: 14px; height: 14px; }
     .solution-card__link {
       font-size: 0.875rem; font-weight: 600;
       display: inline-flex; align-items: center; gap: 6px;
+      margin-top: auto;
     }
     .solution-card__link svg { width: 16px; height: 16px; transition: transform 0.2s; }
     .solution-card:hover .solution-card__link svg { transform: translateX(4px); }
     .solution-card__note {
-      display: inline-block; font-size: 0.7rem; font-weight: 600; text-transform: uppercase;
+      display: inline-block; font-size: 0.68rem; font-weight: 600; text-transform: uppercase;
       letter-spacing: 0.04em; padding: 3px 8px; border-radius: var(--radius);
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
 
-    /* Card color accents */
-    .card--blue { border-top: 3px solid var(--blue); }
-    .card--blue:hover { border-color: var(--blue); }
-    .card--blue .solution-card__category { color: var(--blue); }
-    .card--blue .solution-card__tag { background: var(--blue-pale); color: var(--blue); }
-    .card--blue .solution-card__link { color: var(--blue); }
+    /* Card color accents — based on real product palettes */
+    .card--wk { border-top: 3px solid var(--wk-blue); }
+    .card--wk .solution-card__category { color: var(--wk-blue); }
+    .card--wk .solution-card__tag { background: var(--wk-blue-pale); color: var(--wk-blue); }
+    .card--wk .solution-card__link { color: var(--wk-blue); }
 
-    .card--green { border-top: 3px solid var(--green); }
-    .card--green:hover { border-color: var(--green); }
-    .card--green .solution-card__category { color: var(--green); }
-    .card--green .solution-card__tag { background: var(--green-pale); color: var(--green); }
-    .card--green .solution-card__link { color: var(--green); }
+    .card--ww { border-top: 3px solid var(--ww-blue); }
+    .card--ww .solution-card__category { color: var(--ww-blue); }
+    .card--ww .solution-card__tag { background: var(--ww-blue-pale); color: var(--ww-blue); }
+    .card--ww .solution-card__link { color: var(--ww-blue); }
 
-    .card--amber { border-top: 3px solid var(--amber); }
-    .card--amber:hover { border-color: var(--amber); }
-    .card--amber .solution-card__category { color: var(--amber); }
-    .card--amber .solution-card__tag { background: var(--amber-pale); color: var(--amber); }
-    .card--amber .solution-card__link { color: var(--amber); }
+    .card--genya { border-top: 3px solid var(--genya-blue); }
+    .card--genya .solution-card__category { color: var(--genya-blue); }
+    .card--genya .solution-card__tag { background: var(--genya-blue-pale); color: var(--genya-blue); }
+    .card--genya .solution-card__link { color: var(--genya-blue); }
 
     /* ---------- IT & CYBERSECURITY ---------- */
     .infra-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
     .infra-card {
-      background: white; border: 1px solid var(--slate-200); border-radius: var(--radius-lg);
-      padding: 36px 32px; transition: all 0.3s;
+      border-radius: var(--radius-lg); overflow: hidden;
+      transition: all 0.3s; position: relative;
     }
     .infra-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
-    .infra-card__icon {
-      width: 48px; height: 48px; border-radius: var(--radius-lg);
-      display: flex; align-items: center; justify-content: center; margin-bottom: 20px;
+    .infra-card__img {
+      width: 100%; height: 200px; object-fit: cover;
     }
-    .infra-card__icon svg { width: 24px; height: 24px; }
-    .infra-card h3 { font-size: 1.25rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-    .infra-card__partners { font-size: 0.8rem; color: var(--slate-400); font-weight: 600; margin-bottom: 12px; }
-    .infra-card p { font-size: 0.95rem; color: var(--slate-500); line-height: 1.6; }
-
-    /* ---------- AUDIENCE SPLIT ---------- */
-    .audience { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; }
-    .audience__panel { padding: 64px 40px; position: relative; }
-    .audience__panel--business { background: var(--navy); color: white; }
-    .audience__panel--accountants { background: var(--amber); color: white; }
-    .audience__panel--waste { background: var(--green); color: white; }
-    .audience__panel h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 12px; }
-    .audience__panel p { font-size: 0.95rem; line-height: 1.7; opacity: 0.85; margin-bottom: 24px; }
-    .audience__list { list-style: none; margin-bottom: 28px; }
-    .audience__list li {
-      font-size: 0.875rem; padding: 6px 0; padding-left: 20px; position: relative; opacity: 0.9;
+    .infra-card__body {
+      background: white; border: 1px solid var(--slate-200);
+      border-top: none; border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+      padding: 28px;
     }
-    .audience__list li::before {
-      content: ''; position: absolute; left: 0; top: 12px;
-      width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.5);
-    }
-    .audience__link {
-      font-size: 0.875rem; font-weight: 600; color: white;
-      border-bottom: 2px solid rgba(255,255,255,0.3);
-      padding-bottom: 2px; transition: border-color 0.2s;
-    }
-    .audience__link:hover { border-color: white; }
+    .infra-card__body h3 { font-size: 1.2rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .infra-card__partners { font-size: 0.8rem; color: var(--slate-400); font-weight: 500; margin-bottom: 10px; }
+    .infra-card__body p { font-size: 0.92rem; color: var(--slate-500); line-height: 1.6; }
 
     /* ---------- PROCESS ---------- */
     .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
@@ -302,7 +293,7 @@
       border-radius: 50%; display: flex; align-items: center; justify-content: center;
       font-size: 1.25rem; font-weight: 800; margin: 0 auto 20px;
     }
-    .process-card h4 { font-size: 1.125rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+    .process-card h4 { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
     .process-card p { font-size: 0.9rem; color: var(--slate-500); line-height: 1.6; }
 
     /* ---------- ASSISTENZA ---------- */
@@ -313,7 +304,7 @@
     .assist__contacts { display: flex; flex-direction: column; gap: 12px; }
     .assist__contact {
       display: inline-flex; align-items: center; gap: 12px;
-      color: white; font-size: 1.125rem; font-weight: 600;
+      color: white; font-size: 1.1rem; font-weight: 600;
       transition: opacity 0.2s;
     }
     .assist__contact:hover { opacity: 0.8; }
@@ -322,8 +313,8 @@
       background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
       border-radius: var(--radius-lg); padding: 32px;
     }
-    .assist__remote h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 8px; }
-    .assist__remote p { font-size: 0.95rem; opacity: 0.7; margin-bottom: 20px; }
+    .assist__remote h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
+    .assist__remote p { font-size: 0.92rem; opacity: 0.7; margin-bottom: 20px; }
     .assist__steps { display: flex; gap: 24px; margin-bottom: 24px; }
     .assist__step { text-align: center; }
     .assist__step-num {
@@ -335,12 +326,15 @@
     .assist__step span { font-size: 0.8rem; opacity: 0.7; }
 
     /* ---------- PARTNERS ---------- */
-    .partners-row {
-      display: flex; justify-content: center; align-items: center; gap: 48px; flex-wrap: wrap;
+    .partners-grid {
+      display: flex; justify-content: center; align-items: center; gap: 56px; flex-wrap: wrap;
     }
-    .partners-row span {
-      font-size: 1rem; font-weight: 700; color: var(--slate-400);
-      letter-spacing: 0.02em; white-space: nowrap;
+    .partners-grid a {
+      display: flex; align-items: center; transition: opacity 0.2s; opacity: 0.55;
+    }
+    .partners-grid a:hover { opacity: 0.9; }
+    .partners-grid img {
+      height: 36px; width: auto;
     }
 
     /* ---------- CTA SECTION ---------- */
@@ -355,7 +349,12 @@
     /* ---------- FOOTER ---------- */
     .footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 64px 0 32px; }
     .footer__grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
-    .footer__brand p { font-size: 0.875rem; line-height: 1.7; margin-top: 12px; }
+    .footer__brand-logo {
+      background: white; border-radius: var(--radius); padding: 8px 12px;
+      display: inline-block; margin-bottom: 12px;
+    }
+    .footer__brand-logo img { height: 36px; width: auto; }
+    .footer__brand p { font-size: 0.875rem; line-height: 1.7; }
     .footer h4 { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
     .footer__links { display: flex; flex-direction: column; gap: 10px; }
     .footer__link { font-size: 0.875rem; transition: color 0.2s; }
@@ -372,17 +371,20 @@
     /* ---------- RESPONSIVE ---------- */
     @media (max-width: 768px) {
       .hero { padding: 120px 0 60px; }
-      .hero__inner { grid-template-columns: 1fr; gap: 40px; }
       .hero h1 { font-size: 2rem; }
-      .hero__visual { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .hero__bottom { flex-direction: column; align-items: flex-start; gap: 24px; }
+      .hero__divider { display: none; }
+      .hero__bottom .hero__stats-row { display: flex; gap: 32px; }
       .solutions-grid { grid-template-columns: 1fr; }
       .infra-grid { grid-template-columns: 1fr; }
-      .audience { grid-template-columns: 1fr; }
-      .audience__panel { padding: 48px 24px; }
       .process-grid { grid-template-columns: 1fr; }
       .assist__inner { grid-template-columns: 1fr; gap: 40px; }
       .footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
-      .nav__links { display: none; position: absolute; top: 72px; left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--slate-200); flex-direction: column; padding: 12px 24px; box-shadow: var(--shadow-lg); gap: 0; }
+      .nav__links {
+        display: none; position: absolute; top: 72px; left: 0; right: 0;
+        background: var(--white); border-bottom: 1px solid var(--slate-200);
+        flex-direction: column; padding: 12px 24px; box-shadow: var(--shadow-lg); gap: 0;
+      }
       .nav__links.open { display: flex; }
       .nav__links li { width: 100%; }
       .nav__link, .nav__cta { display: block; width: 100%; padding: 12px 0; }
@@ -399,8 +401,7 @@
   <nav class="nav" id="nav">
     <div class="container nav__inner">
       <a href="/ctech-web/" class="nav__brand">
-        <div class="nav__brand-icon">CT</div>
-        <div>CTech<small>Computer's Technology</small></div>
+        <img src="assets/img/logo/logo-ctech.png" alt="Computer's Technology" width="160" height="52">
       </a>
       <button class="nav__toggle" aria-label="Menu" aria-expanded="false" onclick="document.querySelector('.nav__links').classList.toggle('open'); this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true')">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
@@ -418,35 +419,35 @@
   <!-- HERO -->
   <section class="hero">
     <div class="container hero__inner">
-      <div>
+      <div class="hero__content">
         <div class="hero__label"><span class="hero__label-dot"></span> Macerata &mdash; dal 1984</div>
-        <h1>Software, sistemi<br>e chi li fa funzionare.</h1>
+        <h1>Software gestionali, infrastruttura IT e chi li fa funzionare.</h1>
         <p class="hero__sub">
-          Vendiamo, installiamo e assistiamo software gestionali e infrastrutture IT
-          per aziende, professionisti e operatori ambientali nelle Marche.
-          Per ogni area, un tecnico dedicato che ti segue dall'inizio.
+          Vendiamo, installiamo e assistiamo gestionali ERP, software per studi professionali,
+          piattaforme per la gestione rifiuti, infrastrutture IT e soluzioni di cybersecurity.
+          Nelle Marche, Umbria e Abruzzo. A ogni cliente viene assegnato un consulente dedicato
+          che lo segue dalla prima analisi all'assistenza quotidiana.
         </p>
         <div class="hero__actions">
           <a href="tel:+390733281142" class="btn btn--primary">Chiamaci: 0733 281142</a>
-          <a href="#soluzioni" class="btn btn--outline">Scopri le soluzioni</a>
+          <a href="#soluzioni" class="btn btn--outline">Le nostre soluzioni</a>
         </div>
       </div>
-      <div class="hero__visual">
+      <div class="hero__bottom">
         <div class="hero__stat">
           <div class="hero__stat-number">40+</div>
-          <div class="hero__stat-label">Anni di attività</div>
+          <div class="hero__stat-label">anni di attivit&agrave;</div>
         </div>
         <div class="hero__stat">
           <div class="hero__stat-number">300+</div>
-          <div class="hero__stat-label">Clienti attivi</div>
+          <div class="hero__stat-label">clienti attivi</div>
         </div>
-        <div class="hero__stat">
-          <div class="hero__stat-number">5</div>
-          <div class="hero__stat-label">Persone, tutte tecniche</div>
-        </div>
-        <div class="hero__stat">
-          <div class="hero__stat-number">1</div>
-          <div class="hero__stat-label">Referente per area</div>
+        <div class="hero__divider"></div>
+        <div class="hero__partners">
+          <span class="hero__partners-label">Partner</span>
+          <img src="assets/img/partner/wolters-kluwer.svg" alt="Wolters Kluwer" height="22">
+          <img src="assets/img/partner/zucchetti.svg" alt="Zucchetti" height="22">
+          <img src="assets/img/partner/eset.svg" alt="ESET" height="22">
         </div>
       </div>
     </div>
@@ -456,77 +457,104 @@
   <section class="section" id="soluzioni">
     <div class="container">
       <div class="section-header">
-        <div class="section-label">Le nostre soluzioni</div>
-        <h2>Software di riferimento, configurati per te</h2>
-        <p>Distribuiamo le piattaforme leader di mercato. Le installiamo, le adattiamo ai tuoi processi e le assistiamo ogni giorno.</p>
+        <div class="section-label">Soluzioni software</div>
+        <h2>Il software giusto per il tuo settore</h2>
+        <p>Distribuiamo e assistiamo piattaforme gestionali certificate. Le configuriamo sui tuoi processi e le manteniamo aggiornate.</p>
       </div>
       <div class="solutions-grid">
 
-        <div class="solution-card card--blue">
-          <div class="solution-card__category">Per le aziende</div>
-          <h3>Arca EVOLUTION</h3>
-          <div class="solution-card__producer">Wolters Kluwer</div>
-          <p>Gestionale ERP modulare per aziende commerciali e di produzione. Contabilità, magazzino, vendite, fatturazione elettronica, CRM e produzione in un unico ambiente.</p>
-          <div class="solution-card__tags">
-            <span class="solution-card__tag">Contabilità</span>
-            <span class="solution-card__tag">Magazzino</span>
-            <span class="solution-card__tag">Fatturazione</span>
-            <span class="solution-card__tag">CRM</span>
-            <span class="solution-card__tag">Produzione</span>
+        <!-- ARCA -->
+        <div class="solution-card card--wk">
+          <img src="assets/img/stock/tech-monitoring.webp" alt="Monitoraggio gestionale ERP" class="solution-card__img">
+          <div class="solution-card__body">
+            <div class="solution-card__top">
+              <span class="solution-card__category">Per le aziende</span>
+              <span class="solution-card__producer">Wolters Kluwer</span>
+            </div>
+            <h3>Arca EVOLUTION</h3>
+            <p>ERP modulare per aziende commerciali e di produzione. Contabilit&agrave;, magazzino, vendite, fatturazione elettronica, CRM e produzione in un unico ambiente integrato.</p>
+            <div class="solution-card__tags">
+              <span class="solution-card__tag">Contabilit&agrave;</span>
+              <span class="solution-card__tag">Magazzino</span>
+              <span class="solution-card__tag">Fatturazione</span>
+              <span class="solution-card__tag">CRM</span>
+              <span class="solution-card__tag">Produzione</span>
+            </div>
+            <div class="solution-card__territory">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Marche
+            </div>
+            <a href="#" class="solution-card__link">Scopri Arca EVOLUTION <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
-          <div class="solution-card__territory">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Marche
-          </div>
-          <a href="#" class="solution-card__link">Scopri di più <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
 
-        <div class="solution-card card--green">
-          <div class="solution-card__category">Gestione rifiuti</div>
-          <h3>WinWaste</h3>
-          <div class="solution-card__producer">Nica / Gruppo Zucchetti</div>
-          <p>Il software per la gestione integrata dei rifiuti: registri di carico/scarico, formulari, MUD e piena conformità R.E.N.T.Ri. Per aziende di raccolta, impianti e produttori di rifiuti.</p>
-          <div class="solution-card__tags">
-            <span class="solution-card__tag">Registri</span>
-            <span class="solution-card__tag">Formulari</span>
-            <span class="solution-card__tag">MUD</span>
-            <span class="solution-card__tag">R.E.N.T.Ri</span>
-            <span class="solution-card__tag">Pesatura</span>
+        <!-- WINWASTE -->
+        <div class="solution-card card--ww">
+          <img src="assets/img/screenshot/winwaste-pc.webp" alt="WinWaste gestionale rifiuti" class="solution-card__img" style="object-fit: contain; background: #f8f9fa; padding: 12px;">
+          <div class="solution-card__body">
+            <div class="solution-card__top">
+              <span class="solution-card__category">Gestione rifiuti</span>
+              <span class="solution-card__producer">Nica / Gruppo Zucchetti</span>
+            </div>
+            <h3>WinWaste</h3>
+            <p>Gestionale integrato per il ciclo dei rifiuti: registri di carico/scarico, formulari, MUD e piena conformit&agrave; R.E.N.T.Ri. Per trasportatori, impianti e produttori.</p>
+            <div class="solution-card__tags">
+              <span class="solution-card__tag">Registri</span>
+              <span class="solution-card__tag">Formulari</span>
+              <span class="solution-card__tag">MUD</span>
+              <span class="solution-card__tag">R.E.N.T.Ri</span>
+              <span class="solution-card__tag">Pesatura</span>
+            </div>
+            <div class="solution-card__territory">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Marche &middot; Umbria &middot; Abruzzo
+            </div>
+            <a href="#" class="solution-card__link">Scopri WinWaste <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
-          <div class="solution-card__territory">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Marche &middot; Umbria &middot; Abruzzo
-          </div>
-          <a href="#" class="solution-card__link">Scopri di più <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
 
-        <div class="solution-card card--amber">
-          <div class="solution-card__category">Per i professionisti</div>
-          <h3>Genya</h3>
-          <div class="solution-card__producer">Wolters Kluwer</div>
-          <div class="solution-card__note" style="background: var(--green-pale); color: var(--green);">Cloud &mdash; il futuro</div>
-          <p>Suite cloud per commercialisti: contabilità, dichiarativi, bilanci e fatturazione. Collaborazione studio-cliente in tempo reale, da qualsiasi dispositivo.</p>
-          <div class="solution-card__tags">
-            <span class="solution-card__tag">Cloud</span>
-            <span class="solution-card__tag">Contabilità</span>
-            <span class="solution-card__tag">Dichiarativi</span>
-            <span class="solution-card__tag">Bilanci</span>
+        <!-- GENYA -->
+        <div class="solution-card card--genya">
+          <img src="assets/img/screenshot/genya-preview.png" alt="Genya suite cloud per commercialisti" class="solution-card__img" style="object-fit: contain; background: #f0f4f8; padding: 8px;">
+          <div class="solution-card__body">
+            <div class="solution-card__top">
+              <span class="solution-card__category">Per i professionisti</span>
+              <span class="solution-card__producer">Wolters Kluwer</span>
+            </div>
+            <h3>Genya</h3>
+            <div class="solution-card__note" style="background: #e8f5e9; color: #2e7d32;">Cloud</div>
+            <p>Suite in cloud per commercialisti: contabilit&agrave;, dichiarativi, bilanci e fatturazione. Collaborazione studio-cliente in tempo reale, da qualsiasi dispositivo.</p>
+            <div class="solution-card__tags">
+              <span class="solution-card__tag">Cloud</span>
+              <span class="solution-card__tag">Contabilit&agrave;</span>
+              <span class="solution-card__tag">Dichiarativi</span>
+              <span class="solution-card__tag">Bilanci</span>
+            </div>
+            <div class="solution-card__territory">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Marche
+            </div>
+            <a href="#" class="solution-card__link">Scopri Genya <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
-          <a href="#" class="solution-card__link">Scopri di più <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
 
-        <div class="solution-card card--amber">
-          <div class="solution-card__category">Per i professionisti</div>
-          <h3>BPoint Solution Platform</h3>
-          <div class="solution-card__producer">Wolters Kluwer / OSRA</div>
-          <div class="solution-card__note" style="background: var(--amber-pale); color: var(--amber);">In dismissione entro il 2030</div>
-          <p>La piattaforma desktop per studi professionali. Supportiamo i clienti esistenti e gestiamo la migrazione a Genya.</p>
-          <div class="solution-card__tags">
-            <span class="solution-card__tag">Desktop</span>
-            <span class="solution-card__tag">Fiscale</span>
-            <span class="solution-card__tag">Paghe</span>
+        <!-- BPOINT -->
+        <div class="solution-card card--genya">
+          <div class="solution-card__body" style="padding-top: 32px;">
+            <div class="solution-card__top">
+              <span class="solution-card__category">Per i professionisti</span>
+              <span class="solution-card__producer">Wolters Kluwer / OSRA</span>
+            </div>
+            <h3>BPoint Solution Platform</h3>
+            <div class="solution-card__note" style="background: #fff3e0; color: #e65100;">In dismissione &mdash; supporto fino al 2030</div>
+            <p>La piattaforma desktop per studi professionali. Continuiamo ad assistere i clienti esistenti e gestiamo la migrazione completa verso Genya.</p>
+            <div class="solution-card__tags">
+              <span class="solution-card__tag">Desktop</span>
+              <span class="solution-card__tag">Fiscale</span>
+              <span class="solution-card__tag">Paghe</span>
+            </div>
+            <a href="#" class="solution-card__link">BPoint e la migrazione a Genya <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
-          <a href="#" class="solution-card__link">BPoint e Genya <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
 
       </div>
@@ -537,91 +565,54 @@
   <section class="section section--gray" id="infrastruttura">
     <div class="container">
       <div class="section-header">
-        <div class="section-label">Per tutti i nostri clienti</div>
+        <div class="section-label">Servizi trasversali</div>
         <h2>Infrastruttura IT e cybersecurity</h2>
-        <p>Il software funziona bene solo su una base solida e protetta. Questi servizi sono trasversali a tutte le aree.</p>
+        <p>Il software funziona bene solo su una base solida e protetta. Questi servizi sono per tutti i nostri clienti, indipendentemente dal gestionale.</p>
       </div>
       <div class="infra-grid">
         <div class="infra-card">
-          <div class="infra-card__icon" style="background: var(--blue-pale); color: var(--blue);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><circle cx="6" cy="6" r="1"/><circle cx="6" cy="18" r="1"/></svg>
+          <img src="assets/img/stock/team-datacenter.webp" alt="Team tecnico in sala server" class="infra-card__img">
+          <div class="infra-card__body">
+            <h3>Sistemi e infrastruttura</h3>
+            <div class="infra-card__partners">Dell &middot; HP &middot; Microsoft</div>
+            <p>Server, reti, postazioni di lavoro, Microsoft 365 e Azure. Progettiamo, installiamo e manteniamo l'infrastruttura su cui girano i tuoi gestionali.</p>
           </div>
-          <h3>Sistemi e infrastruttura</h3>
-          <div class="infra-card__partners">Dell &middot; HP &middot; Microsoft</div>
-          <p>Server, reti, postazioni di lavoro, Microsoft 365 e Azure. Progettiamo, installiamo e manteniamo l'infrastruttura su cui girano i tuoi software.</p>
         </div>
         <div class="infra-card">
-          <div class="infra-card__icon" style="background: var(--teal-pale); color: var(--teal-dark);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <img src="assets/img/stock/cybersecurity-login.webp" alt="Sicurezza informatica e protezione endpoint" class="infra-card__img">
+          <div class="infra-card__body">
+            <h3>Cybersecurity</h3>
+            <div class="infra-card__partners">ESET Certified Partner</div>
+            <p>Protezione endpoint, antivirus, XDR e MDR. Siamo partner certificati ESET: proteggiamo i tuoi dati e i tuoi sistemi dalle minacce informatiche.</p>
           </div>
-          <h3>Cybersecurity</h3>
-          <div class="infra-card__partners">ESET Partner</div>
-          <p>Antivirus, protezione endpoint, XDR e MDR. Siamo partner ESET. Proteggiamo i tuoi dati e i tuoi sistemi dalle minacce informatiche.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- AUDIENCE SPLIT -->
-  <div class="audience">
-    <div class="audience__panel audience__panel--business">
-      <h3>Per le aziende</h3>
-      <p>Gestionale completo, infrastruttura solida, un unico referente tecnico.</p>
-      <ul class="audience__list">
-        <li>Arca EVOLUTION: 8 aree funzionali</li>
-        <li>Personalizzazioni su misura</li>
-        <li>Formazione e migrazione dati</li>
-        <li>Assistenza on-site e remota</li>
-      </ul>
-      <a href="#" class="audience__link">Scopri Arca EVOLUTION &rarr;</a>
-    </div>
-    <div class="audience__panel audience__panel--accountants">
-      <h3>Per i professionisti</h3>
-      <p>Più tempo per la consulenza, meno per gli adempimenti.</p>
-      <ul class="audience__list">
-        <li>Genya: lo studio in cloud</li>
-        <li>BPoint: supporto fino al 2030</li>
-        <li>Migrazione assistita a Genya</li>
-        <li>Aggiornamenti normativi inclusi</li>
-      </ul>
-      <a href="#" class="audience__link">Scopri Genya &rarr;</a>
-    </div>
-    <div class="audience__panel audience__panel--waste">
-      <h3>Gestione rifiuti</h3>
-      <p>Software e conformità per chi lavora nel settore ambientale.</p>
-      <ul class="audience__list">
-        <li>WinWaste: gestione integrata</li>
-        <li>R.E.N.T.Ri: conformità nativa</li>
-        <li>Copertura: Marche, Umbria, Abruzzo</li>
-        <li>20+ anni di esperienza nel settore</li>
-      </ul>
-      <a href="#" class="audience__link">Scopri WinWaste &rarr;</a>
-    </div>
-  </div>
-
   <!-- PROCESS -->
-  <section class="section section--gray" id="come-lavoriamo">
+  <section class="section" id="come-lavoriamo">
     <div class="container">
       <div class="section-header">
         <div class="section-label">Come lavoriamo</div>
-        <h2>Tre passi, un unico referente</h2>
-        <p>Per ogni area c'è una persona dedicata che ti segue dalla prima analisi all'assistenza quotidiana.</p>
+        <h2>Un consulente dedicato, dall'inizio alla fine</h2>
+        <p>A ogni cliente assegniamo un consulente che conosce il software e conosce il settore. Lo stesso interlocutore dalla prima analisi all'assistenza quotidiana.</p>
       </div>
       <div class="process-grid">
         <div class="process-card">
           <div class="process-card__number">1</div>
           <h4>Analisi</h4>
-          <p>Veniamo da te, studiamo i tuoi processi e ti proponiamo la configurazione più adatta. Nessun impegno.</p>
+          <p>Veniamo nella tua sede, studiamo i tuoi processi e proponiamo la configurazione pi&ugrave; adatta. Nessun impegno e nessun costo per questa fase.</p>
         </div>
         <div class="process-card">
           <div class="process-card__number">2</div>
           <h4>Installazione e formazione</h4>
-          <p>Configuriamo il software, migriamo i tuoi dati e formiamo il tuo team fino a renderlo autonomo.</p>
+          <p>Configuriamo il software, importiamo i tuoi dati e formiamo il tuo team fino a renderlo autonomo. Lo stesso consulente segue tutto il processo.</p>
         </div>
         <div class="process-card">
           <div class="process-card__number">3</div>
           <h4>Assistenza continua</h4>
-          <p>Chi risponde è chi risolve il problema. Niente call center, niente ticket persi. On-site o da remoto.</p>
+          <p>Quando chiami, risponde chi conosce la tua installazione. Nessun call center, nessun ticket anonimo. Interveniamo in sede o da remoto.</p>
         </div>
       </div>
     </div>
@@ -633,7 +624,7 @@
       <div class="assist__inner">
         <div>
           <h2>Assistenza</h2>
-          <p class="assist__desc">Chiamaci o scrivici. Chi risponde è chi risolve il problema &mdash; non un call center.</p>
+          <p class="assist__desc">Quando chiami, risponde chi conosce la tua installazione e pu&ograve; risolvere il problema direttamente.</p>
           <div class="assist__contacts">
             <a href="tel:+390733281142" class="assist__contact">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
@@ -651,7 +642,7 @@
         </div>
         <div class="assist__remote">
           <h3>Assistenza remota</h3>
-          <p>Scarica SupRemo per ricevere assistenza a distanza. Ti guideremo noi.</p>
+          <p>Scarica SupRemo per permetterci di collegarci al tuo computer e risolvere il problema a distanza.</p>
           <div class="assist__steps">
             <div class="assist__step">
               <div class="assist__step-num">1</div>
@@ -681,15 +672,18 @@
       <div class="section-header">
         <div class="section-label">Partner tecnologici</div>
         <h2>Con chi lavoriamo</h2>
-        <p>Rivenditori certificati dei leader del software gestionale, dell'infrastruttura e della sicurezza.</p>
+        <p>Rivenditori e partner certificati dei principali produttori di software gestionale, infrastruttura e sicurezza informatica.</p>
       </div>
-      <div class="partners-row">
-        <span>Wolters Kluwer</span>
-        <span>Zucchetti</span>
-        <span>ESET</span>
-        <span>Dell</span>
-        <span>HP</span>
-        <span>Microsoft</span>
+      <div class="partners-grid">
+        <a href="https://www.wolterskluwer.com/it-it" target="_blank" rel="noopener" title="Wolters Kluwer">
+          <img src="assets/img/partner/wolters-kluwer.svg" alt="Wolters Kluwer">
+        </a>
+        <a href="https://www.zucchetti.it" target="_blank" rel="noopener" title="Zucchetti">
+          <img src="assets/img/partner/zucchetti.svg" alt="Zucchetti">
+        </a>
+        <a href="https://www.eset.com/it/" target="_blank" rel="noopener" title="ESET">
+          <img src="assets/img/partner/eset.svg" alt="ESET">
+        </a>
       </div>
     </div>
   </section>
@@ -697,8 +691,8 @@
   <!-- CTA -->
   <section class="cta">
     <div class="container">
-      <h2>Parliamo delle tue esigenze?</h2>
-      <p>Chiamaci o scrivici. La prima analisi è gratuita e senza impegno.</p>
+      <h2>Serve una consulenza?</h2>
+      <p>Chiamaci o scrivici. La prima analisi &egrave; gratuita e senza impegno.</p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
         <a href="tel:+390733281142" class="btn btn--white" style="padding:16px 32px;">Chiamaci: 0733 281142</a>
         <a href="mailto:info@ctech.it" class="btn btn--outline" style="padding:16px 32px;">Scrivici: info@ctech.it</a>
@@ -711,11 +705,10 @@
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <div style="display:flex;align-items:center;gap:10px;color:white;font-weight:700;font-size:1.1rem;">
-            <div style="width:36px;height:36px;background:var(--red);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:800;color:white;">CT</div>
-            CTech
+          <div class="footer__brand-logo">
+            <img src="assets/img/logo/logo-ctech.png" alt="Computer's Technology">
           </div>
-          <p>Computer's Technology S.r.l.<br>Software gestionali e servizi IT per aziende e professionisti nelle Marche. Dal 1984.</p>
+          <p>Computer's Technology S.r.l.<br>Software gestionali e servizi IT<br>per aziende e professionisti.<br>Dal 1984, nelle Marche.</p>
         </div>
         <div>
           <h4>Soluzioni</h4>
@@ -737,7 +730,7 @@
         <div>
           <h4>Contatti</h4>
           <div class="footer__links">
-            <span class="footer__link">Via Cluentina, 26/B<br>Loc. Piediripa di Macerata (MC)<br>62100</span>
+            <span class="footer__link">Via Cluentina, 26/B<br>Piediripa di Macerata (MC)<br>62100</span>
             <a href="tel:+390733281142" class="footer__link">0733 281142</a>
             <a href="tel:+390733292776" class="footer__link">0733 292776</a>
             <a href="mailto:info@ctech.it" class="footer__link">info@ctech.it</a>
