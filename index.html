@@ -3,27 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CTech - Draft A: Corporate Grid</title>
+  <title>CTech — Partner IT a Macerata dal 1984</title>
+  <meta name="description" content="Computer's Technology S.r.l. — Software gestionali per aziende, commercialisti e gestione rifiuti. Infrastrutture IT e cybersecurity. Dal 1984 nelle Marche.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://rops.github.io/ctech-web/">
+  <meta property="og:title" content="CTech — Partner IT a Macerata dal 1984">
+  <meta property="og:description" content="Software gestionali, infrastrutture IT e cybersecurity per aziende e professionisti nelle Marche.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Computer's Technology S.r.l.",
+    "alternateName": "CTech",
+    "url": "https://rops.github.io/ctech-web/",
+    "telephone": "+39 0733 281142",
+    "email": "info@ctech.it",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Via Cluentina, 26/B",
+      "addressLocality": "Piediripa di Macerata",
+      "addressRegion": "MC",
+      "postalCode": "62100",
+      "addressCountry": "IT"
+    },
+    "foundingDate": "1984",
+    "areaServed": ["Marche", "Umbria", "Abruzzo"],
+    "vatID": "IT00840390439"
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    /* ================================================================
-       DRAFT A — "CORPORATE GRID"
-       Structured, grid-based, enterprise feel.
-       Palette: navy #0F1B2D, blue accent #2563EB, slate grays, white.
-       Layout: rigid 12-col grid, card-based sections, strong alignment.
-       Typography: Inter, tight tracking, clear hierarchy.
-    ================================================================ */
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --navy: #0F1B2D;
-      --navy-light: #1A2942;
-      --blue: #2563EB;
-      --blue-light: #3B82F6;
-      --blue-pale: #EFF6FF;
+      /* CTech brand */
+      --red: #C52A2A;
+      --red-dark: #A01E1E;
+      --red-light: #FEF2F2;
+      --navy: #1A2B4A;
+      --navy-light: #243B63;
+      /* Area accents */
+      --blue: #007AC3;
+      --blue-light: #3B9CD8;
+      --blue-pale: #e8f4fc;
+      --amber: #d97706;
+      --amber-pale: #fffbeb;
+      --green: #059669;
+      --green-pale: #ecfdf5;
+      --teal: #00B8A9;
+      --teal-dark: #006D77;
+      --teal-pale: #e6faf8;
+      /* Neutrals */
       --slate-50: #F8FAFC;
       --slate-100: #F1F5F9;
       --slate-200: #E2E8F0;
@@ -69,12 +103,12 @@
       font-weight: 700; font-size: 1.1rem; color: var(--navy);
     }
     .nav__brand-icon {
-      width: 40px; height: 40px; background: var(--blue); border-radius: var(--radius);
+      width: 40px; height: 40px; background: var(--red); border-radius: var(--radius);
       display: flex; align-items: center; justify-content: center;
       color: white; font-weight: 800; font-size: 0.85rem; letter-spacing: -0.5px;
     }
     .nav__brand small { display: block; font-weight: 400; font-size: 0.7rem; color: var(--slate-500); letter-spacing: 0.02em; }
-    .nav__links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav__links { display: flex; align-items: center; gap: 28px; list-style: none; }
     .nav__link {
       font-size: 0.875rem; font-weight: 500; color: var(--slate-600);
       transition: color 0.2s; position: relative;
@@ -82,15 +116,22 @@
     .nav__link:hover { color: var(--navy); }
     .nav__link::after {
       content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
-      background: var(--blue); transition: width 0.2s;
+      background: var(--red); transition: width 0.2s;
     }
     .nav__link:hover::after { width: 100%; }
     .nav__cta {
-      background: var(--blue); color: white; padding: 10px 20px;
+      background: var(--red); color: white; padding: 10px 20px;
       border-radius: var(--radius); font-size: 0.875rem; font-weight: 600;
       transition: background 0.2s;
     }
-    .nav__cta:hover { background: var(--blue-light); }
+    .nav__cta:hover { background: var(--red-dark); }
+
+    /* Hamburger */
+    .nav__toggle {
+      display: none; background: none; border: none; cursor: pointer;
+      padding: 8px; color: var(--slate-700);
+    }
+    .nav__toggle svg { width: 24px; height: 24px; }
 
     /* ---------- HERO ---------- */
     .hero {
@@ -100,17 +141,17 @@
     }
     .hero::before {
       content: ''; position: absolute; top: -50%; right: -20%; width: 800px; height: 800px;
-      background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(197,42,42,0.12) 0%, transparent 70%);
       pointer-events: none;
     }
     .hero__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; position: relative; }
     .hero__label {
       display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(37,99,235,0.2); border: 1px solid rgba(37,99,235,0.3);
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
       padding: 6px 14px; border-radius: 100px; font-size: 0.8rem; font-weight: 500;
       color: rgba(255,255,255,0.9); margin-bottom: 20px;
     }
-    .hero__label-dot { width: 6px; height: 6px; background: var(--blue-light); border-radius: 50%; }
+    .hero__label-dot { width: 6px; height: 6px; background: var(--red); border-radius: 50%; }
     .hero h1 {
       font-size: 3rem; font-weight: 800; line-height: 1.15; letter-spacing: -0.02em;
       margin-bottom: 20px;
@@ -122,12 +163,12 @@
       padding: 14px 28px; border-radius: var(--radius); font-size: 0.9375rem;
       font-weight: 600; cursor: pointer; border: none; transition: all 0.2s;
     }
-    .btn--primary { background: var(--blue); color: white; }
-    .btn--primary:hover { background: var(--blue-light); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(37,99,235,0.3); }
+    .btn--primary { background: var(--red); color: white; }
+    .btn--primary:hover { background: var(--red-dark); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(197,42,42,0.3); }
     .btn--outline { background: transparent; color: white; border: 1px solid rgba(255,255,255,0.3); }
     .btn--outline:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.5); }
-    .btn--dark { background: var(--navy); color: white; }
-    .btn--dark:hover { background: var(--navy-light); }
+    .btn--white { background: white; color: var(--navy); }
+    .btn--white:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
 
     .hero__visual {
       display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
@@ -147,7 +188,7 @@
     .section-header { text-align: center; margin-bottom: 64px; }
     .section-label {
       display: inline-block; font-size: 0.8rem; font-weight: 600; text-transform: uppercase;
-      letter-spacing: 0.08em; color: var(--blue); margin-bottom: 12px;
+      letter-spacing: 0.08em; color: var(--red); margin-bottom: 12px;
     }
     .section-header h2 {
       font-size: 2.25rem; font-weight: 800; color: var(--navy); line-height: 1.2;
@@ -163,47 +204,88 @@
     }
     .solution-card {
       background: white; border: 1px solid var(--slate-200); border-radius: var(--radius-lg);
-      padding: 40px 32px; transition: all 0.3s; position: relative; overflow: hidden;
+      padding: 36px 32px; transition: all 0.3s; position: relative; overflow: hidden;
     }
-    .solution-card:hover { border-color: var(--blue); box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+    .solution-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
     .solution-card__category {
       font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;
-      color: var(--blue); margin-bottom: 16px;
+      margin-bottom: 16px;
     }
-    .solution-card h3 { font-size: 1.5rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-    .solution-card p { font-size: 0.95rem; color: var(--slate-500); margin-bottom: 24px; line-height: 1.6; }
+    .solution-card h3 { font-size: 1.4rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .solution-card__producer { font-size: 0.8rem; color: var(--slate-400); margin-bottom: 12px; }
+    .solution-card p { font-size: 0.95rem; color: var(--slate-500); margin-bottom: 20px; line-height: 1.6; }
     .solution-card__tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
     .solution-card__tag {
-      background: var(--blue-pale); color: var(--blue); font-size: 0.75rem; font-weight: 500;
+      font-size: 0.75rem; font-weight: 500;
       padding: 4px 10px; border-radius: 100px;
     }
+    .solution-card__territory {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 0.75rem; color: var(--slate-400); margin-bottom: 20px;
+    }
+    .solution-card__territory svg { width: 14px; height: 14px; }
     .solution-card__link {
-      font-size: 0.875rem; font-weight: 600; color: var(--blue);
+      font-size: 0.875rem; font-weight: 600;
       display: inline-flex; align-items: center; gap: 6px;
     }
     .solution-card__link svg { width: 16px; height: 16px; transition: transform 0.2s; }
     .solution-card:hover .solution-card__link svg { transform: translateX(4px); }
+    .solution-card__note {
+      display: inline-block; font-size: 0.7rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.04em; padding: 3px 8px; border-radius: var(--radius);
+      margin-bottom: 12px;
+    }
+
+    /* Card color accents */
+    .card--blue { border-top: 3px solid var(--blue); }
+    .card--blue:hover { border-color: var(--blue); }
+    .card--blue .solution-card__category { color: var(--blue); }
+    .card--blue .solution-card__tag { background: var(--blue-pale); color: var(--blue); }
+    .card--blue .solution-card__link { color: var(--blue); }
+
+    .card--green { border-top: 3px solid var(--green); }
+    .card--green:hover { border-color: var(--green); }
+    .card--green .solution-card__category { color: var(--green); }
+    .card--green .solution-card__tag { background: var(--green-pale); color: var(--green); }
+    .card--green .solution-card__link { color: var(--green); }
+
+    .card--amber { border-top: 3px solid var(--amber); }
+    .card--amber:hover { border-color: var(--amber); }
+    .card--amber .solution-card__category { color: var(--amber); }
+    .card--amber .solution-card__tag { background: var(--amber-pale); color: var(--amber); }
+    .card--amber .solution-card__link { color: var(--amber); }
+
+    /* ---------- IT & CYBERSECURITY ---------- */
+    .infra-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .infra-card {
+      background: white; border: 1px solid var(--slate-200); border-radius: var(--radius-lg);
+      padding: 36px 32px; transition: all 0.3s;
+    }
+    .infra-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+    .infra-card__icon {
+      width: 48px; height: 48px; border-radius: var(--radius-lg);
+      display: flex; align-items: center; justify-content: center; margin-bottom: 20px;
+    }
+    .infra-card__icon svg { width: 24px; height: 24px; }
+    .infra-card h3 { font-size: 1.25rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .infra-card__partners { font-size: 0.8rem; color: var(--slate-400); font-weight: 600; margin-bottom: 12px; }
+    .infra-card p { font-size: 0.95rem; color: var(--slate-500); line-height: 1.6; }
 
     /* ---------- AUDIENCE SPLIT ---------- */
-    .audience {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
-    }
-    .audience__panel {
-      padding: 80px 64px; position: relative;
-    }
+    .audience { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; }
+    .audience__panel { padding: 64px 40px; position: relative; }
     .audience__panel--business { background: var(--navy); color: white; }
-    .audience__panel--accountants { background: var(--blue); color: white; }
-    .audience__panel h3 {
-      font-size: 1.75rem; font-weight: 700; margin-bottom: 16px;
-    }
-    .audience__panel p { font-size: 1rem; line-height: 1.7; opacity: 0.85; margin-bottom: 28px; }
-    .audience__list { list-style: none; margin-bottom: 32px; }
+    .audience__panel--accountants { background: var(--amber); color: white; }
+    .audience__panel--waste { background: var(--green); color: white; }
+    .audience__panel h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 12px; }
+    .audience__panel p { font-size: 0.95rem; line-height: 1.7; opacity: 0.85; margin-bottom: 24px; }
+    .audience__list { list-style: none; margin-bottom: 28px; }
     .audience__list li {
-      font-size: 0.9rem; padding: 8px 0; padding-left: 24px; position: relative; opacity: 0.9;
+      font-size: 0.875rem; padding: 6px 0; padding-left: 20px; position: relative; opacity: 0.9;
     }
     .audience__list li::before {
-      content: ''; position: absolute; left: 0; top: 14px;
-      width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.5);
+      content: ''; position: absolute; left: 0; top: 12px;
+      width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.5);
     }
     .audience__link {
       font-size: 0.875rem; font-weight: 600; color: white;
@@ -213,38 +295,62 @@
     .audience__link:hover { border-color: white; }
 
     /* ---------- PROCESS ---------- */
-    .process-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
-    }
+    .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
     .process-card { text-align: center; padding: 32px; }
     .process-card__number {
-      width: 56px; height: 56px; background: var(--blue-pale); color: var(--blue);
+      width: 56px; height: 56px; background: var(--red-light); color: var(--red);
       border-radius: 50%; display: flex; align-items: center; justify-content: center;
       font-size: 1.25rem; font-weight: 800; margin: 0 auto 20px;
     }
     .process-card h4 { font-size: 1.125rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
     .process-card p { font-size: 0.9rem; color: var(--slate-500); line-height: 1.6; }
 
+    /* ---------- ASSISTENZA ---------- */
+    .assist { background: var(--navy); color: white; padding: 80px 0; }
+    .assist__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .assist h2 { font-size: 2rem; font-weight: 800; margin-bottom: 12px; }
+    .assist__desc { font-size: 1.05rem; opacity: 0.75; margin-bottom: 28px; max-width: 440px; }
+    .assist__contacts { display: flex; flex-direction: column; gap: 12px; }
+    .assist__contact {
+      display: inline-flex; align-items: center; gap: 12px;
+      color: white; font-size: 1.125rem; font-weight: 600;
+      transition: opacity 0.2s;
+    }
+    .assist__contact:hover { opacity: 0.8; }
+    .assist__contact svg { flex-shrink: 0; opacity: 0.6; }
+    .assist__remote {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-lg); padding: 32px;
+    }
+    .assist__remote h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 8px; }
+    .assist__remote p { font-size: 0.95rem; opacity: 0.7; margin-bottom: 20px; }
+    .assist__steps { display: flex; gap: 24px; margin-bottom: 24px; }
+    .assist__step { text-align: center; }
+    .assist__step-num {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(255,255,255,0.1); display: flex; align-items: center;
+      justify-content: center; font-weight: 700; font-size: 0.875rem;
+      margin: 0 auto 6px;
+    }
+    .assist__step span { font-size: 0.8rem; opacity: 0.7; }
+
     /* ---------- PARTNERS ---------- */
     .partners-row {
-      display: flex; justify-content: center; align-items: center; gap: 64px; flex-wrap: wrap;
+      display: flex; justify-content: center; align-items: center; gap: 48px; flex-wrap: wrap;
     }
-    .partner-logo {
-      height: 36px; opacity: 0.45; filter: grayscale(100%);
-      transition: all 0.3s;
+    .partners-row span {
+      font-size: 1rem; font-weight: 700; color: var(--slate-400);
+      letter-spacing: 0.02em; white-space: nowrap;
     }
-    .partner-logo:hover { opacity: 1; filter: none; }
 
     /* ---------- CTA SECTION ---------- */
     .cta {
       padding: 80px 0; text-align: center;
-      background: linear-gradient(135deg, var(--blue) 0%, #1D4ED8 100%);
+      background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 100%);
       color: white;
     }
     .cta h2 { font-size: 2.25rem; font-weight: 800; margin-bottom: 16px; }
     .cta p { font-size: 1.1rem; opacity: 0.85; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
-    .cta .btn--white { background: white; color: var(--blue); }
-    .cta .btn--white:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
 
     /* ---------- FOOTER ---------- */
     .footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 64px 0 32px; }
@@ -270,12 +376,20 @@
       .hero h1 { font-size: 2rem; }
       .hero__visual { grid-template-columns: 1fr 1fr; gap: 12px; }
       .solutions-grid { grid-template-columns: 1fr; }
+      .infra-grid { grid-template-columns: 1fr; }
       .audience { grid-template-columns: 1fr; }
       .audience__panel { padding: 48px 24px; }
       .process-grid { grid-template-columns: 1fr; }
+      .assist__inner { grid-template-columns: 1fr; gap: 40px; }
       .footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
-      .nav__links { display: none; }
+      .nav__links { display: none; position: absolute; top: 72px; left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--slate-200); flex-direction: column; padding: 12px 24px; box-shadow: var(--shadow-lg); gap: 0; }
+      .nav__links.open { display: flex; }
+      .nav__links li { width: 100%; }
+      .nav__link, .nav__cta { display: block; width: 100%; padding: 12px 0; }
+      .nav__cta { text-align: center; margin-top: 8px; }
+      .nav__toggle { display: block; }
       .section-header h2 { font-size: 1.75rem; }
+      .section { padding: 72px 0; }
     }
   </style>
 </head>
@@ -284,17 +398,19 @@
   <!-- NAV -->
   <nav class="nav" id="nav">
     <div class="container nav__inner">
-      <a href="#" class="nav__brand">
+      <a href="/ctech-web/" class="nav__brand">
         <div class="nav__brand-icon">CT</div>
         <div>CTech<small>Computer's Technology</small></div>
       </a>
+      <button class="nav__toggle" aria-label="Menu" aria-expanded="false" onclick="document.querySelector('.nav__links').classList.toggle('open'); this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
       <ul class="nav__links">
-        <li><a href="#" class="nav__link">Home</a></li>
-        <li><a href="#" class="nav__link">Chi Siamo</a></li>
-        <li><a href="#" class="nav__link">Soluzioni</a></li>
-        <li><a href="#" class="nav__link">Servizi</a></li>
-        <li><a href="#" class="nav__link">Contatti</a></li>
-        <li><a href="#" class="nav__cta">Richiedi Consulenza</a></li>
+        <li><a href="#soluzioni" class="nav__link">Soluzioni</a></li>
+        <li><a href="#infrastruttura" class="nav__link">Servizi IT</a></li>
+        <li><a href="#come-lavoriamo" class="nav__link">Come lavoriamo</a></li>
+        <li><a href="mailto:info@ctech.it" class="nav__link">Contatti</a></li>
+        <li><a href="#assistenza" class="nav__cta">Assistenza</a></li>
       </ul>
     </div>
   </nav>
@@ -303,99 +419,145 @@
   <section class="hero">
     <div class="container hero__inner">
       <div>
-        <div class="hero__label"><span class="hero__label-dot"></span> Dal 1984 al fianco delle imprese</div>
-        <h1>Soluzioni IT<br>per chi vuole crescere</h1>
+        <div class="hero__label"><span class="hero__label-dot"></span> Macerata &mdash; dal 1984</div>
+        <h1>Software, sistemi<br>e chi li fa funzionare.</h1>
         <p class="hero__sub">
-          Software gestionali, infrastruttura IT e assistenza dedicata 
-          per aziende e studi professionali nelle Marche, Umbria e Abruzzo. 
-          Non un call center: il tuo reparto IT.
+          Vendiamo, installiamo e assistiamo software gestionali e infrastrutture IT
+          per aziende, professionisti e operatori ambientali nelle Marche.
+          Per ogni area, un tecnico dedicato che ti segue dall'inizio.
         </p>
         <div class="hero__actions">
-          <a href="#" class="btn btn--primary">Richiedi consulenza gratuita</a>
-          <a href="#" class="btn btn--outline">Scopri le soluzioni</a>
+          <a href="tel:+390733281142" class="btn btn--primary">Chiamaci: 0733 281142</a>
+          <a href="#soluzioni" class="btn btn--outline">Scopri le soluzioni</a>
         </div>
       </div>
       <div class="hero__visual">
         <div class="hero__stat">
           <div class="hero__stat-number">40+</div>
-          <div class="hero__stat-label">Anni di esperienza</div>
+          <div class="hero__stat-label">Anni di attività</div>
         </div>
         <div class="hero__stat">
           <div class="hero__stat-number">300+</div>
           <div class="hero__stat-label">Clienti attivi</div>
         </div>
         <div class="hero__stat">
-          <div class="hero__stat-number">4</div>
-          <div class="hero__stat-label">Piattaforme software</div>
+          <div class="hero__stat-number">5</div>
+          <div class="hero__stat-label">Persone, tutte tecniche</div>
         </div>
         <div class="hero__stat">
-          <div class="hero__stat-number">24h</div>
-          <div class="hero__stat-label">Tempo di risposta</div>
+          <div class="hero__stat-number">1</div>
+          <div class="hero__stat-label">Referente per area</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- SOLUTIONS -->
-  <section class="section">
+  <section class="section" id="soluzioni">
     <div class="container">
       <div class="section-header">
         <div class="section-label">Le nostre soluzioni</div>
-        <h2>Software di riferimento, personalizzati per te</h2>
-        <p>Distribuiamo e configuriamo le piattaforme leader di mercato, adattandole ai tuoi processi.</p>
+        <h2>Software di riferimento, configurati per te</h2>
+        <p>Distribuiamo le piattaforme leader di mercato. Le installiamo, le adattiamo ai tuoi processi e le assistiamo ogni giorno.</p>
       </div>
       <div class="solutions-grid">
 
-        <div class="solution-card">
-          <div class="solution-card__category">Per le Aziende</div>
+        <div class="solution-card card--blue">
+          <div class="solution-card__category">Per le aziende</div>
           <h3>Arca EVOLUTION</h3>
-          <p>Gestionale ERP modulare: contabilita, vendite, magazzino, produzione, CRM e fatturazione elettronica in un unico ambiente.</p>
+          <div class="solution-card__producer">Wolters Kluwer</div>
+          <p>Gestionale ERP modulare per aziende commerciali e di produzione. Contabilità, magazzino, vendite, fatturazione elettronica, CRM e produzione in un unico ambiente.</p>
           <div class="solution-card__tags">
-            <span class="solution-card__tag">ERP</span>
-            <span class="solution-card__tag">Contabilita</span>
+            <span class="solution-card__tag">Contabilità</span>
             <span class="solution-card__tag">Magazzino</span>
+            <span class="solution-card__tag">Fatturazione</span>
+            <span class="solution-card__tag">CRM</span>
             <span class="solution-card__tag">Produzione</span>
           </div>
-          <a href="#" class="solution-card__link">Scopri di piu <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        </div>
-
-        <div class="solution-card">
-          <div class="solution-card__category">Gestione Rifiuti</div>
-          <h3>WinWaste</h3>
-          <p>Il software leader in Italia per la gestione integrata dei rifiuti. Registri, formulari, MUD e piena conformita R.E.N.T.Ri.</p>
-          <div class="solution-card__tags">
-            <span class="solution-card__tag">Rifiuti</span>
-            <span class="solution-card__tag">R.E.N.T.Ri</span>
-            <span class="solution-card__tag">MUD</span>
-            <span class="solution-card__tag">Ambiente</span>
+          <div class="solution-card__territory">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Marche
           </div>
-          <a href="#" class="solution-card__link">Scopri di piu <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="#" class="solution-card__link">Scopri di più <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
 
-        <div class="solution-card">
-          <div class="solution-card__category">Per i Professionisti</div>
+        <div class="solution-card card--green">
+          <div class="solution-card__category">Gestione rifiuti</div>
+          <h3>WinWaste</h3>
+          <div class="solution-card__producer">Nica / Gruppo Zucchetti</div>
+          <p>Il software per la gestione integrata dei rifiuti: registri di carico/scarico, formulari, MUD e piena conformità R.E.N.T.Ri. Per aziende di raccolta, impianti e produttori di rifiuti.</p>
+          <div class="solution-card__tags">
+            <span class="solution-card__tag">Registri</span>
+            <span class="solution-card__tag">Formulari</span>
+            <span class="solution-card__tag">MUD</span>
+            <span class="solution-card__tag">R.E.N.T.Ri</span>
+            <span class="solution-card__tag">Pesatura</span>
+          </div>
+          <div class="solution-card__territory">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Marche &middot; Umbria &middot; Abruzzo
+          </div>
+          <a href="#" class="solution-card__link">Scopri di più <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+
+        <div class="solution-card card--amber">
+          <div class="solution-card__category">Per i professionisti</div>
           <h3>Genya</h3>
-          <p>Suite cloud per studi professionali: contabilita, dichiarativi, bilanci e fatturazione. Collaborazione studio-cliente in tempo reale.</p>
+          <div class="solution-card__producer">Wolters Kluwer</div>
+          <div class="solution-card__note" style="background: var(--green-pale); color: var(--green);">Cloud &mdash; il futuro</div>
+          <p>Suite cloud per commercialisti: contabilità, dichiarativi, bilanci e fatturazione. Collaborazione studio-cliente in tempo reale, da qualsiasi dispositivo.</p>
           <div class="solution-card__tags">
             <span class="solution-card__tag">Cloud</span>
-            <span class="solution-card__tag">Fiscale</span>
+            <span class="solution-card__tag">Contabilità</span>
+            <span class="solution-card__tag">Dichiarativi</span>
             <span class="solution-card__tag">Bilanci</span>
           </div>
-          <a href="#" class="solution-card__link">Scopri di piu <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="#" class="solution-card__link">Scopri di più <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
 
-        <div class="solution-card">
-          <div class="solution-card__category">Per i Professionisti</div>
-          <h3>B.Point Solution Platform</h3>
-          <p>La piattaforma completa per studi professionali. Affidabilita e solidita per garantire l'efficienza operativa di 8.000+ studi.</p>
+        <div class="solution-card card--amber">
+          <div class="solution-card__category">Per i professionisti</div>
+          <h3>BPoint Solution Platform</h3>
+          <div class="solution-card__producer">Wolters Kluwer / OSRA</div>
+          <div class="solution-card__note" style="background: var(--amber-pale); color: var(--amber);">In dismissione entro il 2030</div>
+          <p>La piattaforma desktop per studi professionali. Supportiamo i clienti esistenti e gestiamo la migrazione a Genya.</p>
           <div class="solution-card__tags">
             <span class="solution-card__tag">Desktop</span>
             <span class="solution-card__tag">Fiscale</span>
-            <span class="solution-card__tag">Adempimenti</span>
+            <span class="solution-card__tag">Paghe</span>
           </div>
-          <a href="#" class="solution-card__link">Scopri di piu <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="#" class="solution-card__link">BPoint e Genya <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- IT & CYBERSECURITY -->
+  <section class="section section--gray" id="infrastruttura">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Per tutti i nostri clienti</div>
+        <h2>Infrastruttura IT e cybersecurity</h2>
+        <p>Il software funziona bene solo su una base solida e protetta. Questi servizi sono trasversali a tutte le aree.</p>
+      </div>
+      <div class="infra-grid">
+        <div class="infra-card">
+          <div class="infra-card__icon" style="background: var(--blue-pale); color: var(--blue);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><circle cx="6" cy="6" r="1"/><circle cx="6" cy="18" r="1"/></svg>
+          </div>
+          <h3>Sistemi e infrastruttura</h3>
+          <div class="infra-card__partners">Dell &middot; HP &middot; Microsoft</div>
+          <p>Server, reti, postazioni di lavoro, Microsoft 365 e Azure. Progettiamo, installiamo e manteniamo l'infrastruttura su cui girano i tuoi software.</p>
+        </div>
+        <div class="infra-card">
+          <div class="infra-card__icon" style="background: var(--teal-pale); color: var(--teal-dark);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Cybersecurity</h3>
+          <div class="infra-card__partners">ESET Partner</div>
+          <p>Antivirus, protezione endpoint, XDR e MDR. Siamo partner ESET. Proteggiamo i tuoi dati e i tuoi sistemi dalle minacce informatiche.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -403,52 +565,111 @@
   <!-- AUDIENCE SPLIT -->
   <div class="audience">
     <div class="audience__panel audience__panel--business">
-      <h3>Per le Aziende</h3>
-      <p>Digitalizza i processi aziendali con un gestionale completo, configurato sulle tue esigenze.</p>
+      <h3>Per le aziende</h3>
+      <p>Gestionale completo, infrastruttura solida, un unico referente tecnico.</p>
       <ul class="audience__list">
-        <li>ERP modulare con 8 aree funzionali</li>
+        <li>Arca EVOLUTION: 8 aree funzionali</li>
         <li>Personalizzazioni su misura</li>
-        <li>Gestione rifiuti conforme R.E.N.T.Ri</li>
-        <li>Formazione e migrazione dati garantita</li>
+        <li>Formazione e migrazione dati</li>
+        <li>Assistenza on-site e remota</li>
       </ul>
-      <a href="#" class="audience__link">Soluzioni per imprese &rarr;</a>
+      <a href="#" class="audience__link">Scopri Arca EVOLUTION &rarr;</a>
     </div>
     <div class="audience__panel audience__panel--accountants">
-      <h3>Per Commercialisti e Studi</h3>
-      <p>Piu tempo per la consulenza strategica, meno per gli adempimenti.</p>
+      <h3>Per i professionisti</h3>
+      <p>Più tempo per la consulenza, meno per gli adempimenti.</p>
       <ul class="audience__list">
-        <li>Genya: il futuro dello studio e in cloud</li>
-        <li>B.Point: affidabilita desktop per 8.000+ studi</li>
-        <li>Collaborazione studio-cliente in tempo reale</li>
-        <li>Aggiornamenti normativi sempre inclusi</li>
+        <li>Genya: lo studio in cloud</li>
+        <li>BPoint: supporto fino al 2030</li>
+        <li>Migrazione assistita a Genya</li>
+        <li>Aggiornamenti normativi inclusi</li>
       </ul>
-      <a href="#" class="audience__link">Soluzioni per studi &rarr;</a>
+      <a href="#" class="audience__link">Scopri Genya &rarr;</a>
+    </div>
+    <div class="audience__panel audience__panel--waste">
+      <h3>Gestione rifiuti</h3>
+      <p>Software e conformità per chi lavora nel settore ambientale.</p>
+      <ul class="audience__list">
+        <li>WinWaste: gestione integrata</li>
+        <li>R.E.N.T.Ri: conformità nativa</li>
+        <li>Copertura: Marche, Umbria, Abruzzo</li>
+        <li>20+ anni di esperienza nel settore</li>
+      </ul>
+      <a href="#" class="audience__link">Scopri WinWaste &rarr;</a>
     </div>
   </div>
 
   <!-- PROCESS -->
-  <section class="section section--gray">
+  <section class="section section--gray" id="come-lavoriamo">
     <div class="container">
       <div class="section-header">
         <div class="section-label">Come lavoriamo</div>
-        <h2>Tre passi per la tua soluzione</h2>
-        <p>Un percorso concreto, con tempi certi e un unico referente dedicato.</p>
+        <h2>Tre passi, un unico referente</h2>
+        <p>Per ogni area c'è una persona dedicata che ti segue dalla prima analisi all'assistenza quotidiana.</p>
       </div>
       <div class="process-grid">
         <div class="process-card">
           <div class="process-card__number">1</div>
-          <h4>Analisi gratuita</h4>
-          <p>Veniamo da te, studiamo i tuoi processi e ti proponiamo la soluzione piu adatta. Nessun impegno.</p>
+          <h4>Analisi</h4>
+          <p>Veniamo da te, studiamo i tuoi processi e ti proponiamo la configurazione più adatta. Nessun impegno.</p>
         </div>
         <div class="process-card">
           <div class="process-card__number">2</div>
-          <h4>Configurazione su misura</h4>
-          <p>Installiamo, personalizziamo e migriamo i tuoi dati. Formiamo il tuo team fino a renderlo autonomo.</p>
+          <h4>Installazione e formazione</h4>
+          <p>Configuriamo il software, migriamo i tuoi dati e formiamo il tuo team fino a renderlo autonomo.</p>
         </div>
         <div class="process-card">
           <div class="process-card__number">3</div>
           <h4>Assistenza continua</h4>
-          <p>Risposta entro 24h, aggiornamenti normativi inclusi, interventi on-site quando serve.</p>
+          <p>Chi risponde è chi risolve il problema. Niente call center, niente ticket persi. On-site o da remoto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ASSISTENZA -->
+  <section class="assist" id="assistenza">
+    <div class="container">
+      <div class="assist__inner">
+        <div>
+          <h2>Assistenza</h2>
+          <p class="assist__desc">Chiamaci o scrivici. Chi risponde è chi risolve il problema &mdash; non un call center.</p>
+          <div class="assist__contacts">
+            <a href="tel:+390733281142" class="assist__contact">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              0733 281142
+            </a>
+            <a href="tel:+390733292776" class="assist__contact">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              0733 292776
+            </a>
+            <a href="mailto:info@ctech.it" class="assist__contact">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+              info@ctech.it
+            </a>
+          </div>
+        </div>
+        <div class="assist__remote">
+          <h3>Assistenza remota</h3>
+          <p>Scarica SupRemo per ricevere assistenza a distanza. Ti guideremo noi.</p>
+          <div class="assist__steps">
+            <div class="assist__step">
+              <div class="assist__step-num">1</div>
+              <span>Scarica</span>
+            </div>
+            <div class="assist__step">
+              <div class="assist__step-num">2</div>
+              <span>Avvia</span>
+            </div>
+            <div class="assist__step">
+              <div class="assist__step-num">3</div>
+              <span>Comunicaci l'ID</span>
+            </div>
+          </div>
+          <a href="https://www.supremocontrol.com/download/" class="btn btn--white" target="_blank" rel="noopener" style="padding:12px 24px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Scarica SupRemo
+          </a>
         </div>
       </div>
     </div>
@@ -459,14 +680,16 @@
     <div class="container">
       <div class="section-header">
         <div class="section-label">Partner tecnologici</div>
-        <h2>Rivenditori certificati</h2>
-        <p>Collaborazioni ventennali con i leader del software gestionale e della sicurezza informatica.</p>
+        <h2>Con chi lavoriamo</h2>
+        <p>Rivenditori certificati dei leader del software gestionale, dell'infrastruttura e della sicurezza.</p>
       </div>
       <div class="partners-row">
-        <div style="font-size:1.1rem;font-weight:700;color:var(--slate-400);letter-spacing:0.02em;">Wolters Kluwer</div>
-        <div style="font-size:1.1rem;font-weight:700;color:var(--slate-400);letter-spacing:0.02em;">Zucchetti</div>
-        <div style="font-size:1.1rem;font-weight:700;color:var(--slate-400);letter-spacing:0.02em;">Nica</div>
-        <div style="font-size:1.1rem;font-weight:700;color:var(--slate-400);letter-spacing:0.02em;">ESET</div>
+        <span>Wolters Kluwer</span>
+        <span>Zucchetti</span>
+        <span>ESET</span>
+        <span>Dell</span>
+        <span>HP</span>
+        <span>Microsoft</span>
       </div>
     </div>
   </section>
@@ -474,9 +697,12 @@
   <!-- CTA -->
   <section class="cta">
     <div class="container">
-      <h2>Pronto a ottimizzare la tua azienda?</h2>
-      <p>Parliamo delle tue esigenze. La prima consulenza e gratuita e senza impegno.</p>
-      <a href="#" class="btn btn--white" style="padding:16px 32px;">Richiedi consulenza gratuita</a>
+      <h2>Parliamo delle tue esigenze?</h2>
+      <p>Chiamaci o scrivici. La prima analisi è gratuita e senza impegno.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="tel:+390733281142" class="btn btn--white" style="padding:16px 32px;">Chiamaci: 0733 281142</a>
+        <a href="mailto:info@ctech.it" class="btn btn--outline" style="padding:16px 32px;">Scrivici: info@ctech.it</a>
+      </div>
     </div>
   </section>
 
@@ -486,34 +712,35 @@
       <div class="footer__grid">
         <div class="footer__brand">
           <div style="display:flex;align-items:center;gap:10px;color:white;font-weight:700;font-size:1.1rem;">
-            <div style="width:36px;height:36px;background:var(--blue);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:800;color:white;">CT</div>
+            <div style="width:36px;height:36px;background:var(--red);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:800;color:white;">CT</div>
             CTech
           </div>
-          <p>Soluzioni software e servizi IT per aziende e professionisti nelle Marche. Al tuo fianco dal 1984.</p>
+          <p>Computer's Technology S.r.l.<br>Software gestionali e servizi IT per aziende e professionisti nelle Marche. Dal 1984.</p>
         </div>
         <div>
           <h4>Soluzioni</h4>
           <div class="footer__links">
-            <a href="#" class="footer__link">Arca EVOLUTION</a>
-            <a href="#" class="footer__link">WinWaste</a>
-            <a href="#" class="footer__link">Genya</a>
-            <a href="#" class="footer__link">B.Point</a>
+            <a href="#soluzioni" class="footer__link">Arca EVOLUTION</a>
+            <a href="#soluzioni" class="footer__link">WinWaste</a>
+            <a href="#soluzioni" class="footer__link">Genya</a>
+            <a href="#soluzioni" class="footer__link">BPoint</a>
           </div>
         </div>
         <div>
           <h4>Servizi</h4>
           <div class="footer__links">
-            <a href="#" class="footer__link">Assistenza Tecnica</a>
-            <a href="#" class="footer__link">Servizi IT</a>
-            <a href="#" class="footer__link">Cybersecurity</a>
+            <a href="#assistenza" class="footer__link">Assistenza</a>
+            <a href="#infrastruttura" class="footer__link">Infrastruttura IT</a>
+            <a href="#infrastruttura" class="footer__link">Cybersecurity</a>
           </div>
         </div>
         <div>
           <h4>Contatti</h4>
           <div class="footer__links">
-            <a href="#" class="footer__link">Via Cluentina, 26/B<br>Macerata (MC) 62100</a>
-            <a href="#" class="footer__link">0733.281142</a>
-            <a href="#" class="footer__link">info@ctech.it</a>
+            <span class="footer__link">Via Cluentina, 26/B<br>Loc. Piediripa di Macerata (MC)<br>62100</span>
+            <a href="tel:+390733281142" class="footer__link">0733 281142</a>
+            <a href="tel:+390733292776" class="footer__link">0733 292776</a>
+            <a href="mailto:info@ctech.it" class="footer__link">info@ctech.it</a>
           </div>
         </div>
       </div>
