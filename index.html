@@ -36,354 +36,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      /* Brand accent — uso limitato: CTA, link, section label */
-      --accent: #C52A2A;
-      --accent-hover: #A01E1E;
-      /* Palette B "Tech Contemporanea" — base slate */
-      --dark: #0F172A;
-      --dark-mid: #1E293B;
-      --dark-muted: #334155;
-      --slate: #475569;
-      --slate-light: #F1F5F9;
-      /* Neutrals — scala slate-gray fredda */
-      --gray-50: #F9FAFB;
-      --gray-100: #F3F4F6;
-      --gray-200: #E5E7EB;
-      --gray-300: #D1D5DB;
-      --gray-400: #9CA3AF;
-      --gray-500: #64748B;
-      --gray-600: #475569;
-      --gray-700: #334155;
-      --gray-800: #1E293B;
-      --gray-900: #111827;
-      --white: #FFFFFF;
-      --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      --radius: 8px;
-      --radius-lg: 14px;
-      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-      --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
-      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -2px rgba(0,0,0,0.04);
-      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.04);
-      --max-w: 1200px;
-    }
-
-    html { scroll-behavior: smooth; font-size: 16px; }
-    body { font-family: var(--font); color: var(--gray-500); line-height: 1.65; background: var(--white); -webkit-font-smoothing: antialiased; }
-    img { max-width: 100%; height: auto; display: block; }
-    a { text-decoration: none; color: inherit; }
-
-    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
-
-    /* ---------- NAVBAR ---------- */
-    .nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(255,255,255,0.96); backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--gray-200);
-      transition: box-shadow 0.3s;
-    }
-    .nav.scrolled { box-shadow: var(--shadow-md); }
-    .nav__inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-    .nav__brand { display: flex; align-items: center; }
-    .nav__brand img { height: 42px; width: auto; }
-    .nav__links { display: flex; align-items: center; gap: 32px; list-style: none; }
-    .nav__link {
-      font-size: 0.9rem; font-weight: 500; color: var(--gray-500);
-      transition: color 0.2s; position: relative;
-    }
-    .nav__link:hover { color: var(--gray-900); }
-    .nav__link::after {
-      content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
-      background: var(--gray-900); transition: width 0.2s;
-    }
-    .nav__link:hover::after { width: 100%; }
-    .nav__cta {
-      background: var(--gray-700); color: white; padding: 10px 22px;
-      border-radius: var(--radius); font-size: 0.875rem; font-weight: 600;
-      transition: background 0.2s;
-    }
-    .nav__cta:hover { background: var(--slate); }
-    .nav__toggle {
-      display: none; background: none; border: none; cursor: pointer;
-      padding: 8px; color: var(--gray-700);
-    }
-    .nav__toggle svg { width: 24px; height: 24px; }
-
-    /* ---------- HERO ---------- */
-    .hero {
-      padding: 152px 0 88px;
-      background: var(--dark);
-      color: white; position: relative; overflow: hidden;
-    }
-    .hero::before {
-      content: ''; position: absolute; top: -30%; right: -10%; width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(100,116,139,0.08) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .hero__inner { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
-    .hero__content { max-width: 680px; }
-    .hero__image { position: relative; border-radius: var(--radius-lg); overflow: hidden; }
-    .hero__image img { width: 100%; height: 420px; object-fit: cover; border-radius: var(--radius-lg); }
-    .hero__image::after {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(15,23,42,0.2) 0%, transparent 60%);
-      border-radius: var(--radius-lg);
-    }
-    .hero__label {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
-      padding: 7px 16px; border-radius: 100px; font-size: 0.82rem; font-weight: 500;
-      color: rgba(255,255,255,0.6); margin-bottom: 28px;
-    }
-    .hero__label-dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
-    .hero h1 {
-      font-size: 3.25rem; font-weight: 900; line-height: 1.08; letter-spacing: -0.03em;
-      margin-bottom: 24px;
-    }
-    .hero h1 span { color: rgba(255,255,255,0.4); }
-    .hero__sub {
-      font-size: 1.15rem; line-height: 1.75; color: rgba(255,255,255,0.5);
-      margin-bottom: 40px; max-width: 520px;
-    }
-    .hero__actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 64px; }
-    .btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 15px 30px; border-radius: var(--radius); font-size: 0.95rem;
-      font-weight: 600; cursor: pointer; border: none; transition: all 0.2s;
-    }
-    .btn--primary { background: var(--accent); color: white; }
-    .btn--primary:hover { background: var(--accent-hover); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(197,42,42,0.25); }
-    .btn--outline { background: transparent; color: white; border: 1px solid rgba(255,255,255,0.18); }
-    .btn--outline:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.3); }
-    .btn--white { background: white; color: var(--dark); }
-    .btn--white:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
-    .btn--dark { background: var(--dark); color: white; border: 1px solid var(--dark-mid); }
-    .btn--dark:hover { background: var(--dark-mid); transform: translateY(-1px); }
-
-    /* Hero bottom strip */
-    .hero__bottom {
-      display: flex; align-items: center; gap: 48px;
-      padding-top: 48px; border-top: 1px solid rgba(255,255,255,0.07);
-      grid-column: 1 / -1;
-    }
-    .hero__stat { text-align: center; }
-    .hero__stat-number { font-size: 2.5rem; font-weight: 900; color: white; line-height: 1; letter-spacing: -0.02em; }
-    .hero__stat-label { font-size: 0.8rem; color: rgba(255,255,255,0.35); margin-top: 6px; }
-    .hero__divider { width: 1px; height: 48px; background: rgba(255,255,255,0.07); flex-shrink: 0; }
-    .hero__partners { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
-    .hero__partners-label { font-size: 0.72rem; color: rgba(255,255,255,0.25); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; white-space: nowrap; }
-    .hero__partners img {
-      height: 20px; width: auto; opacity: 0.3; transition: opacity 0.2s;
-      filter: brightness(0) invert(1);
-    }
-    .hero__partners img:hover { opacity: 0.6; }
-
-    /* ---------- SECTION COMMON ---------- */
-    .section { padding: 104px 0; }
-    .section--gray { background: var(--gray-100); }
-    .section--dark { background: var(--dark); color: white; }
-    .section-header { text-align: center; margin-bottom: 64px; }
-    .section-label {
-      display: inline-block; font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.12em; color: var(--accent); margin-bottom: 14px;
-    }
-    .section-header h2 {
-      font-size: 2.5rem; font-weight: 800; color: var(--gray-900); line-height: 1.15;
-      letter-spacing: -0.02em; margin-bottom: 18px;
-    }
-    .section--dark .section-header h2 { color: white; }
-    .section-header p { font-size: 1.1rem; color: var(--gray-500); max-width: 560px; margin: 0 auto; line-height: 1.7; }
-    .section--dark .section-header p { color: rgba(255,255,255,0.5); }
-
-    /* ---------- SOLUTIONS GRID ---------- */
-    .solutions-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-    .solution-card {
-      background: white; border: 1px solid var(--gray-200); border-radius: var(--radius-lg);
-      padding: 0; transition: all 0.3s; position: relative; overflow: hidden;
-      display: flex; flex-direction: column;
-    }
-    .solution-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
-    .solution-card__img { width: 100%; height: 190px; object-fit: cover; border-bottom: 1px solid var(--gray-100); }
-    .solution-card__body { padding: 28px 28px 24px; flex: 1; display: flex; flex-direction: column; }
-    .solution-card__top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
-    .solution-card__category { font-size: 0.73rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
-    .solution-card__producer { font-size: 0.73rem; color: var(--gray-400); font-weight: 500; }
-    .solution-card h3 { font-size: 1.4rem; font-weight: 800; color: var(--gray-900); margin-bottom: 10px; letter-spacing: -0.01em; }
-    .solution-card p { font-size: 0.92rem; color: var(--gray-500); margin-bottom: 16px; line-height: 1.65; flex: 1; }
-    .solution-card__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
-    .solution-card__tag { font-size: 0.73rem; font-weight: 600; padding: 4px 11px; border-radius: 100px; }
-    .solution-card__territory {
-      display: inline-flex; align-items: center; gap: 5px;
-      font-size: 0.78rem; color: var(--gray-400); margin-bottom: 16px; font-weight: 500;
-    }
-    .solution-card__territory svg { width: 14px; height: 14px; }
-    .solution-card__link {
-      font-size: 0.9rem; font-weight: 700;
-      display: inline-flex; align-items: center; gap: 6px; margin-top: auto;
-    }
-    .solution-card__link svg { width: 16px; height: 16px; transition: transform 0.2s; }
-    .solution-card:hover .solution-card__link svg { transform: translateX(4px); }
-    .solution-card__note {
-      display: inline-block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.04em; padding: 4px 10px; border-radius: var(--radius); margin-bottom: 8px;
-    }
-
-    /* Card soluzioni — category e link rossi (accent), tag neutri ardesia */
-    .solution-card__category { color: var(--accent); }
-    .solution-card__tag { background: var(--slate-light); color: var(--slate); }
-    .solution-card__link { color: var(--accent); }
-    .solution-card__link:hover { color: var(--accent-hover); }
-
-    /* ---------- IT & CYBERSECURITY ---------- */
-    .infra-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .infra-card { border-radius: var(--radius-lg); overflow: hidden; transition: all 0.3s; }
-    .infra-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
-    .infra-card__img { width: 100%; height: 210px; object-fit: cover; }
-    .infra-card__body {
-      background: white; border: 1px solid var(--gray-200);
-      border-top: none; border-radius: 0 0 var(--radius-lg) var(--radius-lg); padding: 28px;
-    }
-    .infra-card__body h3 { font-size: 1.25rem; font-weight: 800; color: var(--gray-900); margin-bottom: 6px; }
-    .infra-card__partners { font-size: 0.82rem; color: var(--slate); font-weight: 600; margin-bottom: 10px; }
-    .infra-card__body p { font-size: 0.92rem; color: var(--gray-500); line-height: 1.65; }
-
-    /* ---------- PROCESS ---------- */
-    .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-    .process-card { text-align: center; padding: 36px 28px; }
-    .process-card__number {
-      width: 60px; height: 60px; background: var(--gray-700); color: white;
-      border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      font-size: 1.35rem; font-weight: 900; margin: 0 auto 22px;
-    }
-    .process-card h4 { font-size: 1.15rem; font-weight: 800; color: var(--gray-900); margin-bottom: 12px; }
-    .process-card p { font-size: 0.92rem; color: var(--gray-500); line-height: 1.65; }
-    /* process cards su sfondo chiaro — no override dark */
-
-    /* ---------- ASSISTENZA ---------- */
-    .assist { background: var(--dark); color: white; padding: 88px 0; }
-    .assist__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
-    .assist h2 { font-size: 2.1rem; font-weight: 800; margin-bottom: 14px; }
-    .assist__desc { font-size: 1.1rem; color: rgba(255,255,255,0.45); margin-bottom: 32px; max-width: 440px; line-height: 1.7; }
-    .assist__contacts { display: flex; flex-direction: column; gap: 14px; }
-    .assist__contact {
-      display: inline-flex; align-items: center; gap: 14px;
-      color: white; font-size: 1.15rem; font-weight: 700; transition: opacity 0.2s;
-    }
-    .assist__contact:hover { opacity: 0.7; }
-    .assist__contact svg { flex-shrink: 0; opacity: 0.35; }
-    .assist__remote {
-      background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
-      border-radius: var(--radius-lg); padding: 36px;
-    }
-    .assist__remote h3 { font-size: 1.25rem; font-weight: 800; margin-bottom: 10px; }
-    .assist__remote p { font-size: 0.92rem; color: rgba(255,255,255,0.45); margin-bottom: 22px; line-height: 1.65; }
-    .assist__steps { display: flex; gap: 28px; margin-bottom: 28px; }
-    .assist__step { text-align: center; }
-    .assist__step-num {
-      width: 38px; height: 38px; border-radius: 50%;
-      background: rgba(255,255,255,0.1); display: flex; align-items: center;
-      justify-content: center; font-weight: 800; font-size: 0.9rem; margin: 0 auto 8px; color: white;
-    }
-    .assist__step span { font-size: 0.82rem; color: rgba(255,255,255,0.45); font-weight: 500; }
-
-    /* ---------- PARTNERS ---------- */
-    .partners-grid {
-      display: flex; justify-content: center; align-items: center; gap: 64px; flex-wrap: wrap;
-    }
-    .partners-grid a { display: flex; align-items: center; transition: opacity 0.2s; opacity: 0.7; }
-    .partners-grid a:hover { opacity: 1; }
-    .partners-grid img { height: 40px; width: auto; }
-    /* partners — nessun bordo decorativo */
-
-    /* ---------- CTA / CONTACT FORM ---------- */
-    .cta-form { padding: 104px 0; background: var(--gray-100); }
-    .cta-form__inner { max-width: 720px; margin: 0 auto; text-align: center; }
-    .cta-form__inner h2 { font-size: 2.5rem; font-weight: 800; color: var(--gray-900); margin-bottom: 12px; letter-spacing: -0.02em; }
-    .cta-form__inner > p { font-size: 1.1rem; color: var(--gray-500); margin-bottom: 48px; line-height: 1.7; }
-    .form-card {
-      background: white; border-radius: var(--radius-lg); padding: 40px;
-      box-shadow: var(--shadow-lg);
-    }
-    .form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; text-align: left; }
-    .form__group { display: flex; flex-direction: column; }
-    .form__group--full { grid-column: 1 / -1; }
-    .form__label { font-size: 0.82rem; font-weight: 600; color: var(--gray-700); margin-bottom: 6px; }
-    .form__input, .form__select, .form__textarea {
-      font-family: var(--font); font-size: 0.95rem; color: var(--gray-800);
-      background: var(--white); border: 1px solid var(--gray-300);
-      border-radius: var(--radius); padding: 13px 16px;
-      transition: border-color 0.2s, box-shadow 0.2s;
-      width: 100%;
-    }
-    .form__input:focus, .form__select:focus, .form__textarea:focus {
-      outline: none; border-color: var(--slate);
-      box-shadow: 0 0 0 3px rgba(71,85,105,0.12);
-    }
-    .form__input::placeholder, .form__textarea::placeholder { color: var(--gray-400); }
-    .form__select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23A3A3A3' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
-    .form__textarea { resize: vertical; min-height: 100px; }
-    .form__submit {
-      grid-column: 1 / -1; margin-top: 8px;
-    }
-    .form__privacy { grid-column: 1 / -1; font-size: 0.78rem; color: var(--gray-400); line-height: 1.6; }
-    .form__privacy a { color: var(--gray-500); text-decoration: underline; }
-
-    /* ---------- FOOTER ---------- */
-    .footer { background: var(--gray-800); color: rgba(255,255,255,0.45); padding: 72px 0 36px; }
-    .footer__grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
-    .footer__brand-logo {
-      background: white; border-radius: var(--radius); padding: 8px 12px;
-      display: inline-block; margin-bottom: 14px;
-    }
-    .footer__brand-logo img { height: 36px; width: auto; }
-    .footer__brand p { font-size: 0.9rem; line-height: 1.7; }
-    .footer h4 { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.25); margin-bottom: 18px; }
-    .footer__links { display: flex; flex-direction: column; gap: 12px; }
-    .footer__link { font-size: 0.9rem; transition: color 0.2s; }
-    .footer__link:hover { color: white; }
-    .footer__bottom {
-      border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px;
-      display: flex; justify-content: space-between; align-items: center;
-      font-size: 0.82rem; color: rgba(255,255,255,0.25);
-    }
-    .footer__legal { display: flex; gap: 24px; }
-    .footer__legal a { color: rgba(255,255,255,0.25); transition: color 0.2s; }
-    .footer__legal a:hover { color: rgba(255,255,255,0.5); }
-
-    /* ---------- RESPONSIVE ---------- */
-    @media (max-width: 768px) {
-      .hero { padding: 128px 0 64px; }
-      .hero__inner { grid-template-columns: 1fr; }
-      .hero__image { display: none; }
-      .hero h1 { font-size: 2.25rem; }
-      .hero__bottom { flex-direction: column; align-items: flex-start; gap: 24px; }
-      .hero__divider { display: none; }
-      .solutions-grid { grid-template-columns: 1fr; }
-      .infra-grid { grid-template-columns: 1fr; }
-      .process-grid { grid-template-columns: 1fr; }
-      .assist__inner { grid-template-columns: 1fr; gap: 40px; }
-      .footer__grid { grid-template-columns: 1fr 1fr; gap: 32px; }
-      .form { grid-template-columns: 1fr; }
-      .form-card { padding: 24px; }
-      .nav__links {
-        display: none; position: absolute; top: 72px; left: 0; right: 0;
-        background: var(--white); border-bottom: 1px solid var(--gray-200);
-        flex-direction: column; padding: 12px 24px; box-shadow: var(--shadow-lg); gap: 0;
-      }
-      .nav__links.open { display: flex; }
-      .nav__links li { width: 100%; }
-      .nav__link, .nav__cta { display: block; width: 100%; padding: 12px 0; }
-      .nav__cta { text-align: center; margin-top: 8px; }
-      .nav__toggle { display: block; }
-      .section-header h2 { font-size: 1.85rem; }
-      .section { padding: 76px 0; }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+
 
   <!-- NAV -->
   <nav class="nav" id="nav">
@@ -398,8 +54,8 @@
         <li><a href="#soluzioni" class="nav__link">Soluzioni</a></li>
         <li><a href="#infrastruttura" class="nav__link">Servizi IT</a></li>
         <li><a href="#come-lavoriamo" class="nav__link">Come lavoriamo</a></li>
-        <li><a href="#contatti" class="nav__link">Contatti</a></li>
-        <li><a href="#assistenza" class="nav__cta">Assistenza</a></li>
+        <li><a href="/ctech-web/contatti.html" class="nav__link">Contatti</a></li>
+        <li><a href="/ctech-web/assistenza.html" class="nav__cta">Assistenza</a></li>
       </ul>
     </div>
   </nav>
@@ -472,7 +128,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
               Marche
             </div>
-            <a href="#" class="solution-card__link">Approfondisci <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <a href="/ctech-web/soluzioni/arca-evolution.html" class="solution-card__link">Approfondisci <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
         </div>
 
@@ -497,7 +153,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
               Marche &middot; Umbria &middot; Abruzzo
             </div>
-            <a href="#" class="solution-card__link">Approfondisci <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <a href="/ctech-web/soluzioni/winwaste.html" class="solution-card__link">Approfondisci <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
         </div>
 
@@ -522,7 +178,7 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
               Marche
             </div>
-            <a href="#" class="solution-card__link">Approfondisci <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <a href="/ctech-web/soluzioni/genya.html" class="solution-card__link">Approfondisci <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
         </div>
 
@@ -541,7 +197,7 @@
               <span class="solution-card__tag">Fiscale</span>
               <span class="solution-card__tag">Paghe</span>
             </div>
-            <a href="#" class="solution-card__link">Scopri il percorso di migrazione <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <a href="/ctech-web/soluzioni/genya.html#bpoint" class="solution-card__link">Scopri il percorso di migrazione <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
         </div>
 
@@ -702,7 +358,7 @@
             <label class="form__label" for="messaggio">Messaggio</label>
             <textarea class="form__textarea" id="messaggio" name="messaggio" placeholder="Descrivi brevemente la tua esigenza..."></textarea>
           </div>
-          <p class="form__privacy">Inviando il modulo acconsenti al trattamento dei dati personali ai sensi del Regolamento UE 2016/679 (GDPR). <a href="#">Leggi l'informativa completa</a>.</p>
+          <p class="form__privacy">Inviando il modulo acconsenti al trattamento dei dati personali ai sensi del Regolamento UE 2016/679 (GDPR). <a href="/ctech-web/privacy.html">Leggi l'informativa completa</a>.</p>
           <div class="form__submit">
             <button type="submit" class="btn btn--primary" style="width:100%; justify-content:center; padding: 16px 32px; font-size: 1rem;">Invia richiesta</button>
           </div>
@@ -725,18 +381,18 @@
         <div>
           <h4>Soluzioni</h4>
           <div class="footer__links">
-            <a href="#soluzioni" class="footer__link">Arca EVOLUTION</a>
-            <a href="#soluzioni" class="footer__link">WinWaste</a>
-            <a href="#soluzioni" class="footer__link">Genya</a>
-            <a href="#soluzioni" class="footer__link">BPoint</a>
+            <a href="/ctech-web/soluzioni/arca-evolution.html" class="footer__link">Arca EVOLUTION</a>
+            <a href="/ctech-web/soluzioni/winwaste.html" class="footer__link">WinWaste</a>
+            <a href="/ctech-web/soluzioni/genya.html" class="footer__link">Genya</a>
+            <a href="/ctech-web/soluzioni/genya.html#bpoint" class="footer__link">BPoint</a>
           </div>
         </div>
         <div>
           <h4>Servizi</h4>
           <div class="footer__links">
-            <a href="#assistenza" class="footer__link">Assistenza</a>
-            <a href="#infrastruttura" class="footer__link">Infrastruttura IT</a>
-            <a href="#infrastruttura" class="footer__link">Cybersecurity</a>
+            <a href="/ctech-web/assistenza.html" class="footer__link">Assistenza</a>
+            <a href="/ctech-web/soluzioni/infrastruttura.html" class="footer__link">Infrastruttura IT</a>
+            <a href="/ctech-web/soluzioni/cybersecurity.html" class="footer__link">Cybersecurity</a>
           </div>
         </div>
         <div>
@@ -752,8 +408,8 @@
       <div class="footer__bottom">
         <span>&copy; 2026 Computer's Technology S.r.l. &mdash; P.IVA 00840390439</span>
         <div class="footer__legal">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Cookie Policy</a>
+          <a href="/ctech-web/privacy.html">Privacy Policy</a>
+          <a href="/ctech-web/cookie-policy.html">Cookie Policy</a>
         </div>
       </div>
     </div>
