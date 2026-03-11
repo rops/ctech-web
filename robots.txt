@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rops.github.io/ctech-web/sitemap.xml

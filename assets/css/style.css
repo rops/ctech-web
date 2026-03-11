@@ -4,6 +4,14 @@
    Shared stylesheet for all pages
    ============================================================ */
 
+/* ---------- FONT: Inter (self-hosted) ---------- */
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 400; font-display: swap; src: url('../fonts/inter-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 500; font-display: swap; src: url('../fonts/inter-latin-500-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 600; font-display: swap; src: url('../fonts/inter-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 700; font-display: swap; src: url('../fonts/inter-latin-700-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 800; font-display: swap; src: url('../fonts/inter-latin-800-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 900; font-display: swap; src: url('../fonts/inter-latin-900-normal.woff2') format('woff2'); }
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -230,6 +238,17 @@ a { text-decoration: none; color: inherit; }
 .form__submit { grid-column: 1 / -1; margin-top: 8px; }
 .form__privacy { grid-column: 1 / -1; font-size: 0.78rem; color: var(--gray-400); line-height: 1.6; }
 .form__privacy a { color: var(--gray-500); text-decoration: underline; }
+.form__consent { grid-column: 1 / -1; }
+.form__checkbox-label {
+  display: flex; align-items: flex-start; gap: 10px; cursor: pointer;
+  font-size: 0.82rem; color: var(--gray-500); line-height: 1.6;
+}
+.form__checkbox-label input[type="checkbox"] {
+  margin-top: 3px; flex-shrink: 0; width: 18px; height: 18px;
+  accent-color: var(--slate);
+}
+.form__checkbox-label a { color: var(--slate); text-decoration: underline; }
+.form__checkbox-label a:hover { color: var(--gray-900); }
 
 /* ---------- FOOTER ---------- */
 .footer { background: var(--gray-800); color: rgba(255,255,255,0.45); padding: 72px 0 36px; }
@@ -399,6 +418,18 @@ a { text-decoration: none; color: inherit; }
 .partners-grid a { display: flex; align-items: center; transition: opacity 0.2s; opacity: 0.7; }
 .partners-grid a:hover { opacity: 1; }
 .partners-grid img { height: 40px; width: auto; }
+
+/* ---------- STATIC MAP ---------- */
+.map-link { display: block; text-decoration: none; color: inherit; }
+.map-static {
+  background: var(--gray-100); border: 1px solid var(--gray-200); border-radius: var(--radius-lg);
+  padding: 48px 32px; text-align: center; transition: all 0.3s;
+}
+.map-static:hover { box-shadow: var(--shadow-md); border-color: var(--gray-300); }
+.map-static__pin { margin-bottom: 16px; }
+.map-static__info { font-size: 1rem; color: var(--gray-500); line-height: 1.7; margin-bottom: 24px; }
+.map-static__info strong { color: var(--gray-900); font-weight: 700; }
+.map-static__cta { display: inline-block; }
 
 /* ---------- LEGAL / PROSE CONTENT ---------- */
 .prose { max-width: 760px; margin: 0 auto; }

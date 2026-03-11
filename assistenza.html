@@ -13,6 +13,14 @@
   <meta property="og:description" content="Assistenza tecnica diretta: niente call center, niente ticket anonimi. Chiamaci e parla con chi conosce la tua installazione.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="it_IT">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Assistenza tecnica — CTech Macerata">
+  <meta name="twitter:description" content="Assistenza tecnica diretta: niente call center, niente ticket anonimi. Chiamaci e parla con chi conosce la tua installazione.">
+  <meta name="twitter:image" content="https://rops.github.io/ctech-web/assets/img/og-default.jpg">
+  <meta property="og:image" content="https://rops.github.io/ctech-web/assets/img/og-default.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:url" content="https://rops.github.io/ctech-web/assistenza.html">
 
   <!-- Structured Data -->
@@ -42,12 +50,10 @@
   }
   </script>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
   <!-- Stylesheet -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -56,7 +62,7 @@
   <nav class="nav" id="nav">
     <div class="container nav__inner">
       <a href="/ctech-web/" class="nav__brand">
-        <img src="assets/img/logo/logo-ctech.png" alt="Computer's Technology" width="160" height="52">
+        <img src="assets/img/logo/logo-ctech.png" alt="Computer's Technology" width="160" height="52" loading="lazy">
       </a>
       <button class="nav__toggle" aria-label="Menu" aria-expanded="false" onclick="document.querySelector('.nav__links').classList.toggle('open'); this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true')">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
@@ -150,11 +156,11 @@
         <div class="split__content">
           <h2>Cosa copriamo</h2>
           <ul>
-            <li>Arca EVOLUTION &mdash; gestionale ERP</li>
-            <li>WinWaste &mdash; gestione rifiuti</li>
-            <li>Genya e BPoint &mdash; software professionisti</li>
-            <li>ESET &mdash; cybersecurity e antivirus</li>
-            <li>Server, reti, postazioni, Microsoft 365</li>
+            <li><a href="/ctech-web/soluzioni/arca-evolution.html" style="color: var(--slate); text-decoration: underline;">Arca EVOLUTION</a> &mdash; gestionale ERP</li>
+            <li><a href="/ctech-web/soluzioni/winwaste.html" style="color: var(--slate); text-decoration: underline;">WinWaste</a> &mdash; gestione rifiuti</li>
+            <li><a href="/ctech-web/soluzioni/genya.html" style="color: var(--slate); text-decoration: underline;">Genya e BPoint</a> &mdash; software professionisti</li>
+            <li><a href="/ctech-web/soluzioni/cybersecurity.html" style="color: var(--slate); text-decoration: underline;">ESET</a> &mdash; cybersecurity e antivirus</li>
+            <li><a href="/ctech-web/soluzioni/infrastruttura.html" style="color: var(--slate); text-decoration: underline;">Server, reti, postazioni, Microsoft 365</a></li>
             <li>Backup, disaster recovery, continuit&agrave; operativa</li>
           </ul>
         </div>
@@ -185,7 +191,7 @@
             <span style="font-size: 0.9rem; font-weight: 600; color: var(--gray-700);">Comunicaci l'ID</span>
           </div>
         </div>
-        <a href="https://www.supremocontrol.com/download/" class="btn btn--primary" target="_blank" rel="noopener">
+        <a href="https://www.supremocontrol.com/it/supremo-download/" class="btn btn--primary" target="_blank" rel="noopener">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
           Scarica SupRemo
         </a>
@@ -211,7 +217,7 @@
       <div class="footer__grid">
         <div class="footer__brand">
           <div class="footer__brand-logo">
-            <img src="assets/img/logo/logo-ctech.png" alt="Computer's Technology">
+            <img src="assets/img/logo/logo-ctech.png" alt="Computer's Technology" loading="lazy">
           </div>
           <p>Computer's Technology S.r.l.<br>Dal 1984 al fianco di aziende e<br>professionisti nelle Marche.</p>
         </div>

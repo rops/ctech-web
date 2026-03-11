@@ -13,6 +13,14 @@
   <meta property="og:description" content="Contattaci per gestionali, infrastruttura IT e cybersecurity. Sede a Piediripa di Macerata, operiamo in tutta la regione Marche.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="it_IT">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contatti — CTech Macerata">
+  <meta name="twitter:description" content="Contattaci per gestionali, infrastruttura IT e cybersecurity. Sede a Piediripa di Macerata, operiamo in tutta la regione Marche.">
+  <meta name="twitter:image" content="https://rops.github.io/ctech-web/assets/img/og-default.jpg">
+  <meta property="og:image" content="https://rops.github.io/ctech-web/assets/img/og-default.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:url" content="https://rops.github.io/ctech-web/contatti.html">
 
   <!-- Structured Data -->
@@ -44,12 +52,10 @@
   }
   </script>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
   <!-- Stylesheet -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -58,7 +64,7 @@
   <nav class="nav" id="nav">
     <div class="container nav__inner">
       <a href="/ctech-web/" class="nav__brand">
-        <img src="assets/img/logo/logo-ctech.png" alt="Computer's Technology" width="160" height="52">
+        <img src="assets/img/logo/logo-ctech.png" alt="Computer's Technology" width="160" height="52" loading="lazy">
       </a>
       <button class="nav__toggle" aria-label="Menu" aria-expanded="false" onclick="document.querySelector('.nav__links').classList.toggle('open'); this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true')">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
@@ -129,7 +135,7 @@
         <h2>Richiedi un contatto</h2>
         <p>Compila il modulo e ti ricontattiamo entro 24 ore. La prima analisi &egrave; gratuita e senza impegno.</p>
         <div class="form-card">
-        <form class="form" action="https://formspree.io/f/PLACEHOLDER" method="POST">
+        <form class="form" action="https://formspree.io/f/info@ctech.it" method="POST">
           <div class="form__group">
             <label class="form__label" for="nome">Nome e cognome *</label>
             <input class="form__input" type="text" id="nome" name="nome" placeholder="Mario Rossi" required>
@@ -163,7 +169,12 @@
             <label class="form__label" for="messaggio">Messaggio</label>
             <textarea class="form__textarea" id="messaggio" name="messaggio" placeholder="Descrivi brevemente la tua esigenza..."></textarea>
           </div>
-          <p class="form__privacy">Inviando il modulo acconsenti al trattamento dei dati personali ai sensi del Regolamento UE 2016/679 (GDPR). <a href="/ctech-web/privacy.html">Leggi l'informativa completa</a>.</p>
+          <div class="form__group form__group--full form__consent">
+            <label class="form__checkbox-label">
+              <input type="checkbox" name="privacy_consent" required>
+              <span>Ho letto l'<a href="/ctech-web/privacy.html">informativa sulla privacy</a> e acconsento al trattamento dei miei dati personali ai sensi del Regolamento UE 2016/679 (GDPR). *</span>
+            </label>
+          </div>
           <div class="form__submit">
             <button type="submit" class="btn btn--primary" style="width:100%; justify-content:center; padding: 16px 32px; font-size: 1rem;">Invia richiesta</button>
           </div>
@@ -181,14 +192,23 @@
         <h2>Piediripa di Macerata</h2>
         <p>Sulla Cluentina, facilmente raggiungibile dalla superstrada Civitanova&ndash;Foligno. Operiamo in tutte le Marche.</p>
       </div>
-      <div style="border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--gray-200);">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2902.5!2d13.4528!3d43.2844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132e8d0a0a0a0a0a%3A0x0!2sVia+Cluentina+26%2FB%2C+62100+Macerata+MC!5e0!3m2!1sit!2sit!4v1700000000000"
-          width="100%" height="400" style="border:0; display:block;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="Sede CTech — Via Cluentina 26/B, Piediripa di Macerata">
-        </iframe>
-      </div>
+      <a href="https://maps.app.goo.gl/xmt5wpxGgRGjaHh79" target="_blank" rel="noopener" class="map-link" title="Apri in Google Maps">
+        <div class="map-static">
+          <div class="map-static__pin">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="map-static__info">
+            <strong>Computer's Technology S.r.l.</strong><br>
+            Via Cluentina, 26/B &mdash; 62100 Piediripa di Macerata (MC)
+          </div>
+          <div class="map-static__cta">
+            <span class="btn btn--outline" style="padding: 10px 20px; font-size: 0.85rem;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+              Apri in Google Maps
+            </span>
+          </div>
+        </div>
+      </a>
     </div>
   </section>
 
@@ -198,7 +218,7 @@
       <div class="footer__grid">
         <div class="footer__brand">
           <div class="footer__brand-logo">
-            <img src="assets/img/logo/logo-ctech.png" alt="Computer's Technology">
+            <img src="assets/img/logo/logo-ctech.png" alt="Computer's Technology" loading="lazy">
           </div>
           <p>Computer's Technology S.r.l.<br>Dal 1984 al fianco di aziende e<br>professionisti nelle Marche.</p>
         </div>

@@ -13,6 +13,14 @@
   <meta property="og:description" content="Il software gestione rifiuti pi&ugrave; diffuso in Italia. Registri, formulari, MUD, pesature e piena conformit&agrave; R.E.N.T.Ri. Rivenditore Zucchetti Ambiente su Marche, Umbria e Abruzzo.">
   <meta property="og:type" content="product">
   <meta property="og:locale" content="it_IT">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="WinWaste — Software gestione rifiuti | CTech Macerata">
+  <meta name="twitter:description" content="Il software gestione rifiuti pi&ugrave; diffuso in Italia. Registri, formulari, MUD, pesature e piena conformit&agrave; R.E.N.T.Ri. Rivenditore Zucchetti Ambiente su Marche, Umbria e Abruzzo.">
+  <meta name="twitter:image" content="https://rops.github.io/ctech-web/assets/img/og-default.jpg">
+  <meta property="og:image" content="https://rops.github.io/ctech-web/assets/img/og-default.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:url" content="https://rops.github.io/ctech-web/soluzioni/winwaste.html">
 
   <!-- Structured Data -->
@@ -61,12 +69,10 @@
   }
   </script>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
   <!-- Stylesheet -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/apple-touch-icon.png">
+  <link rel="icon" href="../favicon.ico" sizes="32x32">
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
@@ -75,7 +81,7 @@
   <nav class="nav" id="nav">
     <div class="container nav__inner">
       <a href="/ctech-web/" class="nav__brand">
-        <img src="../assets/img/logo/logo-ctech.png" alt="Computer's Technology" width="160" height="52">
+        <img src="../assets/img/logo/logo-ctech.png" alt="Computer's Technology" width="160" height="52" loading="lazy">
       </a>
       <button class="nav__toggle" aria-label="Menu" aria-expanded="false" onclick="document.querySelector('.nav__links').classList.toggle('open'); this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true')">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
@@ -245,6 +251,30 @@
     </div>
   </section>
 
+  <!-- SCOPRI ANCHE -->
+  <section class="section section--gray">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Correlati</div>
+        <h2>Scopri anche</h2>
+      </div>
+      <div class="features-grid">
+        <a href="/ctech-web/soluzioni/arca-evolution.html" class="feature-card" style="text-decoration:none;">
+          <h3>Arca EVOLUTION</h3>
+          <p>ERP completo per le PMI: contabilit&agrave;, magazzino, fatturazione elettronica, CRM e produzione.</p>
+        </a>
+        <a href="/ctech-web/soluzioni/infrastruttura.html" class="feature-card" style="text-decoration:none;">
+          <h3>Infrastruttura IT</h3>
+          <p>Server, reti, Microsoft 365, backup e manutenzione programmata.</p>
+        </a>
+        <a href="/ctech-web/soluzioni/cybersecurity.html" class="feature-card" style="text-decoration:none;">
+          <h3>Cybersecurity</h3>
+          <p>Protezione endpoint, antivirus ESET, XDR e monitoraggio continuo per le PMI.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA BAND -->
   <section class="cta-band">
     <div class="container">
@@ -252,7 +282,7 @@
       <p>Verifichiamo insieme lo stato della tua conformit&agrave;. Consulenza gratuita e senza impegno.</p>
       <div class="cta-band__actions">
         <a href="tel:+390733281142" class="btn btn--primary">Richiedi una consulenza</a>
-        <a href="tel:+390733281142" class="btn btn--outline-light">Chiama 0733 281142</a>
+        <a href="/ctech-web/contatti.html#modulo" class="btn btn--outline-light">Compila il modulo</a>
       </div>
     </div>
   </section>
@@ -263,7 +293,7 @@
       <div class="footer__grid">
         <div class="footer__brand">
           <div class="footer__brand-logo">
-            <img src="../assets/img/logo/logo-ctech.png" alt="Computer's Technology">
+            <img src="../assets/img/logo/logo-ctech.png" alt="Computer's Technology" loading="lazy">
           </div>
           <p>Computer's Technology S.r.l.<br>Dal 1984 al fianco di aziende e<br>professionisti nelle Marche.</p>
         </div>
