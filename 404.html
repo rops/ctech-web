@@ -11,8 +11,9 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+<a href="#contenuto" class="skip-nav">Vai al contenuto</a>
 
-  <nav class="nav" id="nav">
+  <nav class="nav" id="nav" aria-label="Navigazione principale">
     <div class="container nav__inner">
       <a href="/ctech-web/" class="nav__brand">
         <img src="assets/img/logo/logo-ctech.png" alt="Computer's Technology" width="160" height="52" loading="lazy">
@@ -25,20 +26,24 @@
     </div>
   </nav>
 
-  <section class="page-hero" style="min-height: 60vh; display: flex; align-items: center;">
-    <div class="container page-hero__inner" style="text-align: center; max-width: 560px; margin: 0 auto;">
+  <main id="contenuto">
+
+  <section class="page-hero page-hero--centered">
+    <div class="container page-hero__inner page-hero__inner--centered">
       <h1>Pagina non trovata</h1>
       <p>La pagina che cerchi non esiste o &egrave; stata spostata.</p>
-      <div class="page-hero__actions" style="justify-content: center;">
+      <div class="page-hero__actions page-hero__actions--centered">
         <a href="/ctech-web/" class="btn btn--primary">Torna alla homepage</a>
         <a href="/ctech-web/contatti.html" class="btn btn--outline-light">Contattaci</a>
       </div>
     </div>
   </section>
 
+  </main>
+
   <footer class="footer">
     <div class="container">
-      <div class="footer__bottom" style="border-top: none;">
+      <div class="footer__bottom footer__bottom--flat">
         <span>&copy; 2026 Computer's Technology S.r.l. &mdash; P.IVA 00840390439</span>
         <div class="footer__legal">
           <a href="/ctech-web/privacy.html">Privacy Policy</a>

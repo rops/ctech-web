@@ -58,15 +58,16 @@
   <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
+<a href="#contenuto" class="skip-nav">Vai al contenuto</a>
 
   <!-- NAV -->
-  <nav class="nav" id="nav">
+  <nav class="nav" id="nav" aria-label="Navigazione principale">
     <div class="container nav__inner">
       <a href="/ctech-web/" class="nav__brand">
         <img src="../assets/img/logo/logo-ctech.png" alt="Computer's Technology" width="160" height="52" loading="lazy">
       </a>
-      <button class="nav__toggle" aria-label="Menu" aria-expanded="false" onclick="document.querySelector('.nav__links').classList.toggle('open'); this.setAttribute('aria-expanded', this.getAttribute('aria-expanded')==='true'?'false':'true')">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      <button class="nav__toggle" aria-label="Menu" aria-expanded="false" onclick="const n=document.querySelector('.nav__links');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line class="nav__toggle-bar" x1="3" y1="6" x2="21" y2="6"/><line class="nav__toggle-bar" x1="3" y1="12" x2="21" y2="12"/><line class="nav__toggle-bar" x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
       <ul class="nav__links">
         <li><a href="/ctech-web/#soluzioni" class="nav__link nav__link--active">Soluzioni</a></li>
@@ -77,6 +78,8 @@
       </ul>
     </div>
   </nav>
+
+  <main id="contenuto">
 
   <!-- PAGE HERO -->
   <section class="page-hero">
@@ -225,15 +228,15 @@
         <h2>Scopri anche</h2>
       </div>
       <div class="features-grid">
-        <a href="/ctech-web/soluzioni/cybersecurity.html" class="feature-card" style="text-decoration:none;">
+        <a href="/ctech-web/soluzioni/cybersecurity.html" class="feature-card">
           <h3>Cybersecurity</h3>
           <p>Protezione endpoint, antivirus ESET, XDR e monitoraggio continuo per le PMI.</p>
         </a>
-        <a href="/ctech-web/soluzioni/arca-evolution.html" class="feature-card" style="text-decoration:none;">
+        <a href="/ctech-web/soluzioni/arca-evolution.html" class="feature-card">
           <h3>Arca EVOLUTION</h3>
           <p>ERP completo per le PMI: contabilit&agrave;, magazzino, fatturazione elettronica, CRM e produzione.</p>
         </a>
-        <a href="/ctech-web/soluzioni/winwaste.html" class="feature-card" style="text-decoration:none;">
+        <a href="/ctech-web/soluzioni/winwaste.html" class="feature-card">
           <h3>WinWaste</h3>
           <p>Gestione rifiuti: registri, formulari, MUD, pesature e conformit&agrave; R.E.N.T.Ri.</p>
         </a>
@@ -252,6 +255,8 @@
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- FOOTER -->
   <footer class="footer">
@@ -304,6 +309,11 @@
     window.addEventListener('scroll', () => {
       document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 10);
     });
+    document.querySelectorAll('.nav__link').forEach(l => l.addEventListener('click', () => {
+      document.querySelector('.nav__links').classList.remove('open');
+      const t = document.querySelector('.nav__toggle');
+      if (t) t.setAttribute('aria-expanded', 'false');
+    }));
   </script>
 
 </body>
