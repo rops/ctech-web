@@ -85,9 +85,27 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line class="nav__toggle-bar" x1="3" y1="6" x2="21" y2="6"/><line class="nav__toggle-bar" x1="3" y1="12" x2="21" y2="12"/><line class="nav__toggle-bar" x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
       <ul class="nav__links">
-        <li><a href="/ctech-web/soluzioni/" class="nav__link">Soluzioni</a></li>
-        <li><a href="#infrastruttura" class="nav__link">Servizi IT</a></li>
-        <li><a href="#come-lavoriamo" class="nav__link">Come lavoriamo</a></li>
+        <li><a href="/ctech-web/" class="nav__link nav__link--active">Home</a></li>
+        <li class="nav__item">
+          <button class="nav__dropdown-toggle" aria-expanded="false" onclick="this.parentElement.classList.toggle('open');this.setAttribute('aria-expanded',this.parentElement.classList.contains('open'))">Soluzioni <svg class="nav__dropdown-chevron" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1.5L6 6.5L11 1.5"/></svg></button>
+          <div class="nav__dropdown">
+            <a href="/ctech-web/soluzioni/" class="nav__dropdown-link">Tutte le soluzioni</a>
+            <div class="nav__dropdown-divider"></div>
+            <a href="/ctech-web/soluzioni/arca-evolution.html" class="nav__dropdown-link">Arca EVOLUTION</a>
+            <a href="/ctech-web/soluzioni/winwaste.html" class="nav__dropdown-link">WinWaste</a>
+            <a href="/ctech-web/soluzioni/genya.html" class="nav__dropdown-link">Genya</a>
+          </div>
+        </li>
+        <li class="nav__item">
+          <button class="nav__dropdown-toggle" aria-expanded="false" onclick="this.parentElement.classList.toggle('open');this.setAttribute('aria-expanded',this.parentElement.classList.contains('open'))">Servizi IT <svg class="nav__dropdown-chevron" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1.5L6 6.5L11 1.5"/></svg></button>
+          <div class="nav__dropdown">
+            <a href="/ctech-web/servizi/" class="nav__dropdown-link">Tutti i servizi</a>
+            <div class="nav__dropdown-divider"></div>
+            <a href="/ctech-web/servizi/infrastruttura.html" class="nav__dropdown-link">Sistemi e infrastruttura</a>
+            <a href="/ctech-web/servizi/cybersecurity.html" class="nav__dropdown-link">Cybersecurity</a>
+          </div>
+        </li>
+        <li><a href="/ctech-web/come-lavoriamo.html" class="nav__link">Come lavoriamo</a></li>
         <li><a href="/ctech-web/contatti.html" class="nav__link">Contatti</a></li>
         <li><a href="/ctech-web/assistenza.html" class="nav__cta">Assistenza</a></li>
       </ul>
@@ -269,34 +287,6 @@
     </div>
   </section>
 
-  <!-- PROCESS -->
-  <section class="section" id="come-lavoriamo">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-label">Metodo</div>
-        <h2>Un unico interlocutore, dall'inizio</h2>
-        <p>Il consulente che ti segue in fase di analisi &egrave; lo stesso che ti assiste ogni giorno. Nessun passaggio di consegne, nessun disguido.</p>
-      </div>
-      <div class="process-grid">
-        <div class="process-card">
-          <div class="process-card__number">1</div>
-          <h4>Analisi gratuita</h4>
-          <p>Studiamo i tuoi processi e ti proponiamo la configurazione pi&ugrave; adatta. Nessun costo, nessun impegno.</p>
-        </div>
-        <div class="process-card">
-          <div class="process-card__number">2</div>
-          <h4>Setup e formazione</h4>
-          <p>Installiamo il software, importiamo i dati e formiamo il tuo team. Lo stesso consulente segue tutto.</p>
-        </div>
-        <div class="process-card">
-          <div class="process-card__number">3</div>
-          <h4>Assistenza continua</h4>
-          <p>Quando chiami, risponde chi conosce la tua installazione. Niente call center, niente ticket anonimi.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ASSISTENZA -->
   <section class="assist" id="assistenza">
     <div class="container">
@@ -433,8 +423,8 @@
           <h4>Servizi</h4>
           <div class="footer__links">
             <a href="/ctech-web/assistenza.html" class="footer__link">Assistenza</a>
-            <a href="/ctech-web/soluzioni/infrastruttura.html" class="footer__link">Infrastruttura IT</a>
-            <a href="/ctech-web/soluzioni/cybersecurity.html" class="footer__link">Cybersecurity</a>
+            <a href="/ctech-web/servizi/infrastruttura.html" class="footer__link">Infrastruttura IT</a>
+            <a href="/ctech-web/servizi/cybersecurity.html" class="footer__link">Cybersecurity</a>
           </div>
         </div>
         <div>
@@ -461,8 +451,9 @@
     window.addEventListener('scroll', () => {
       document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 10);
     });
-    document.querySelectorAll('.nav__link').forEach(l => l.addEventListener('click', () => {
+    document.querySelectorAll('.nav__link, .nav__dropdown-link').forEach(l => l.addEventListener('click', () => {
       document.querySelector('.nav__links').classList.remove('open');
+      document.querySelectorAll('.nav__item').forEach(i => i.classList.remove('open'));
       const t = document.querySelector('.nav__toggle');
       if (t) t.setAttribute('aria-expanded', 'false');
     }));

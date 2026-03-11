@@ -89,6 +89,35 @@ a { text-decoration: none; color: inherit; }
 }
 .nav__toggle svg { width: 24px; height: 24px; }
 
+/* ---------- NAV DROPDOWN ---------- */
+.nav__item { position: relative; }
+.nav__dropdown-toggle {
+  font-size: 0.9rem; font-weight: 500; color: var(--gray-500);
+  transition: color 0.2s; cursor: pointer; display: inline-flex;
+  align-items: center; gap: 4px; background: none; border: none;
+  font-family: var(--font); padding: 0;
+}
+.nav__dropdown-toggle:hover { color: var(--gray-900); }
+.nav__dropdown-toggle--active { color: var(--gray-900); }
+.nav__dropdown-chevron {
+  width: 12px; height: 12px; transition: transform 0.2s;
+}
+.nav__item:hover .nav__dropdown-chevron,
+.nav__item.open .nav__dropdown-chevron { transform: rotate(180deg); }
+.nav__dropdown {
+  display: none; position: absolute; top: calc(100% + 12px); left: -16px;
+  background: white; border: 1px solid var(--gray-200); border-radius: var(--radius);
+  box-shadow: var(--shadow-lg); min-width: 220px; padding: 8px 0; z-index: 110;
+}
+.nav__item:hover .nav__dropdown { display: block; }
+.nav__dropdown-link {
+  display: block; padding: 10px 20px; font-size: 0.85rem; font-weight: 500;
+  color: var(--gray-500); transition: all 0.15s; white-space: nowrap;
+}
+.nav__dropdown-link:hover { background: var(--gray-50); color: var(--gray-900); }
+.nav__dropdown-link--active { color: var(--gray-900); font-weight: 600; }
+.nav__dropdown-divider { height: 1px; background: var(--gray-200); margin: 6px 0; }
+
 /* ---------- BUTTONS ---------- */
 .btn {
   display: inline-flex; align-items: center; gap: 8px;
@@ -562,10 +591,19 @@ a.feature-card { text-decoration: none; }
     flex-direction: column; padding: 12px 24px; box-shadow: var(--shadow-lg); gap: 0;
   }
   .nav__links.open { display: flex; }
-  .nav__links li { width: 100%; }
-  .nav__link, .nav__cta { display: block; width: 100%; padding: 12px 0; }
+  .nav__links li, .nav__links .nav__item { width: 100%; }
+  .nav__link, .nav__cta, .nav__dropdown-toggle { display: block; width: 100%; padding: 12px 0; }
   .nav__cta { text-align: center; margin-top: 8px; }
   .nav__toggle { display: block; }
+  /* Dropdown: inline expand on mobile */
+  .nav__item:hover .nav__dropdown { display: none; }
+  .nav__dropdown {
+    position: static; border: none; box-shadow: none; min-width: 0;
+    padding: 0 0 0 16px; background: none;
+  }
+  .nav__item.open .nav__dropdown { display: block; }
+  .nav__dropdown-link { padding: 8px 0; }
+  .nav__dropdown-divider { display: none; }
   .section-header h2 { font-size: 1.85rem; }
   .section { padding: 76px 0; }
   /* SupRemo steps */

@@ -43,9 +43,27 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line class="nav__toggle-bar" x1="3" y1="6" x2="21" y2="6"/><line class="nav__toggle-bar" x1="3" y1="12" x2="21" y2="12"/><line class="nav__toggle-bar" x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
       <ul class="nav__links">
-        <li><a href="/ctech-web/soluzioni/" class="nav__link nav__link--active">Soluzioni</a></li>
-        <li><a href="/ctech-web/#infrastruttura" class="nav__link">Servizi IT</a></li>
-        <li><a href="/ctech-web/#come-lavoriamo" class="nav__link">Come lavoriamo</a></li>
+        <li><a href="/ctech-web/" class="nav__link">Home</a></li>
+        <li class="nav__item">
+          <button class="nav__dropdown-toggle nav__dropdown-toggle--active" aria-expanded="false" onclick="this.parentElement.classList.toggle('open');this.setAttribute('aria-expanded',this.parentElement.classList.contains('open'))">Soluzioni <svg class="nav__dropdown-chevron" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1.5L6 6.5L11 1.5"/></svg></button>
+          <div class="nav__dropdown">
+            <a href="/ctech-web/soluzioni/" class="nav__dropdown-link nav__dropdown-link--active">Tutte le soluzioni</a>
+            <div class="nav__dropdown-divider"></div>
+            <a href="/ctech-web/soluzioni/arca-evolution.html" class="nav__dropdown-link">Arca EVOLUTION</a>
+            <a href="/ctech-web/soluzioni/winwaste.html" class="nav__dropdown-link">WinWaste</a>
+            <a href="/ctech-web/soluzioni/genya.html" class="nav__dropdown-link">Genya</a>
+          </div>
+        </li>
+        <li class="nav__item">
+          <button class="nav__dropdown-toggle" aria-expanded="false" onclick="this.parentElement.classList.toggle('open');this.setAttribute('aria-expanded',this.parentElement.classList.contains('open'))">Servizi IT <svg class="nav__dropdown-chevron" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1.5L6 6.5L11 1.5"/></svg></button>
+          <div class="nav__dropdown">
+            <a href="/ctech-web/servizi/" class="nav__dropdown-link">Tutti i servizi</a>
+            <div class="nav__dropdown-divider"></div>
+            <a href="/ctech-web/servizi/infrastruttura.html" class="nav__dropdown-link">Sistemi e infrastruttura</a>
+            <a href="/ctech-web/servizi/cybersecurity.html" class="nav__dropdown-link">Cybersecurity</a>
+          </div>
+        </li>
+        <li><a href="/ctech-web/come-lavoriamo.html" class="nav__link">Come lavoriamo</a></li>
         <li><a href="/ctech-web/contatti.html" class="nav__link">Contatti</a></li>
         <li><a href="/ctech-web/assistenza.html" class="nav__cta">Assistenza</a></li>
       </ul>
@@ -189,7 +207,7 @@
             <h3>Sistemi e infrastruttura</h3>
             <div class="infra-card__partners">Dell &middot; HP &middot; Microsoft</div>
             <p>Server, reti, postazioni, Microsoft 365, Azure. Progettiamo e manteniamo l'ambiente su cui girano i tuoi gestionali e i tuoi dati.</p>
-            <a href="/ctech-web/soluzioni/infrastruttura.html" class="solution-card__link">Approfondisci <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <a href="/ctech-web/servizi/infrastruttura.html" class="solution-card__link">Approfondisci <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
         </div>
         <div class="infra-card">
@@ -198,7 +216,7 @@
             <h3>Cybersecurity</h3>
             <div class="infra-card__partners">ESET Certified Partner</div>
             <p>Antivirus, protezione endpoint, XDR e monitoraggio continuo. La sicurezza non &egrave; un optional: &egrave; la base di tutto.</p>
-            <a href="/ctech-web/soluzioni/cybersecurity.html" class="solution-card__link">Approfondisci <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <a href="/ctech-web/servizi/cybersecurity.html" class="solution-card__link">Approfondisci <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
         </div>
       </div>
@@ -242,8 +260,8 @@
           <h4>Servizi</h4>
           <div class="footer__links">
             <a href="/ctech-web/assistenza.html" class="footer__link">Assistenza</a>
-            <a href="/ctech-web/soluzioni/infrastruttura.html" class="footer__link">Infrastruttura IT</a>
-            <a href="/ctech-web/soluzioni/cybersecurity.html" class="footer__link">Cybersecurity</a>
+            <a href="/ctech-web/servizi/infrastruttura.html" class="footer__link">Infrastruttura IT</a>
+            <a href="/ctech-web/servizi/cybersecurity.html" class="footer__link">Cybersecurity</a>
           </div>
         </div>
         <div>
@@ -270,8 +288,9 @@
     window.addEventListener('scroll', () => {
       document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 10);
     });
-    document.querySelectorAll('.nav__link').forEach(l => l.addEventListener('click', () => {
+    document.querySelectorAll('.nav__link, .nav__dropdown-link').forEach(l => l.addEventListener('click', () => {
       document.querySelector('.nav__links').classList.remove('open');
+      document.querySelectorAll('.nav__item').forEach(i => i.classList.remove('open'));
       const t = document.querySelector('.nav__toggle');
       if (t) t.setAttribute('aria-expanded', 'false');
     }));
