@@ -104,8 +104,14 @@ a { text-decoration: none; color: inherit; }
 }
 .nav__item:hover .nav__dropdown-chevron,
 .nav__item.open .nav__dropdown-chevron { transform: rotate(180deg); }
+/* Invisible bridge: fills the gap between toggle and panel */
+.nav__item::after {
+  content: ''; position: absolute; top: 100%; left: 0; width: 100%; height: 16px;
+  display: none;
+}
+.nav__item:hover::after { display: block; }
 .nav__dropdown {
-  display: none; position: absolute; top: calc(100% + 12px); left: -16px;
+  display: none; position: absolute; top: calc(100% + 8px); left: -16px;
   background: white; border: 1px solid var(--gray-200); border-radius: var(--radius);
   box-shadow: var(--shadow-lg); min-width: 220px; padding: 8px 0; z-index: 110;
 }
@@ -278,6 +284,19 @@ a { text-decoration: none; color: inherit; }
 }
 .form__checkbox-label a { color: var(--slate); text-decoration: underline; }
 .form__checkbox-label a:hover { color: var(--gray-900); }
+.form__checkboxes {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px;
+}
+.form__check-label {
+  display: flex; align-items: center; gap: 8px; cursor: pointer;
+  font-size: 0.88rem; color: var(--gray-600); line-height: 1.4;
+}
+.form__check-label input[type="checkbox"] {
+  flex-shrink: 0; width: 16px; height: 16px; accent-color: var(--slate);
+}
+@media (max-width: 768px) {
+  .form__checkboxes { grid-template-columns: 1fr; }
+}
 
 /* ---------- FOOTER ---------- */
 .footer { background: var(--gray-800); color: rgba(255,255,255,0.45); padding: 72px 0 36px; }
@@ -380,10 +399,16 @@ a { text-decoration: none; color: inherit; }
 .solution-card__link {
   font-size: 0.9rem; font-weight: 700; color: var(--accent);
   display: inline-flex; align-items: center; gap: 6px; margin-top: auto;
+  /* stretched link: the ::after covers the whole card */
+  position: static;
+}
+.solution-card__link::after {
+  content: ''; position: absolute; inset: 0; z-index: 1;
 }
 .solution-card__link:hover { color: var(--accent-hover); }
 .solution-card__link svg { width: 16px; height: 16px; transition: transform 0.2s; }
 .solution-card:hover .solution-card__link svg { transform: translateX(4px); }
+.solution-card { cursor: pointer; }
 .solution-card__note {
   display: inline-block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
   letter-spacing: 0.04em; padding: 4px 10px; border-radius: var(--radius); margin-bottom: 8px;

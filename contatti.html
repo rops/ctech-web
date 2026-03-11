@@ -173,17 +173,16 @@
             <input class="form__input" type="tel" id="telefono" name="telefono" placeholder="0733 000000">
           </div>
           <div class="form__group form__group--full">
-            <label class="form__label" for="interesse">Prodotto di interesse</label>
-            <select class="form__select" id="interesse" name="interesse">
-              <option value="">Seleziona un'opzione</option>
-              <option value="arca">Arca EVOLUTION (ERP aziende)</option>
-              <option value="winwaste">WinWaste (gestione rifiuti)</option>
-              <option value="genya">Genya (professionisti cloud)</option>
-              <option value="bpoint">BPoint (migrazione a Genya)</option>
-              <option value="cybersecurity">Cybersecurity / ESET</option>
-              <option value="infrastruttura">Infrastruttura IT / Sistemi</option>
-              <option value="altro">Altro</option>
-            </select>
+            <span class="form__label">Prodotti di interesse</span>
+            <div class="form__checkboxes">
+              <label class="form__check-label"><input type="checkbox" name="interesse" value="arca"> Arca EVOLUTION</label>
+              <label class="form__check-label"><input type="checkbox" name="interesse" value="winwaste"> WinWaste</label>
+              <label class="form__check-label"><input type="checkbox" name="interesse" value="genya"> Genya</label>
+              <label class="form__check-label"><input type="checkbox" name="interesse" value="bpoint"> BPoint</label>
+              <label class="form__check-label"><input type="checkbox" name="interesse" value="cybersecurity"> Cybersecurity / ESET</label>
+              <label class="form__check-label"><input type="checkbox" name="interesse" value="infrastruttura"> Infrastruttura IT</label>
+              <label class="form__check-label"><input type="checkbox" name="interesse" value="altro"> Altro</label>
+            </div>
           </div>
           <div class="form__group form__group--full">
             <label class="form__label" for="messaggio">Messaggio</label>
