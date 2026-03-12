@@ -79,6 +79,7 @@
       </button>
       <ul class="nav__links">
         <li><a href="/ctech-web/" class="nav__link">Home</a></li>
+        <li><a href="/ctech-web/chi-siamo.html" class="nav__link">Chi siamo</a></li>
         <li class="nav__item">
           <button class="nav__dropdown-toggle nav__dropdown-toggle--active" aria-expanded="false" onclick="this.parentElement.classList.toggle('open');this.setAttribute('aria-expanded',this.parentElement.classList.contains('open'))">Soluzioni <svg class="nav__dropdown-chevron" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1.5L6 6.5L11 1.5"/></svg></button>
           <div class="nav__dropdown">
@@ -100,7 +101,7 @@
         </li>
         <li><a href="/ctech-web/come-lavoriamo.html" class="nav__link">Come lavoriamo</a></li>
         <li><a href="/ctech-web/contatti.html" class="nav__link">Contatti</a></li>
-        <li><a href="/ctech-web/assistenza.html" class="nav__cta">Assistenza</a></li>
+
       </ul>
     </div>
   </nav>
@@ -115,9 +116,9 @@
         Wolters Kluwer &middot; Marche
       </div>
       <h1>Genya</h1>
-      <p>La piattaforma cloud per commercialisti e consulenti del lavoro. Contabilit&agrave;, dichiarativi, bilanci e collaborazione in tempo reale con i clienti, da qualsiasi dispositivo.</p>
+      <p>La piattaforma cloud per commercialisti e consulenti del lavoro. Contabilit&agrave;, dichiarativi, bilanci e collaborazione con i clienti in tempo reale, da qualsiasi dispositivo.</p>
       <div class="page-hero__actions">
-        <a href="tel:+390733281142" class="btn btn--primary">Scopri Genya</a>
+        <a href="tel:+390733281142" class="btn btn--primary">Parla con un consulente</a>
         <a href="#bpoint" class="btn btn--outline-light">Migrazione da BPoint</a>
       </div>
       <div class="page-hero__meta">
@@ -137,23 +138,15 @@
     </div>
   </section>
 
-  <!-- PANORAMICA -->
+  <!-- IL PROBLEMA -->
   <section class="section">
     <div class="container">
       <div class="split">
         <div class="split__content">
-          <h2>Lo studio professionale diventa cloud</h2>
-          <p>Genya &egrave; la suite cloud-native di Wolters Kluwer pensata per commercialisti, consulenti del lavoro e studi professionali. Tutto funziona nel browser: contabilit&agrave;, dichiarativi, bilanci, paghe. Nessun software da installare, nessun server locale da manutenere.</p>
-          <p>La collaborazione con i clienti dello studio avviene in tempo reale, dallo stesso ambiente. Documenti condivisi, comunicazioni tracciate, scadenze sotto controllo. Gli aggiornamenti normativi e fiscali vengono distribuiti automaticamente: quando accedi, il sistema &egrave; gi&agrave; aggiornato.</p>
-          <p>Genya &egrave; accessibile da qualsiasi dispositivo con un browser. Lo studio non &egrave; pi&ugrave; legato a una postazione fisica.</p>
-          <ul>
-            <li>Contabilit&agrave; e bilanci in cloud</li>
-            <li>Dichiarativi fiscali integrati</li>
-            <li>Collaborazione studio-cliente in tempo reale</li>
-            <li>Aggiornamenti normativi automatici</li>
-            <li>Accessibile da qualsiasi dispositivo</li>
-            <li>Nessun server locale da gestire</li>
-          </ul>
+          <h2>Lo studio che dipende dal server</h2>
+          <p>Aggiornamenti normativi da installare manualmente, backup da gestire in proprio, un server locale che rallenta o si blocca nei momenti peggiori. E quando un collaboratore lavora da casa o da un cliente, i dati restano in ufficio.</p>
+          <p>Per molti studi professionali la tecnologia &egrave; ancora un vincolo operativo invece che uno strumento di produttivit&agrave;. Ogni adempimento richiede un software diverso, ogni scadenza un passaggio manuale, e la collaborazione con i clienti si ferma all'email e al telefono.</p>
+          <p>Genya elimina questo modello. &Egrave; una piattaforma cloud nativa: nessun server da mantenere, nessun aggiornamento da installare, accesso da qualsiasi dispositivo. I dati sono sempre disponibili, sempre aggiornati, sempre al sicuro.</p>
         </div>
         <div class="split__image split__image--contain">
           <img src="../assets/img/screenshot/genya-preview.webp" alt="Interfaccia Genya suite cloud per professionisti" loading="lazy">
@@ -162,85 +155,151 @@
     </div>
   </section>
 
-  <!-- VANTAGGI -->
+  <!-- PANORAMICA -->
   <section class="section section--gray">
     <div class="container">
+      <div class="split split--reverse">
+        <div class="split__content">
+          <h2>Lo studio professionale diventa cloud</h2>
+          <p>Genya &egrave; la suite cloud di Wolters Kluwer per commercialisti, consulenti del lavoro e studi associati. Tutto funziona nel browser: contabilit&agrave;, dichiarativi, bilanci, gestione mandati, collaborazione con i clienti.</p>
+          <p>Gli aggiornamenti normativi e fiscali vengono distribuiti automaticamente &mdash; quando accedi, il sistema &egrave; gi&agrave; aggiornato. La collaborazione con i clienti dello studio avviene dallo stesso ambiente: documenti condivisi, comunicazioni tracciate, scadenze sotto controllo.</p>
+        </div>
+        <div class="split__image split__image--contain">
+          <img src="../assets/img/screenshot/genya-preview.webp" alt="Dashboard Genya" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ECOSISTEMA GENYA -->
+  <section class="section">
+    <div class="container">
       <div class="section-header">
-        <div class="section-label">Vantaggi</div>
-        <h2>Perch&eacute; passare al cloud</h2>
+        <div class="section-label">Ecosistema</div>
+        <h2>Un ecosistema completo per lo studio</h2>
       </div>
       <div class="features-grid">
 
-        <!-- Sempre aggiornato -->
         <div class="feature-card">
           <div class="feature-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="18"/><line x1="8" y1="10" x2="8" y2="10"/><line x1="12" y1="10" x2="12" y2="10"/><line x1="16" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="8" y2="14"/><line x1="12" y1="14" x2="12" y2="14"/><line x1="8" y1="18" x2="8" y2="18"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
           </div>
-          <h3>Sempre aggiornato</h3>
-          <p>Aggiornamenti normativi e fiscali distribuiti automaticamente. Zero interventi manuali.</p>
+          <h3>Contabilit&agrave; e bilanci</h3>
+          <p>Bilancio guidato, calcolo imposte automatico, schemi GAAP e IFRS, Enti Terzo Settore. Dal dato contabile al deposito CCIAA in un flusso unico.</p>
         </div>
 
-        <!-- Collaborazione reale -->
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <h3>Dichiarativi e deleghe</h3>
+          <p>Dichiarazioni fiscali integrate, deleghe F24, scadenzario automatico. Aggiornamenti normativi immediati, senza installazioni.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Fattura SMART</h3>
+          <p>Fatturazione elettronica attiva e passiva via SdI &mdash; per lo studio e per i clienti. Import automatico, cruscotti di monitoraggio, consegna con un click.</p>
+        </div>
+
         <div class="feature-card">
           <div class="feature-card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
           </div>
-          <h3>Collaborazione reale</h3>
-          <p>Il cliente vede, carica documenti e comunica dallo stesso ambiente. Fine delle email con allegati.</p>
+          <h3>Webdesk</h3>
+          <p>Portale di collaborazione studio-cliente attivo 24/7. Scambio documenti, comunicazioni tracciate, fatture elettroniche e presenze &mdash; tutto in un punto.</p>
         </div>
 
-        <!-- Accessibile ovunque -->
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+          </div>
+          <h3>Controllo di gestione</h3>
+          <p>CRM, piano di fatturazione, analisi profittabilit&agrave; per cliente e per mandato. Margini e carichi di lavoro dello studio visibili in tempo reale.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h3>Analisi e advisory</h3>
+          <p>Rating finanziari, Centrale Rischi automatica, indici di bilancio, previsionale. Per passare dall'adempimento alla consulenza di valore.</p>
+        </div>
+
+      </div>
+      <p style="text-align:center;color:var(--gray-400);font-size:0.9rem;margin-top:32px;">Tutti i moduli condividono gli stessi dati in cloud. Nessuna duplicazione, nessun passaggio manuale.</p>
+    </div>
+  </section>
+
+  <!-- PER CHI &Egrave; -->
+  <section class="section section--gray">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Target</div>
+        <h2>Per chi &egrave; Genya</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
+          </div>
+          <h3>Studi di commercialisti</h3>
+          <p>Contabilit&agrave;, bilanci, dichiarativi, advisory. Tutto in cloud, con collaborazione clienti integrata e aggiornamento normativo automatico.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3>Consulenti del lavoro</h3>
+          <p>Gestione presenze, deleghe, comunicazioni con i clienti. Un unico ambiente per operativit&agrave; quotidiana e scadenze.</p>
+        </div>
         <div class="feature-card">
           <div class="feature-card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
           </div>
-          <h3>Accessibile ovunque</h3>
-          <p>Da studio, da casa, in mobilit&agrave;. Basta un browser.</p>
+          <h3>Studi associati e multisede</h3>
+          <p>Accesso contemporaneo da sedi diverse, controllo di gestione centralizzato, carichi di lavoro visibili in tempo reale.</p>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Sicurezza dei dati -->
-        <div class="feature-card">
-          <div class="feature-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-          </div>
-          <h3>Sicurezza dei dati</h3>
-          <p>Backup automatici, crittografia, data center certificati. Pi&ugrave; sicuro di un server in ufficio.</p>
+  <!-- PERCH&Eacute; CTECH -->
+  <section class="section">
+    <div class="container">
+      <div class="split split--reverse">
+        <div class="split__content">
+          <h2>Perch&eacute; attivare Genya con CTech</h2>
+          <p>Genya &egrave; un prodotto Wolters Kluwer. CTech &egrave; il partner autorizzato che lo implementa nelle Marche &mdash; con un approccio diverso dal portale online.</p>
+          <p>Un consulente dedicato analizza il tuo studio, configura l'ambiente, importa i dati dal gestionale precedente e forma il team. Dopo l'attivazione, resta il tuo riferimento per qualsiasi esigenza.</p>
+          <ul>
+            <li>Analisi gratuita dello studio e delle esigenze</li>
+            <li>Configurazione e migrazione dati assistita</li>
+            <li>Formazione personalizzata, in sede o da remoto</li>
+            <li>Assistenza diretta: chiami e parli con chi conosce il tuo studio</li>
+          </ul>
         </div>
-
-        <!-- Scalabile -->
-        <div class="feature-card">
-          <div class="feature-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-          </div>
-          <h3>Scalabile</h3>
-          <p>Aggiungi moduli e utenti quando servono. Nessun vincolo hardware.</p>
+        <div class="split__image">
+          <img src="../assets/img/stock/team-datacenter.webp" alt="Team CTech al lavoro" loading="lazy">
         </div>
-
-        <!-- Integrato -->
-        <div class="feature-card">
-          <div class="feature-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
-          </div>
-          <h3>Integrato</h3>
-          <p>Contabilit&agrave;, fiscale, paghe e bilanci in un unico ambiente. Nessuna doppia digitazione.</p>
-        </div>
-
       </div>
     </div>
   </section>
 
   <!-- BPOINT -->
-  <section class="section" id="bpoint">
+  <section class="section section--gray" id="bpoint">
     <div class="container">
       <div class="split">
         <div class="split__content">
           <h2>Usi BPoint? Il percorso di migrazione &egrave; chiaro.</h2>
-          <p>BPoint resta supportato fino al 2030. Ma il futuro &egrave; Genya. CTech gestisce la migrazione completa: analisi della situazione, pianificazione, migrazione dati, formazione. Stesso consulente, nessuna interruzione operativa.</p>
-          <p>Il passaggio &egrave; graduale e lo decidi tu.</p>
+          <p>BPoint resta supportato fino al 2030, ma Wolters Kluwer concentra sviluppo e innovazione su Genya. Le nuove funzionalit&agrave; &mdash; advisory, Centrale Rischi, Webdesk &mdash; sono disponibili solo su Genya.</p>
+          <p>CTech gestisce la migrazione completa: stesso consulente, nessuna interruzione operativa. Il passaggio &egrave; graduale e lo decidi tu.</p>
           <ul>
-            <li>Analisi della situazione attuale</li>
+            <li>Analisi della situazione attuale e mappatura dati</li>
             <li>Piano di migrazione personalizzato</li>
-            <li>Trasferimento dati e configurazioni</li>
+            <li>Trasferimento dati, configurazioni e anagrafiche</li>
             <li>Formazione su Genya</li>
             <li>Supporto continuativo post-migrazione</li>
           </ul>
@@ -273,6 +332,37 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Domande frequenti</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Genya sostituisce BPoint?</summary>
+          <div class="faq-item__answer">S&igrave;. BPoint resta supportato fino al 2030, ma Genya &egrave; la piattaforma su cui Wolters Kluwer concentra sviluppo e innovazione. CTech gestisce la migrazione completa &mdash; analisi, import dati, formazione &mdash; senza interruzioni operative.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Devo installare qualcosa?</summary>
+          <div class="faq-item__answer">No. Genya &egrave; cloud nativo: funziona da browser, su qualsiasi dispositivo. Non servono server locali, installazioni o aggiornamenti manuali.</div>
+        </details>
+        <details class="faq-item">
+          <summary>I dati dei miei clienti sono al sicuro?</summary>
+          <div class="faq-item__answer">I dati risiedono nei data center Wolters Kluwer, con crittografia, backup automatici e conformit&agrave; GDPR. La sicurezza &egrave; gestita dal provider, non dal tuo studio.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Posso attivare solo alcuni moduli?</summary>
+          <div class="faq-item__answer">S&igrave;. Genya &egrave; modulare: puoi partire con contabilit&agrave; e bilanci e aggiungere dichiarativi, Fattura SMART, Webdesk o advisory quando servono. Il tuo consulente CTech ti consiglia la configurazione pi&ugrave; adatta.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Quanto tempo serve per essere operativi?</summary>
+          <div class="faq-item__answer">Dipende dalla complessit&agrave; dello studio e dalla migrazione dati. Per uno studio standard, il passaggio &egrave; completato in 2&ndash;4 settimane &mdash; inclusi import dati e formazione del team.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <!-- SCOPRI ANCHE -->
   <section class="section section--gray">
     <div class="container">
@@ -283,7 +373,7 @@
       <div class="features-grid">
         <a href="/ctech-web/servizi/cybersecurity.html" class="feature-card">
           <h3>Cybersecurity</h3>
-          <p>Protezione endpoint, antivirus ESET, XDR e monitoraggio continuo per le PMI.</p>
+          <p>Protezione endpoint, ESET, XDR e monitoraggio continuo per le PMI.</p>
         </a>
         <a href="/ctech-web/servizi/infrastruttura.html" class="feature-card">
           <h3>Infrastruttura IT</h3>
@@ -291,7 +381,7 @@
         </a>
         <a href="/ctech-web/soluzioni/arca-evolution.html" class="feature-card">
           <h3>Arca EVOLUTION</h3>
-          <p>ERP completo per le PMI: contabilit&agrave;, magazzino, fatturazione elettronica, CRM e produzione.</p>
+          <p>ERP completo per le PMI: contabilit&agrave;, magazzino, fatturazione, CRM e produzione.</p>
         </a>
       </div>
     </div>
@@ -301,7 +391,7 @@
   <section class="cta-band">
     <div class="container">
       <h2>Pronto a portare lo studio nel cloud?</h2>
-      <p>Ti mostriamo Genya in una demo dedicata. Se usi BPoint, pianifichiamo insieme la migrazione.</p>
+      <p>Ti mostriamo Genya in una demo dedicata. Se usi BPoint, pianifichiamo insieme la migrazione. Senza impegno e senza obbligo.</p>
       <div class="cta-band__actions">
         <a href="tel:+390733281142" class="btn btn--primary">Prenota una demo</a>
         <a href="/ctech-web/contatti.html#modulo" class="btn btn--outline-light">Compila il modulo</a>
@@ -333,7 +423,7 @@
         <div>
           <h4>Servizi</h4>
           <div class="footer__links">
-            <a href="/ctech-web/assistenza.html" class="footer__link">Assistenza</a>
+            <a href="/ctech-web/come-lavoriamo.html#assistenza" class="footer__link">Assistenza</a>
             <a href="/ctech-web/servizi/infrastruttura.html" class="footer__link">Infrastruttura IT</a>
             <a href="/ctech-web/servizi/cybersecurity.html" class="footer__link">Cybersecurity</a>
           </div>

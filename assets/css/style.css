@@ -567,6 +567,65 @@ a.feature-card { text-decoration: none; }
 .page-hero__actions--centered { justify-content: center; }
 .footer__bottom--flat { border-top: none; }
 
+/* ---------- FAQ ---------- */
+.faq-list { max-width: 760px; margin: 0 auto; }
+.faq-item {
+  border-bottom: 1px solid var(--gray-200); padding: 0;
+}
+.faq-item:first-child { border-top: 1px solid var(--gray-200); }
+.faq-item summary {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 22px 0; cursor: pointer; list-style: none;
+  font-size: 1.05rem; font-weight: 700; color: var(--gray-900); line-height: 1.4;
+  transition: color 0.2s;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+'; flex-shrink: 0; width: 28px; height: 28px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.25rem; font-weight: 400; color: var(--gray-400);
+  border: 1px solid var(--gray-200); border-radius: 50%;
+  transition: all 0.2s;
+}
+.faq-item[open] summary::after { content: '\2212'; background: var(--slate-light); color: var(--slate); }
+.faq-item summary:hover { color: var(--dark); }
+.faq-item__answer {
+  font-size: 0.95rem; color: var(--gray-500); line-height: 1.75;
+  padding: 0 0 22px; max-width: 640px;
+}
+
+/* ---------- KEY FACTS (chi-siamo) ---------- */
+.key-facts {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+  background: var(--gray-200); border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg); overflow: hidden;
+}
+.key-fact {
+  background: var(--white); padding: 28px 20px; text-align: center;
+}
+.key-fact__number {
+  font-size: 2rem; font-weight: 900; color: var(--gray-900);
+  line-height: 1; letter-spacing: -0.02em; margin-bottom: 6px;
+}
+.key-fact__label {
+  font-size: 0.82rem; color: var(--gray-500); font-weight: 500; line-height: 1.4;
+}
+
+/* ---------- PARTNER LOGOS ROW (chi-siamo) ---------- */
+.partner-logos {
+  display: flex; justify-content: center; align-items: center;
+  gap: 48px; flex-wrap: wrap;
+}
+.partner-logos img {
+  height: 36px; width: auto; opacity: 0.6;
+  transition: opacity 0.2s; filter: grayscale(30%);
+}
+.partner-logos img:hover { opacity: 1; filter: grayscale(0%); }
+.partner-logos__caption {
+  width: 100%; text-align: center; margin-top: 16px;
+  font-size: 0.85rem; color: var(--gray-400); font-weight: 500;
+}
+
 /* ---------- SKIP-NAV (accessibility) ---------- */
 .skip-nav {
   position: absolute; top: -100%; left: 16px; z-index: 200;
@@ -634,6 +693,11 @@ a.feature-card { text-decoration: none; }
   /* SupRemo steps */
   .supremo-steps__grid { gap: 24px; }
   .supremo-step__num { width: 48px; height: 48px; font-size: 1.1rem; }
+  /* Key facts */
+  .key-facts { grid-template-columns: repeat(2, 1fr); }
+  /* Partner logos */
+  .partner-logos { gap: 28px; }
+  .partner-logos img { height: 28px; }
 }
 
 /* ---------- TABLET BREAKPOINT ---------- */

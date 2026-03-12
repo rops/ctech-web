@@ -79,6 +79,7 @@
       </button>
       <ul class="nav__links">
         <li><a href="/ctech-web/" class="nav__link">Home</a></li>
+        <li><a href="/ctech-web/chi-siamo.html" class="nav__link">Chi siamo</a></li>
         <li class="nav__item">
           <button class="nav__dropdown-toggle nav__dropdown-toggle--active" aria-expanded="false" onclick="this.parentElement.classList.toggle('open');this.setAttribute('aria-expanded',this.parentElement.classList.contains('open'))">Soluzioni <svg class="nav__dropdown-chevron" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1.5L6 6.5L11 1.5"/></svg></button>
           <div class="nav__dropdown">
@@ -100,7 +101,7 @@
         </li>
         <li><a href="/ctech-web/come-lavoriamo.html" class="nav__link">Come lavoriamo</a></li>
         <li><a href="/ctech-web/contatti.html" class="nav__link">Contatti</a></li>
-        <li><a href="/ctech-web/assistenza.html" class="nav__cta">Assistenza</a></li>
+
       </ul>
     </div>
   </nav>
@@ -115,9 +116,9 @@
         Wolters Kluwer &middot; Marche
       </div>
       <h1>Arca EVOLUTION</h1>
-      <p>ERP completo per le PMI. Dalla contabilit&agrave; alla produzione, un unico gestionale per gestire tutti i processi aziendali.</p>
+      <p>Il gestionale ERP per le PMI che unifica contabilit&agrave;, magazzino, fatturazione, CRM e produzione in un unico ambiente. Implementato e supportato da CTech nelle Marche.</p>
       <div class="page-hero__actions">
-        <a href="tel:+390733281142" class="btn btn--primary">Richiedi una demo gratuita</a>
+        <a href="tel:+390733281142" class="btn btn--primary">Parla con un consulente</a>
         <a href="#moduli" class="btn btn--outline-light">Scopri i moduli</a>
       </div>
       <div class="page-hero__meta">
@@ -133,33 +134,41 @@
     </div>
   </section>
 
-  <!-- PANORAMICA -->
+  <!-- IL PROBLEMA -->
   <section class="section">
     <div class="container">
       <div class="split">
         <div class="split__content">
-          <h2>Il gestionale che cresce con la tua azienda</h2>
-          <p>Arca EVOLUTION &egrave; l'ERP di Wolters Kluwer progettato per le piccole e medie imprese italiane. Un sistema completo che copre contabilit&agrave;, magazzino, fatturazione elettronica, CRM, produzione e Business Intelligence in un unico ambiente integrato.</p>
-          <p>Non &egrave; un sistema enterprise sovradimensionato e non &egrave; un gestionale di base che ti costringe a cambiare dopo due anni. Arca &egrave; una piattaforma concreta, configurabile, che si adatta ai processi della tua azienda senza imporre i suoi.</p>
-          <p>Modulare e scalabile: parti con quello che ti serve oggi e aggiungi funzionalit&agrave; quando il tuo business lo richiede. Senza dover ricominciare da zero.</p>
-          <ul>
-            <li>Contabilit&agrave; generale e analitica</li>
-            <li>Magazzino e logistica</li>
-            <li>Fatturazione elettronica</li>
-            <li>CRM e gestione clienti</li>
-            <li>Produzione e distinta base</li>
-            <li>Business Intelligence</li>
-          </ul>
+          <h2>Quando il gestionale diventa il problema</h2>
+          <p>Fogli Excel che si moltiplicano, dati duplicati tra contabilit&agrave; e magazzino, fatture elettroniche gestite con un software diverso dal gestionale. Ogni reparto lavora con strumenti diversi, e le informazioni si perdono nei passaggi.</p>
+          <p>Per molte PMI il &ldquo;gestionale&rdquo; &egrave; in realt&agrave; un insieme di soluzioni scollegate, nate per tamponare esigenze puntuali. Il risultato: errori manuali, tempo perso a ricopiare dati, nessuna visione d'insieme su margini, scorte o scadenze.</p>
+          <p>Arca EVOLUTION sostituisce questa frammentazione con un unico ambiente integrato &mdash; dove contabilit&agrave;, magazzino, fatturazione, CRM e produzione condividono gli stessi dati in tempo reale.</p>
         </div>
         <div class="split__image">
-          <img src="../assets/img/stock/tech-screens.webp" alt="Interfaccia gestionale Arca EVOLUTION su pi&ugrave; schermi" loading="lazy">
+          <img src="../assets/img/stock/tech-screens.webp" alt="Interfaccia gestionale Arca EVOLUTION" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PANORAMICA -->
+  <section class="section section--gray">
+    <div class="container">
+      <div class="split split--reverse">
+        <div class="split__content">
+          <h2>Un ERP concreto, configurabile, che non impone il suo modello</h2>
+          <p>Arca EVOLUTION &egrave; l'ERP di Wolters Kluwer per le piccole e medie imprese italiane. Copre l'intero ciclo operativo &mdash; dall'ordine cliente alla spedizione, dalla registrazione contabile al bilancio &mdash; senza bisogno di software esterni o integrazioni forzate.</p>
+          <p>Modulare: attivi solo i moduli che servono oggi e aggiungi gli altri quando il business lo richiede, senza ricominciare da zero. Configurabile: si adatta ai tuoi processi, non il contrario.</p>
+        </div>
+        <div class="split__image">
+          <img src="../assets/img/screenshot/arca-evo.webp" alt="Screenshot Arca EVOLUTION" loading="lazy">
         </div>
       </div>
     </div>
   </section>
 
   <!-- MODULI -->
-  <section class="section section--gray" id="moduli">
+  <section class="section" id="moduli">
     <div class="container">
       <div class="section-header">
         <div class="section-label">Moduli</div>
@@ -173,7 +182,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="18"/><line x1="8" y1="10" x2="8" y2="10"/><line x1="12" y1="10" x2="12" y2="10"/><line x1="16" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="8" y2="14"/><line x1="12" y1="14" x2="12" y2="14"/><line x1="8" y1="18" x2="8" y2="18"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
           </div>
           <h3>Contabilit&agrave;</h3>
-          <p>Generale, analitica, cespiti, ritenute. Bilanci e dichiarativi integrati.</p>
+          <p>Generale, analitica, cespiti, ritenute d'acconto. Bilancio e dichiarativi integrati, senza esportazioni manuali.</p>
         </div>
 
         <!-- Magazzino -->
@@ -182,7 +191,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
           </div>
           <h3>Magazzino</h3>
-          <p>Gestione multi-magazzino, lotti, matricole, inventario. Movimenti automatici.</p>
+          <p>Multi-magazzino, lotti, matricole, inventario. Movimenti automatici collegati a ordini e DDT.</p>
         </div>
 
         <!-- Fatturazione -->
@@ -191,7 +200,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
           </div>
           <h3>Fatturazione</h3>
-          <p>Ciclo attivo e passivo, fatturazione elettronica, DDT, ordini.</p>
+          <p>Ciclo attivo e passivo, fatturazione elettronica via SdI, DDT, ordini e preventivi in un flusso unico.</p>
         </div>
 
         <!-- CRM -->
@@ -200,7 +209,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
           </div>
           <h3>CRM</h3>
-          <p>Gestione clienti, opportunit&agrave;, attivit&agrave;, scadenzario commerciale.</p>
+          <p>Anagrafica clienti, opportunit&agrave; commerciali, attivit&agrave; e scadenzario. Integrato con il ciclo di vendita.</p>
         </div>
 
         <!-- Produzione -->
@@ -209,7 +218,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
           </div>
           <h3>Produzione</h3>
-          <p>Distinta base, ordini di produzione, pianificazione MRP.</p>
+          <p>Distinta base, ordini di produzione, pianificazione MRP. Per chi produce e ha bisogno di tracciare il processo.</p>
         </div>
 
         <!-- Business Intelligence -->
@@ -218,10 +227,44 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
           </div>
           <h3>Business Intelligence</h3>
-          <p>Dashboard, report personalizzati, analisi dati in tempo reale.</p>
+          <p>Dashboard e report personalizzati. Margini, andamento vendite, scorte critiche &mdash; tutto visibile in tempo reale.</p>
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- PER CHI &Egrave; -->
+  <section class="section section--gray">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Target</div>
+        <h2>Per chi &egrave; Arca EVOLUTION</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="M5 20V8l7-5 7 5v12"/><path d="M9 20v-4h6v4"/></svg>
+          </div>
+          <h3>PMI manifatturiere</h3>
+          <p>Aziende con produzione, magazzino e contabilit&agrave; da tenere allineati. Dall'ordine cliente alla consegna, in un flusso unico.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+          </div>
+          <h3>Aziende commerciali</h3>
+          <p>Grossisti, distributori, rivenditori. Gestione listini, agenti, fatturazione elettronica e analisi margini senza fogli Excel.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Imprese in crescita</h3>
+          <p>Aziende che stanno superando il primo gestionale e hanno bisogno di un ERP strutturato, modulare e scalabile nel tempo.</p>
+        </div>
+      </div>
+      <p style="text-align:center;color:var(--gray-400);font-size:0.9rem;margin-top:32px;">Arca EVOLUTION &egrave; diffuso in tutta Italia. CTech lo implementa e supporta nelle Marche con assistenza diretta.</p>
     </div>
   </section>
 
@@ -231,13 +274,13 @@
       <div class="split split--reverse">
         <div class="split__content">
           <h2>Non vendiamo software. Lo implementiamo.</h2>
-          <p>CTech non &egrave; un semplice rivenditore. Analizziamo i processi della tua azienda, configuriamo il sistema sulle tue reali esigenze, formiamo il team che lo utilizzer&agrave; ogni giorno e garantiamo assistenza continuativa nel tempo.</p>
-          <p>Il consulente che segue l'analisi iniziale &egrave; lo stesso che ti assiste durante l'uso quotidiano del gestionale. Nessun passaggio di consegne, nessun disguido: un unico interlocutore che conosce la tua installazione e i tuoi processi.</p>
+          <p>CTech &egrave; rivenditore autorizzato Wolters Kluwer nelle Marche dal 1984. Non ci limitiamo a installare il gestionale: analizziamo i processi della tua azienda, configuriamo il sistema sulle tue esigenze reali, formiamo il team e garantiamo assistenza continuativa nel tempo.</p>
+          <p>Il consulente che segue l'analisi iniziale &egrave; lo stesso che ti assiste durante l'uso quotidiano. Nessun passaggio di consegne, nessun call center: un unico interlocutore che conosce la tua installazione e i tuoi processi.</p>
           <ul>
             <li>Analisi gratuita dei processi aziendali</li>
-            <li>Configurazione su misura per il tuo business</li>
-            <li>Formazione del team in sede</li>
-            <li>Assistenza diretta &mdash; rispondiamo noi, non un call center</li>
+            <li>Configurazione su misura e migrazione dati dal gestionale precedente</li>
+            <li>Formazione in sede, sul tuo ambiente, con i tuoi dati</li>
+            <li>Assistenza diretta &mdash; chiami e parli con chi conosce la tua installazione</li>
           </ul>
         </div>
         <div class="split__image">
@@ -247,8 +290,39 @@
     </div>
   </section>
 
-  <!-- SCOPRI ANCHE -->
+  <!-- FAQ -->
   <section class="section section--gray">
+    <div class="container">
+      <div class="section-header">
+        <h2>Domande frequenti</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Quanto costa Arca EVOLUTION?</summary>
+          <div class="faq-item__answer">Il costo dipende dal numero di postazioni e dai moduli attivati. CTech effettua un'analisi gratuita delle tue esigenze e ti fornisce un preventivo dettagliato, senza costi nascosti.</div>
+        </details>
+        <details class="faq-item">
+          <summary>&Egrave; possibile migrare i dati dal gestionale attuale?</summary>
+          <div class="faq-item__answer">S&igrave;. La migrazione dei dati &mdash; anagrafiche, piano dei conti, articoli, saldi &mdash; &egrave; parte del processo di implementazione. Il tuo consulente CTech si occupa dell'import e della verifica.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Quanto tempo richiede l'implementazione?</summary>
+          <div class="faq-item__answer">Dipende dalla complessit&agrave; aziendale. Per una PMI standard, l'implementazione completa &mdash; analisi, configurazione, migrazione dati e formazione &mdash; richiede in genere 4&ndash;8 settimane.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Arca EVOLUTION funziona in cloud?</summary>
+          <div class="faq-item__answer">Arca EVOLUTION &egrave; installabile sia in locale (on-premise) sia in cloud. CTech ti consiglia la configurazione pi&ugrave; adatta alla tua infrastruttura e alle tue esigenze di accesso remoto.</div>
+        </details>
+        <details class="faq-item">
+          <summary>Cosa succede se ho un problema dopo l'installazione?</summary>
+          <div class="faq-item__answer">Chiami direttamente il consulente che ha seguito la tua implementazione. Niente call center, niente ticket anonimi: la persona che risponde conosce la tua installazione.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCOPRI ANCHE -->
+  <section class="section">
     <div class="container">
       <div class="section-header">
         <div class="section-label">Correlati</div>
@@ -257,7 +331,7 @@
       <div class="features-grid">
         <a href="/ctech-web/servizi/cybersecurity.html" class="feature-card">
           <h3>Cybersecurity</h3>
-          <p>Protezione endpoint, antivirus ESET, XDR e monitoraggio continuo per le PMI.</p>
+          <p>Protezione endpoint, ESET, XDR e monitoraggio continuo per le PMI.</p>
         </a>
         <a href="/ctech-web/servizi/infrastruttura.html" class="feature-card">
           <h3>Infrastruttura IT</h3>
@@ -274,8 +348,8 @@
   <!-- CTA BAND -->
   <section class="cta-band">
     <div class="container">
-      <h2>Vuoi vedere Arca in azione?</h2>
-      <p>Ti mostriamo il gestionale configurato per il tuo settore. La demo &egrave; gratuita e senza impegno.</p>
+      <h2>Vuoi vedere Arca EVOLUTION sul tuo caso specifico?</h2>
+      <p>Ti mostriamo il gestionale configurato per il tuo settore. L'analisi iniziale &egrave; gratuita, senza impegno e senza obbligo.</p>
       <div class="cta-band__actions">
         <a href="tel:+390733281142" class="btn btn--primary">Parla con un consulente</a>
         <a href="/ctech-web/contatti.html#modulo" class="btn btn--outline-light">Compila il modulo</a>
@@ -307,7 +381,7 @@
         <div>
           <h4>Servizi</h4>
           <div class="footer__links">
-            <a href="/ctech-web/assistenza.html" class="footer__link">Assistenza</a>
+            <a href="/ctech-web/come-lavoriamo.html#assistenza" class="footer__link">Assistenza</a>
             <a href="/ctech-web/servizi/infrastruttura.html" class="footer__link">Infrastruttura IT</a>
             <a href="/ctech-web/servizi/cybersecurity.html" class="footer__link">Cybersecurity</a>
           </div>

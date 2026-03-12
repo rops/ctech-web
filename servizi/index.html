@@ -40,6 +40,7 @@
       </button>
       <ul class="nav__links">
         <li><a href="/ctech-web/" class="nav__link">Home</a></li>
+        <li><a href="/ctech-web/chi-siamo.html" class="nav__link">Chi siamo</a></li>
         <li class="nav__item">
           <button class="nav__dropdown-toggle" aria-expanded="false" onclick="this.parentElement.classList.toggle('open');this.setAttribute('aria-expanded',this.parentElement.classList.contains('open'))">Soluzioni <svg class="nav__dropdown-chevron" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 1.5L6 6.5L11 1.5"/></svg></button>
           <div class="nav__dropdown">
@@ -61,7 +62,7 @@
         </li>
         <li><a href="/ctech-web/come-lavoriamo.html" class="nav__link">Come lavoriamo</a></li>
         <li><a href="/ctech-web/contatti.html" class="nav__link">Contatti</a></li>
-        <li><a href="/ctech-web/assistenza.html" class="nav__cta">Assistenza</a></li>
+
       </ul>
     </div>
   </nav>
@@ -70,25 +71,50 @@
     <div class="container page-hero__inner">
       <div class="page-hero__label">
         <span class="page-hero__label-dot"></span>
-        Infrastruttura &middot; Cybersecurity
+        Infrastruttura &middot; Cybersecurity &middot; Manutenzione
       </div>
-      <h1>Servizi IT</h1>
-      <p>Il software funziona bene solo se l'infrastruttura sotto &egrave; solida e protetta. Ci occupiamo di server, reti, endpoint, sicurezza e continuit&agrave; operativa.</p>
+      <h1>Servizi IT per le PMI delle Marche</h1>
+      <p>Il software funziona se l'infrastruttura regge. CTech progetta, installa e mantiene l'ambiente su cui girano i tuoi gestionali, i tuoi dati e la tua operativit&agrave; quotidiana.</p>
+      <div class="page-hero__actions">
+        <a href="tel:+390733281142" class="btn btn--primary">Richiedi un sopralluogo gratuito</a>
+      </div>
     </div>
   </section>
 
   <main id="contenuto">
 
+  <!-- IL MODELLO DI SERVIZIO -->
   <section class="section">
     <div class="container">
+      <div class="split">
+        <div class="split__content">
+          <h2>Non interveniamo solo quando qualcosa si rompe</h2>
+          <p>La maggior parte delle PMI chiama un tecnico quando il server si ferma o la rete non funziona. &Egrave; il modello pi&ugrave; costoso: fermo operativo, intervento urgente, tempi incerti.</p>
+          <p>CTech lavora al contrario. Con un contratto di manutenzione programmata, monitoriamo l'infrastruttura prima che i problemi si presentino. Aggiornamenti pianificati, backup verificati, risorse sotto controllo. Quando serve un intervento, hai priorit&agrave; e un referente che conosce il tuo ambiente.</p>
+          <p>Il risultato: meno emergenze, meno fermo, costi prevedibili.</p>
+        </div>
+        <div class="split__image">
+          <img src="../assets/img/stock/tech-monitoring.webp" alt="Monitoraggio infrastruttura IT" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AREE DI INTERVENTO -->
+  <section class="section section--gray">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Aree</div>
+        <h2>Infrastruttura e sicurezza</h2>
+      </div>
       <div class="infra-grid">
         <div class="infra-card">
           <img src="../assets/img/stock/team-datacenter.webp" alt="Progettazione infrastruttura IT" class="infra-card__img" loading="lazy">
           <div class="infra-card__body">
             <h3>Sistemi e infrastruttura</h3>
             <div class="infra-card__partners">Dell &middot; HP &middot; Microsoft</div>
-            <p>Server, reti, postazioni, Microsoft 365, Azure. Progettiamo e manteniamo l'ambiente su cui girano i tuoi gestionali e i tuoi dati.</p>
-            <a href="/ctech-web/servizi/infrastruttura.html" class="solution-card__link">Approfondisci <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <p>Server, reti, postazioni, Microsoft 365, backup. Dalla progettazione alla manutenzione quotidiana &mdash; con hardware Dell, HP e Microsoft.</p>
+            <a href="/ctech-web/servizi/infrastruttura.html" class="solution-card__link">Scopri di pi&ugrave; <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
         </div>
         <div class="infra-card">
@@ -96,9 +122,35 @@
           <div class="infra-card__body">
             <h3>Cybersecurity</h3>
             <div class="infra-card__partners">ESET Certified Partner</div>
-            <p>Antivirus, protezione endpoint, XDR e monitoraggio continuo. La sicurezza non &egrave; un optional: &egrave; la base di tutto.</p>
-            <a href="/ctech-web/servizi/cybersecurity.html" class="solution-card__link">Approfondisci <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <p>Protezione endpoint, XDR, email security, assessment, formazione. Con ESET e un approccio concreto, non teorico.</p>
+            <a href="/ctech-web/servizi/cybersecurity.html" class="solution-card__link">Scopri di pi&ugrave; <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COME FUNZIONA -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Tre passi per un'infrastruttura sotto controllo</h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-card">
+          <div class="process-card__number">1</div>
+          <h4>Sopralluogo gratuito</h4>
+          <p>Un tecnico CTech visita la tua sede, verifica lo stato dell'infrastruttura e ti consegna un report con criticit&agrave; e raccomandazioni.</p>
+        </div>
+        <div class="process-card">
+          <div class="process-card__number">2</div>
+          <h4>Progetto e intervento</h4>
+          <p>Ti proponiamo un piano: cosa sostituire, cosa aggiornare, cosa monitorare. Realizziamo tutto con tempi e costi definiti.</p>
+        </div>
+        <div class="process-card">
+          <div class="process-card__number">3</div>
+          <h4>Manutenzione continua</h4>
+          <p>Interventi programmati, monitoraggio remoto, aggiornamenti gestiti. Un referente dedicato che conosce il tuo ambiente.</p>
         </div>
       </div>
     </div>
@@ -107,7 +159,7 @@
   <section class="cta-band">
     <div class="container">
       <h2>Vuoi capire se la tua infrastruttura &egrave; adeguata?</h2>
-      <p>Facciamo un'analisi gratuita del tuo ambiente IT. Nessun impegno.</p>
+      <p>Un sopralluogo gratuito, un report chiaro. Senza impegno e senza obbligo.</p>
       <div class="cta-band__actions">
         <a href="tel:+390733281142" class="btn btn--primary">Parla con un tecnico</a>
         <a href="/ctech-web/contatti.html#modulo" class="btn btn--outline-light">Compila il modulo</a>
@@ -138,7 +190,7 @@
         <div>
           <h4>Servizi</h4>
           <div class="footer__links">
-            <a href="/ctech-web/assistenza.html" class="footer__link">Assistenza</a>
+            <a href="/ctech-web/come-lavoriamo.html#assistenza" class="footer__link">Assistenza</a>
             <a href="/ctech-web/servizi/infrastruttura.html" class="footer__link">Infrastruttura IT</a>
             <a href="/ctech-web/servizi/cybersecurity.html" class="footer__link">Cybersecurity</a>
           </div>
