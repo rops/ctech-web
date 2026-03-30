@@ -271,7 +271,7 @@ a { text-decoration: none; color: inherit; }
 .form__select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23A3A3A3' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
 .form__textarea { resize: vertical; min-height: 100px; }
 .form__submit { grid-column: 1 / -1; margin-top: 8px; }
-.form__privacy { grid-column: 1 / -1; font-size: 0.78rem; color: var(--gray-400); line-height: 1.6; }
+.form__privacy { grid-column: 1 / -1; font-size: 0.78rem; color: var(--gray-500); line-height: 1.6; }
 .form__privacy a { color: var(--gray-500); text-decoration: underline; }
 .form__consent { grid-column: 1 / -1; }
 .form__checkbox-label {
@@ -307,14 +307,14 @@ a { text-decoration: none; color: inherit; }
 }
 .footer__brand-logo img { height: 36px; width: auto; }
 .footer__brand p { font-size: 0.9rem; line-height: 1.7; }
-.footer h4 { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.25); margin-bottom: 18px; }
+.footer h4 { font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.5); margin-bottom: 18px; }
 .footer__links { display: flex; flex-direction: column; gap: 12px; }
 .footer__link { font-size: 0.9rem; transition: color 0.2s; }
 .footer__link:hover { color: white; }
 .footer__bottom {
   border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px;
   display: flex; justify-content: space-between; align-items: center;
-  font-size: 0.82rem; color: rgba(255,255,255,0.25);
+  font-size: 0.82rem; color: rgba(255,255,255,0.45);
 }
 .footer__legal { display: flex; gap: 24px; }
 .footer__legal a { color: rgba(255,255,255,0.25); transition: color 0.2s; }
@@ -386,14 +386,14 @@ a { text-decoration: none; color: inherit; }
 .solution-card__body { padding: 28px 28px 24px; flex: 1; display: flex; flex-direction: column; }
 .solution-card__top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
 .solution-card__category { font-size: 0.73rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); }
-.solution-card__producer { font-size: 0.73rem; color: var(--gray-400); font-weight: 500; }
+.solution-card__producer { font-size: 0.73rem; color: var(--gray-500); font-weight: 500; }
 .solution-card h3 { font-size: 1.4rem; font-weight: 800; color: var(--gray-900); margin-bottom: 10px; letter-spacing: -0.01em; }
 .solution-card p { font-size: 0.92rem; color: var(--gray-500); margin-bottom: 16px; line-height: 1.65; flex: 1; }
 .solution-card__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
 .solution-card__tag { font-size: 0.73rem; font-weight: 600; padding: 4px 11px; border-radius: 100px; background: var(--slate-light); color: var(--slate); }
 .solution-card__territory {
   display: inline-flex; align-items: center; gap: 5px;
-  font-size: 0.78rem; color: var(--gray-400); margin-bottom: 16px; font-weight: 500;
+  font-size: 0.78rem; color: var(--gray-500); margin-bottom: 16px; font-weight: 500;
 }
 .solution-card__territory svg { width: 14px; height: 14px; }
 .solution-card__link {
@@ -435,7 +435,7 @@ a { text-decoration: none; color: inherit; }
   border-radius: 50%; display: flex; align-items: center; justify-content: center;
   font-size: 1.35rem; font-weight: 900; margin: 0 auto 22px;
 }
-.process-card h4 { font-size: 1.15rem; font-weight: 800; color: var(--gray-900); margin-bottom: 12px; }
+.process-card h3 { font-size: 1.15rem; font-weight: 800; color: var(--gray-900); margin-bottom: 12px; }
 .process-card p { font-size: 0.92rem; color: var(--gray-500); line-height: 1.65; }
 
 /* ---------- ASSISTENZA (homepage) ---------- */
@@ -623,7 +623,7 @@ a.feature-card { text-decoration: none; }
 .partner-logos img:hover { opacity: 1; filter: grayscale(0%); }
 .partner-logos__caption {
   width: 100%; text-align: center; margin-top: 16px;
-  font-size: 0.85rem; color: var(--gray-400); font-weight: 500;
+  font-size: 0.85rem; color: var(--gray-500); font-weight: 500;
 }
 
 /* ---------- SKIP-NAV (accessibility) ---------- */
